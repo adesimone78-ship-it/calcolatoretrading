@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interesse composto: come far crescere i tuoi investimenti | CalcolatoreTrading.it</title>
+  <meta name="description" content="Guida completa all'interesse composto: formula, esempi pratici, regola del 72 e perché iniziare prima fa un'enorme differenza sul capitale finale." />
+  <meta name="keywords" content="interesse composto, calcolo interesse composto, interesse composto investimenti, regola del 72, interesse composto azioni, ETF interesse composto, investimento lungo termine" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/blog/interesse-composto-investimenti" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Interesse composto: come far crescere i tuoi investimenti nel tempo" />
+  <meta property="og:description" content="Guida completa all'interesse composto: formula, esempi pratici e regola del 72." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/blog/interesse-composto-investimenti" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Interesse composto: come far crescere i tuoi investimenti nel tempo","description":"Guida completa all'interesse composto: formula, esempi pratici, regola del 72 e perché iniziare prima fa la differenza.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2025-05-24","dateModified":"2025-05-24","inLanguage":"it"}</script>
+
+  <!-- GOOGLE ADSENSE
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:#4a5568;margin-bottom:1.5rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-0.03em;color:var(--text);line-height:1.15;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:#4a5568;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem}
+    .article strong{color:var(--text);font-weight:600}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .data-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.9rem}
+    .data-table th{text-align:left;font-family:'Syne',sans-serif;font-size:0.78rem;color:#4a5568;font-weight:500;padding:6px 10px;border-bottom:1px solid var(--border)}
+    .data-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2)}
+    .data-table td:not(:first-child){text-align:right;color:var(--text)}
+    .data-table tr:last-child td{border-bottom:none;color:var(--accent);font-weight:600}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:#4a5568;text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+  </style>
+</head>
+<body>
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span><a href="/blog">Blog</a><span>›</span><span>Interesse composto</span>
+    </nav>
+    <div class="post-tag">Investimenti</div>
+    <h1>Interesse composto: come far crescere i tuoi investimenti nel tempo</h1>
+    <div class="post-meta"><span>24 maggio 2025</span><span>7 min di lettura</span></div>
+
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>Cos'è l'interesse composto</h2>
+    <p>L'<strong>interesse composto</strong> è il meccanismo per cui gli interessi generati da un investimento vengono reinvestiti nel capitale, producendo a loro volta nuovi interessi nel periodo successivo. A differenza dell'interesse semplice — dove gli interessi vengono sempre calcolati sul capitale iniziale — l'interesse composto genera una crescita <strong>esponenziale</strong> nel tempo.</p>
+    <p>Albert Einstein lo definì <em>"l'ottava meraviglia del mondo"</em>. Che la citazione sia autentica o no, il concetto è corretto: dato abbastanza tempo, l'interesse composto trasforma somme modeste in capitali significativi.</p>
+
+    <h2>La formula</h2>
+    <div class="formula-box">
+      C = P × (1 + r/n)^(n×t)
+      <span>C = capitale finale, P = capitale iniziale, r = tasso annuo, n = frequenza capitalizzazione, t = anni</span>
+    </div>
+    <p>Senza capitalizzazione infra-annuale si semplifica in <strong>C = P × (1 + r)^t</strong>. Aggiungendo versamenti periodici (DCA) si aggiunge un secondo termine che accumula i contributi ricorrenti.</p>
+
+    <h2>Un esempio concreto</h2>
+    <div class="example-box">
+      <div class="example-box-title">Esempio — €10.000 investiti all'8% annuo</div>
+      <table class="data-table">
+        <thead><tr><th>Anno</th><th>Capitale</th><th>Interessi totali</th><th>Rendimento</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>€14.693</td><td>€4.693</td><td>+47%</td></tr>
+          <tr><td>10</td><td>€21.589</td><td>€11.589</td><td>+116%</td></tr>
+          <tr><td>20</td><td>€46.610</td><td>€36.610</td><td>+366%</td></tr>
+          <tr><td>30</td><td>€100.627</td><td>€90.627</td><td>+906%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Nota come i guadagni accelerino nel tempo: nei primi 10 anni guadagni €11.589, nei secondi 10 anni €25.021, nei terzi 10 anni €54.017. È l'accelerazione esponenziale dell'interesse composto in azione.</p>
+
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>La regola del 72</h2>
+    <p>La <strong>regola del 72</strong> è una scorciatoia per stimare in quanti anni un capitale raddoppia: dividi 72 per il tasso di rendimento annuo. Con un tasso dell'8%, il capitale raddoppia in 72 ÷ 8 = <strong>9 anni</strong>. Con il 10% in 7.2 anni. È un'approssimazione sorprendentemente precisa per tassi tra il 2% e il 20%.</p>
+
+    <h2>Perché iniziare prima fa un'enorme differenza</h2>
+    <p>Il fattore più importante nell'interesse composto non è il tasso di rendimento — è il <strong>tempo</strong>. Considera questo confronto:</p>
+    <ul>
+      <li><strong>Mario</strong> investe €200/mese dai 25 ai 35 anni (10 anni, €24.000 totali), poi smette ma lascia tutto investito fino a 65 anni.</li>
+      <li><strong>Luca</strong> aspetta e investe €200/mese dai 35 ai 65 anni (30 anni, €72.000 totali).</li>
+    </ul>
+    <p>Assumendo un rendimento dell'8% annuo, a 65 anni <strong>Mario ha circa €250.000</strong> e <strong>Luca circa €244.000</strong>. Mario ha investito tre volte meno di Luca, ma grazie a 10 anni in più di interesse composto ottiene un risultato simile. Questo è il potere del tempo.</p>
+
+    <h2>Come applicarlo concretamente</h2>
+    <ol>
+      <li><strong>Inizia il prima possibile</strong> — anche con piccole cifre. €100/mese a 25 anni valgono molto più di €300/mese a 45 anni.</li>
+      <li><strong>Reinvesti sempre i dividendi</strong> — non prelevarli. I dividendi reinvestiti rappresentano storicamente circa il 40% del rendimento totale di un portafoglio azionario.</li>
+      <li><strong>Scegli strumenti ad accumulo</strong> — gli ETF ad accumulazione reinvestono automaticamente i dividendi, massimizzando l'effetto dell'interesse composto senza intervento manuale.</li>
+      <li><strong>Minimizza i costi</strong> — commissioni e spese di gestione si compongono negativamente esattamente come i rendimenti si compongono positivamente. Un TER dell'1% in più su 30 anni può costare il 25% del capitale finale.</li>
+      <li><strong>Non interrompere</strong> — i mercati scendono. Chi vende durante i crolli perde l'interesse composto proprio nel momento in cui compra di più a prezzi bassi.</li>
+    </ol>
+
+    <div class="cta-box">
+      <p>Calcola quanto diventerà il tuo capitale nel tempo con il nostro calcolatore gratuito.</p>
+      <a href="/calcolatore-interesse-composto" class="cta-btn">Calcola il tuo interesse composto →</a>
+    </div>
+
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore</div>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">📈 Interesse composto →</span></a>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">⚖️ Criterio di Kelly</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">🔢 Prezzo medio azioni</span></a>
+    </div>
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/criterio-di-kelly-trading" class="post-link"><div class="post-link-title">Criterio di Kelly: cos'è e come usarlo nel trading</div></a>
+      <a href="/blog/dca-dollar-cost-averaging" class="post-link"><div class="post-link-title">DCA: cos'è il Dollar Cost Averaging e quando usarlo</div></a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/privacy">Privacy</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti — CalcolatoreTrading.it</title>
+  <meta name="description" content="Contatta il team di CalcolatoreTrading.it per segnalazioni, suggerimenti o richieste di nuove calcolatrici." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/contatti" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swapfamily=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#5a6475;--accent:#00d4a8;--accent2:#00a882;--accent-glow:rgba(0,212,168,0.15);--red:#e24b4a;--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .page{max-width:700px;margin:0 auto;padding:4rem 2rem 6rem}
+    .breadcrumb{font-size:0.8rem;color:#4a5568;margin-bottom:1.5rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
+    .page-sub{font-size:0.95rem;color:var(--text2);margin-bottom:2.5rem;font-weight:300}
+    .contact-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:2rem;margin-bottom:1.25rem}
+    .contact-card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+    .contact-card-sub{font-size:0.88rem;color:var(--text2);margin-bottom:1.25rem;font-weight:300}
+    .field{margin-bottom:1rem}
+    .field-label{font-size:14px;color:#4a5568;margin-bottom:6px;display:block}
+    input[type="text"],input[type="email"],textarea,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 14px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none;transition:border-color 0.2s;resize:vertical}
+    input[type="text"]:focus,input[type="email"]:focus,textarea:focus,select:focus{border-color:var(--accent)}
+    input[type="text"].error,input[type="email"].error,textarea.error{border-color:var(--red)}
+    input::placeholder,textarea::placeholder{color:#4a5568}
+    select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%235a6475' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+    select option{background:var(--bg2)}
+    textarea{min-height:120px}
+    .btn-send{width:100%;margin-top:0.5rem;padding:13px;background:var(--accent);border:none;border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;color:#021a14;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .btn-send:hover{background:#00eabe;transform:translateY(-1px)}
+    .success-box{display:none;background:rgba(0,212,168,0.08);border:1px solid rgba(0,212,168,0.25);border-radius:var(--radius);padding:1.25rem;text-align:center;margin-top:1rem}
+    .success-box.visible{display:block}
+    .success-box p{font-size:0.92rem;color:var(--accent);font-weight:400}
+    .email-direct{display:flex;align-items:center;gap:10px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:0.9rem 1rem;margin-top:1.25rem}
+    .email-direct span{font-size:0.88rem;color:var(--text2)}
+    .email-direct a{font-size:0.88rem;color:var(--accent);text-decoration:none;font-weight:500}
+    .email-direct a:hover{text-decoration:underline}
+    .faq-mini{margin-top:2rem}
+    .faq-mini-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1rem}
+    .faq-row{border-bottom:1px solid var(--border);padding:0.9rem 0}
+    .faq-row:last-child{border-bottom:none}
+    .faq-q{font-size:0.9rem;color:var(--text);font-weight:500;margin-bottom:0.3rem}
+    .faq-a{font-size:0.85rem;color:var(--text2);font-weight:300;line-height:1.7}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#9aa5b4;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%239aa5b4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">CalcolatoreTrading.it</a>
+    <span aria-hidden="true">›</span>
+    <span>Contatti</span>
+  </nav>
+
+  <h1>Contatti</h1>
+  <p class="page-sub">Segnalazioni, suggerimenti o richieste di nuove calcolatrici — rispondo entro 48 ore.</p>
+
+  <div class="contact-card">
+    <div class="contact-card-title">Scrivici</div>
+    <div class="contact-card-sub">Usa il modulo oppure scrivi direttamente all'email in fondo.</div>
+
+    <div class="field">
+      <label class="field-label" for="nome">Nome</label>
+      <input type="text" id="nome" placeholder="Il tuo nome" aria-label="Nome" />
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="email">Email</label>
+      <input type="email" id="email" placeholder="la-tua@email.it" aria-label="Email" />
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="oggetto">Oggetto</label>
+      <select id="oggetto" aria-label="Oggetto del messaggio">
+        <option value="">Seleziona un argomento</option>
+        <option value="bug">Segnalazione errore in una calcolatrice</option>
+        <option value="nuova">Richiesta nuova calcolatrice</option>
+        <option value="suggerimento">Suggerimento o miglioramento</option>
+        <option value="privacy">Richiesta GDPR / Privacy</option>
+        <option value="altro">Altro</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label class="field-label" for="messaggio">Messaggio</label>
+      <textarea id="messaggio" placeholder="Descrivi la tua richiesta..." aria-label="Messaggio"></textarea>
+    </div>
+
+    <button class="btn-send" onclick="sendForm()">Invia messaggio</button>
+
+    <div class="success-box" id="success-box">
+      <p>✓ Messaggio ricevuto — risponderemo entro 48 ore.</p>
+    </div>
+
+    <div class="email-direct">
+      <span>Oppure scrivi direttamente a</span>
+      <a href="mailto:info@calcolatoretrading.it">info@calcolatoretrading.it</a>
+    </div>
+  </div>
+
+  <div class="faq-mini">
+    <div class="faq-mini-title">Domande frequenti</div>
+
+    <div class="faq-row">
+      <div class="faq-q">Posso richiedere una nuova calcolatrice?</div>
+      <div class="faq-a">Sì. Usa il modulo qui sopra selezionando "Richiesta nuova calcolatrice" e descrivi cosa ti serve. Valutiamo tutte le richieste e aggiungiamo le calcolatrici con più interesse.</div>
+    </div>
+
+    <div class="faq-row">
+      <div class="faq-q">Ho trovato un errore nel calcolo, come lo segnalo?</div>
+      <div class="faq-a">Scrivi tramite il modulo selezionando "Segnalazione errore", indicando quale calcolatrice, i valori inseriti e il risultato atteso. Lo correggiamo nel minor tempo possibile.</div>
+    </div>
+
+    <div class="faq-row">
+      <div class="faq-q">I calcoli sono affidabili?</div>
+      <div class="faq-a">Le formule utilizzate sono standard e verificate. I calcoli vengono eseguiti interamente nel browser, senza trasmissione di dati. Ti consigliamo comunque di verificare sempre i risultati prima di prendere decisioni finanziarie importanti.</div>
+    </div>
+
+    <div class="faq-row">
+      <div class="faq-q">Come esercito i miei diritti GDPR?</div>
+      <div class="faq-a">Scrivi a <a href="mailto:privacy@calcolatoretrading.it" style="color:var(--accent);text-decoration:none">privacy@calcolatoretrading.it</a> o usa il modulo selezionando "Richiesta GDPR / Privacy". Risponderemo entro 30 giorni come previsto dal regolamento.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links" aria-label="Link footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  async function sendForm() {
+    var nome = document.getElementById('nome');
+    var email = document.getElementById('email');
+    var messaggio = document.getElementById('messaggio');
+    var oggetto = document.getElementById('oggetto');
+    var valid = true;
+
+    [nome, email, messaggio].forEach(function(el){ el.classList.remove('error'); });
+
+    if (!nome.value.trim()) { nome.classList.add('error'); valid = false; }
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(email.value.trim())) { email.classList.add('error'); valid = false; }
+    if (!messaggio.value.trim()) { messaggio.classList.add('error'); valid = false; }
+    if (!valid) return;
+
+    var btn = document.querySelector('.btn-send');
+    btn.textContent = 'Invio in corso...';
+    btn.disabled = true;
+
+    try {
+      var formData = new FormData();
+      formData.append('access_key', '04c0d50c-1749-4c76-926d-95bbe4ccf80a');
+      formData.append('nome', nome.value.trim());
+      formData.append('email', email.value.trim());
+      formData.append('oggetto', oggetto.options[oggetto.selectedIndex].text);
+      formData.append('messaggio', messaggio.value.trim());
+      formData.append('subject', 'Nuovo messaggio da CalcolatoreTrading.it');
+
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (res.ok) {
+        document.getElementById('success-box').classList.add('visible');
+        btn.textContent = '✓ Inviato';
+        btn.style.background = 'var(--accent2)';
+        [nome, email, messaggio].forEach(function(el){ el.value = ''; });
+        oggetto.selectedIndex = 0;
+      } else {
+        btn.textContent = 'Riprova';
+        btn.disabled = false;
+        btn.style.background = 'var(--red)';
+      }
+    } catch(err) {
+      btn.textContent = 'Errore di rete — riprova';
+      btn.disabled = false;
+      btn.style.background = 'var(--red)';
+    }
+  }
+
+  // Remove error on input
+  ['nome','email','messaggio'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){ this.classList.remove('error'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalcolatoreTrading.it — Calcolatrici gratuite per trader italiani</title>
+  <meta name="description" content="Calcolatrici online gratuite per il trading: interesse composto, criterio di Kelly, prezzo medio delle azioni. Strumenti precisi per decisioni di investimento più intelligenti." />
+  <meta name="keywords" content="calcolatore interesse composto, criterio di kelly, calcolatore prezzo medio azioni, calcolatrici trading, strumenti trader, calcolatore investimento, trading italia" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CalcolatoreTrading.it — Calcolatrici gratuite per trader italiani" />
+  <meta property="og:description" content="Calcolatrici online gratuite per il trading: interesse composto, criterio di Kelly, prezzo medio delle azioni." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CalcolatoreTrading.it — Calcolatrici per trader" />
+  <meta name="twitter:description" content="Strumenti di calcolo gratuiti per trader italiani: interesse composto, Kelly, prezzo medio." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/","description":"Calcolatrici gratuite per il trading: interesse composto, criterio di Kelly, prezzo medio azioni.","inLanguage":"it"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Calcolatrici per il trading","itemListElement":[{"@type":"ListItem","position":1,"name":"Calcolatore interesse composto","url":"https://www.calcolatoretrading.it/calcolatore-interesse-composto"},{"@type":"ListItem","position":2,"name":"Calcolatore criterio di Kelly","url":"https://www.calcolatoretrading.it/calcolatore-criterio-kelly"},{"@type":"ListItem","position":3,"name":"Calcolatore prezzo medio azioni","url":"https://www.calcolatoretrading.it/calcolatore-prezzo-medio-azioni"}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swapfamily=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#4a5568;--accent:#00d4a8;--accent2:#00a882;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-badge{font-size:13px;font-weight:500;background:var(--accent-glow);color:var(--accent);border:1px solid rgba(0,212,168,0.25);border-radius:99px;padding:3px 10px;letter-spacing:0.04em}
+    .hero{max-width:1100px;margin:0 auto;padding:7rem 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    @media(max-width:768px){.hero{grid-template-columns:1fr;padding:4rem 1.5rem 3rem;gap:2.5rem}}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.75)}}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-0.03em;color:var(--text);margin-bottom:1.25rem}
+    h1 em{font-style:normal;color:var(--accent)}
+    .hero-sub{font-size:1.05rem;color:var(--text2);line-height:1.7;margin-bottom:2rem;font-weight:300}
+    .cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.95rem;font-weight:500;padding:12px 24px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s,transform 0.15s}
+    .btn-primary:hover{background:#00eabe;transform:translateY(-1px)}
+    .btn-ghost{font-size:0.9rem;color:var(--text2);text-decoration:none;border-bottom:1px solid var(--border2);padding-bottom:1px;transition:color 0.2s}
+    .btn-ghost:hover{color:var(--text)}
+    .hero-visual{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.75rem;position:relative;overflow:hidden}
+    .hero-visual::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+    .mini-card-label{font-size:13px;font-weight:500;color:#4a5568;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.35rem}
+    .mini-card-value{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:var(--accent);margin-bottom:0.15rem}
+    .mini-card-sub{font-size:0.8rem;color:var(--text2)}
+    .badge-green{display:inline-block;font-size:10px;font-weight:600;background:rgba(0,212,168,0.12);color:var(--accent);border-radius:99px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+    .divider{height:1px;background:var(--border);margin:1.25rem 0}
+    .mini-row{display:flex;justify-content:space-between;gap:1rem}
+    .mini-stat-label{font-size:13px;color:#4a5568;margin-bottom:4px}
+    .mini-stat-val{font-size:1rem;font-weight:500;color:var(--text)}
+    .chart-bars{display:flex;align-items:flex-end;gap:5px;height:60px;margin-top:1rem}
+    .bar{flex:1;background:var(--border2);border-radius:3px 3px 0 0}
+    .bar.active{background:var(--accent)}
+    .section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
+    @media(max-width:768px){.section{padding:3rem 1.5rem}}
+    .section-label{font-size:13px;font-weight:500;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
+    h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:0.75rem}
+    .section-intro{font-size:1rem;color:var(--text2);max-width:560px;margin-bottom:3rem;font-weight:300}
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+    .tool-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;text-decoration:none;display:block;transition:border-color 0.2s,transform 0.15s,background 0.2s;position:relative;overflow:hidden}
+    .tool-card:hover{border-color:var(--border2);transform:translateY(-2px);background:var(--bg3)}
+    .tool-card.featured{border-color:rgba(0,212,168,0.3)}
+    .tool-card.featured::after{content:'Più usato';position:absolute;top:1rem;right:1rem;font-size:10px;font-weight:600;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:2px 10px;letter-spacing:0.05em}
+    .tool-icon{width:44px;height:44px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
+    .tool-icon.teal{background:rgba(0,212,168,0.1)}
+    .tool-icon.amber{background:rgba(245,166,35,0.1)}
+    .tool-icon.blue{background:rgba(74,158,255,0.1)}
+    .tool-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.5rem}
+    .tool-desc{font-size:0.88rem;color:var(--text2);line-height:1.6;margin-bottom:1.25rem;font-weight:300}
+    .tool-tag{display:inline-block;font-size:10px;font-weight:500;color:#4a5568;background:var(--bg);border:1px solid var(--border);border-radius:99px;padding:3px 10px;margin-right:5px;margin-bottom:5px;letter-spacing:0.04em}
+    .tool-arrow{display:inline-flex;align-items:center;gap:5px;font-size:0.82rem;color:var(--accent);margin-top:1rem;font-weight:500}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+    .why-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem}
+    .why-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);line-height:1;margin-bottom:0.4rem}
+    .why-label{font-size:0.88rem;color:var(--text2);font-weight:300}
+    .seo-section{background:var(--bg2);border-top:1px solid var(--border)}
+    .seo-inner{max-width:1100px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+    @media(max-width:768px){.seo-inner{grid-template-columns:1fr;gap:2rem}}
+    h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .seo-text{font-size:0.92rem;color:var(--text2);line-height:1.8;font-weight:300}
+    .seo-text p{margin-bottom:0.75rem}
+    .seo-text strong{color:var(--text);font-weight:500}
+    .notify-section{max-width:1100px;margin:0 auto;padding:4rem 2rem 6rem;text-align:center}
+    .notify-box{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:3rem 2rem;max-width:520px;margin:0 auto;position:relative;overflow:hidden}
+    .notify-box::before{content:'';position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:300px;height:150px;background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+    .notify-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:0.5rem}
+    .notify-sub{font-size:0.9rem;color:var(--text2);margin-bottom:1.5rem;font-weight:300}
+    .email-form{display:flex;gap:8px;max-width:380px;margin:0 auto}
+    @media(max-width:480px){.email-form{flex-direction:column}}
+    .email-input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:11px 14px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;color:var(--text);outline:none;transition:border-color 0.2s}
+    .email-input::placeholder{color:#4a5568}
+    .email-input:focus{border-color:var(--accent)}
+    .btn-notify{background:var(--accent);color:#021a14;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;font-weight:500;padding:11px 20px;border-radius:var(--radius);border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s}
+    .btn-notify:hover{background:#00eabe}
+    /* AdSense slots */
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-slot-hero{max-width:1100px;margin:0 auto;padding:0 2rem 2rem}
+    .ad-slot-incontent{max-width:1100px;margin:0 auto;padding:2rem}
+    .ad-slot-seo{max-width:1100px;margin:0 auto;padding:2rem 2rem 0}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--text2)}
+  @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#64748b;--accent:#009e7e;--accent2:#007d63;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="CalcolatoreTrading home">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog">Blog</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        Calcolatrici per trader italiani
+      </div>
+      <h1>Calcola.<br /><em>Decidi.</em><br />Investi meglio.</h1>
+      <p class="hero-sub">Strumenti di calcolo gratuiti e precisi per il trading: interesse composto, criterio di Kelly, prezzo medio delle azioni. Niente registrazioni, niente abbonamenti.</p>
+      <div class="cta-row">
+        <a href="#strumenti" class="btn-primary">
+          Esplora gli strumenti
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/calcolatore-interesse-composto" class="btn-ghost">Inizia a calcolare</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Anteprima calcolatore interesse composto">
+      <div class="mini-card-label">Interesse composto — esempio</div>
+      <div class="mini-card-value">€ 32.578</div>
+      <div class="mini-card-sub">Capitale finale dopo 10 anni <span class="badge-green">+225%</span></div>
+      <div class="divider"></div>
+      <div class="mini-row">
+        <div class="mini-stat"><div class="mini-stat-label">Capitale iniziale</div><div class="mini-stat-val">€ 10.000</div></div>
+        <div class="mini-stat"><div class="mini-stat-label">Rendimento annuo</div><div class="mini-stat-val">12,5%</div></div>
+        <div class="mini-stat"><div class="mini-stat-label">Periodo</div><div class="mini-stat-val">10 anni</div></div>
+      </div>
+      <div class="chart-bars" aria-hidden="true">
+        <div class="bar" style="height:18%"></div>
+        <div class="bar" style="height:25%"></div>
+        <div class="bar" style="height:33%"></div>
+        <div class="bar" style="height:43%"></div>
+        <div class="bar" style="height:52%"></div>
+        <div class="bar" style="height:62%"></div>
+        <div class="bar" style="height:72%"></div>
+        <div class="bar" style="height:81%"></div>
+        <div class="bar" style="height:91%"></div>
+        <div class="bar active" style="height:100%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================================================
+     GOOGLE ADSENSE — inserisci qui il tuo script principale
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+     ====================================================== -->
+
+<main>
+
+  <!-- SLOT 1: Leaderboard sotto hero — alto CTR, primo contenuto visibile -->
+  <div class="ad-slot-hero">
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — Responsive Display (leaderboard 728x90 / 320x100 mobile)
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
+  <section class="section" id="strumenti" aria-labelledby="tools-heading">
+    <div class="section-label">Strumenti disponibili</div>
+    <h2 id="tools-heading">Tre calcolatrici essenziali<br />per ogni trader serio</h2>
+    <p class="section-intro">Ogni strumento è pensato per una decisione precisa. Nessun fronzolo, risultati immediati.</p>
+    <div class="tools-grid">
+      <a href="/calcolatore-interesse-composto" class="tool-card featured" aria-label="Calcolatore interesse composto">
+        <div class="tool-icon teal" aria-hidden="true">📈</div>
+        <div class="tool-title">Calcolatore interesse composto</div>
+        <p class="tool-desc">Proietta la crescita del tuo capitale nel tempo reinvestendo i rendimenti. Indispensabile per pianificare investimenti a lungo termine in azioni, ETF o crypto.</p>
+        <div><span class="tool-tag">Azioni</span><span class="tool-tag">ETF</span><span class="tool-tag">Crypto</span><span class="tool-tag">Lungo periodo</span></div>
+        <div class="tool-arrow">Apri calcolatore <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="/calcolatore-criterio-kelly" class="tool-card" aria-label="Calcolatore criterio di Kelly">
+        <div class="tool-icon amber" aria-hidden="true">⚖️</div>
+        <div class="tool-title">Criterio di Kelly</div>
+        <p class="tool-desc">Calcola la dimensione ottimale di ogni posizione in base alla tua probabilità di successo e al rapporto rischio/rendimento. Gestione del capitale basata sulla matematica.</p>
+        <div><span class="tool-tag">Position sizing</span><span class="tool-tag">Rischio</span><span class="tool-tag">Money management</span></div>
+        <div class="tool-arrow">Apri calcolatore <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-card" aria-label="Calcolatore prezzo medio azioni">
+        <div class="tool-icon blue" aria-hidden="true">🔢</div>
+        <div class="tool-title">Prezzo medio delle azioni</div>
+        <p class="tool-desc">Calcola il prezzo medio di carico quando acquisti la stessa azione in più tranche a prezzi diversi. Utile per chi fa DCA o mediazione su posizioni in perdita.</p>
+        <div><span class="tool-tag">DCA</span><span class="tool-tag">Mediazione</span><span class="tool-tag">Prezzo medio</span></div>
+        <div class="tool-arrow">Apri calcolatore <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SLOT 2: In-content tra tools e why — posizione ad alto CTR assoluto -->
+  <div class="ad-slot-incontent">
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article (in-content, formato più redditizio)
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:0" aria-labelledby="why-heading">
+    <div class="section-label">Perché usarci</div>
+    <h2 id="why-heading">Semplice, preciso, gratuito</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">100%</div><div class="why-label">Gratuito, senza registrazione e senza limiti di utilizzo</div></div>
+      <div class="why-card"><div class="why-num">3</div><div class="why-label">Calcolatrici specializzate per le decisioni più comuni nel trading</div></div>
+      <div class="why-card"><div class="why-num">0s</div><div class="why-label">Risultati istantanei, calcoli lato client, nessun dato inviato</div></div>
+      <div class="why-card"><div class="why-num">IT</div><div class="why-label">Interfaccia completamente in italiano, pensata per trader italiani</div></div>
+    </div>
+  </section>
+
+  <div class="seo-section">
+    <div class="seo-inner">
+      <div>
+        <h3>Cos'è il calcolatore di interesse composto?</h3>
+        <div class="seo-text">
+          <p>Il <strong>calcolatore di interesse composto</strong> permette di stimare la crescita di un capitale nel tempo quando i rendimenti vengono reinvestiti. A differenza dell'interesse semplice, l'interesse composto genera rendimenti sui rendimenti precedenti, producendo una crescita esponenziale.</p>
+          <p>È lo strumento fondamentale per pianificare investimenti a lungo termine in <strong>azioni, ETF, obbligazioni o criptovalute</strong>. Inserisci il capitale iniziale, il tasso di rendimento atteso e il periodo: otterrai la proiezione del capitale finale e il guadagno totale.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Cos'è il criterio di Kelly?</h3>
+        <div class="seo-text">
+          <p>Il <strong>criterio di Kelly</strong> è una formula matematica che calcola la percentuale ottimale del capitale da rischiare in ogni singola operazione. Sviluppata nel 1956, è largamente usata nel trading professionale per massimizzare la crescita del capitale evitando la rovina.</p>
+          <p>La formula considera la <strong>probabilità di successo</strong> di un'operazione e il rapporto tra guadagno potenziale e perdita potenziale. Il risultato indica la dimensione ideale della posizione rispetto al tuo capitale totale.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Come calcolare il prezzo medio delle azioni?</h3>
+        <div class="seo-text">
+          <p>Il <strong>prezzo medio di carico</strong> si calcola dividendo il costo totale degli acquisti per il numero totale di azioni acquistate. È essenziale per chi pratica il <strong>DCA (Dollar Cost Averaging)</strong> o per chi media una posizione in perdita acquistando a prezzi più bassi.</p>
+          <p>Conoscere il prezzo medio permette di sapere con precisione a quale livello la posizione è in pareggio e di pianificare il punto di uscita ottimale.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Strumenti gratuiti per trader italiani</h3>
+        <div class="seo-text">
+          <p>CalcolatoreTrading.it nasce per offrire <strong>calcolatrici finanziarie gratuite</strong> in italiano, senza registrazione e senza abbonamento. Tutti i calcoli vengono eseguiti direttamente nel browser: nessun dato personale viene trasmesso o conservato.</p>
+          <p>Il sito è ottimizzato per smartphone e tablet, così puoi usare le calcolatrici direttamente durante le sessioni di trading, ovunque ti trovi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLOT 3: Dopo il testo SEO — utente ha letto tutto, alta intenzione -->
+  <div class="ad-slot-seo">
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
+
+  </main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links" aria-label="Link footer">
+      <a href="/privacy">Privacy</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+  </div>
+</footer>
+
+
+</body>
+</html>

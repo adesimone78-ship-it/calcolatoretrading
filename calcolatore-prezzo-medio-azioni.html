@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calcolatore Prezzo Medio Azioni — CalcolatoreTrading.it</title>
+  <meta name="description" content="Calcola il prezzo medio di carico delle tue azioni in pochi secondi. Strumento gratuito per DCA e mediazione su più acquisti a prezzi diversi." />
+  <meta name="keywords" content="calcolatore prezzo medio azioni, prezzo medio di carico, DCA calcolatore, dollar cost averaging, mediazione azioni, calcolo prezzo medio acquisto" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/calcolatore-prezzo-medio-azioni" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calcolatore Prezzo Medio Azioni — CalcolatoreTrading.it" />
+  <meta property="og:description" content="Calcola il prezzo medio di carico delle tue azioni in pochi secondi. Gratuito, senza registrazione." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/calcolatore-prezzo-medio-azioni" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Calcolatore Prezzo Medio Azioni","url":"https://www.calcolatoretrading.it/calcolatore-prezzo-medio-azioni","description":"Calcola il prezzo medio di carico delle tue azioni su più acquisti a prezzi diversi.","inLanguage":"it","isPartOf":{"@type":"WebSite","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Come si calcola il prezzo medio di carico delle azioni?","acceptedAnswer":{"@type":"Answer","text":"Il prezzo medio di carico si calcola dividendo il costo totale degli acquisti (somma di prezzo × quantità per ogni tranche) per il numero totale di azioni acquistate."}},{"@type":"Question","name":"Cos'è il DCA (Dollar Cost Averaging)?","acceptedAnswer":{"@type":"Answer","text":"Il DCA è una strategia di investimento che consiste nell'acquistare una quantità fissa di un asset a intervalli regolari, indipendentemente dal prezzo. Riduce l'impatto della volatilità e abbassa il prezzo medio di carico nel tempo."}},{"@type":"Question","name":"Conviene mediare una posizione in perdita?","acceptedAnswer":{"@type":"Answer","text":"Mediare abbassa il prezzo medio di carico, ma aumenta l'esposizione sullo stesso asset. È una strategia rischiosa se non si è convinti dei fondamentali: usare il calcolatore per capire quante azioni e a quale prezzo servono per raggiungere il breakeven desiderato."}}]}</script>
+
+  <!-- ======================================================
+       GOOGLE ADSENSE — inserisci qui il tuo script principale
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+       ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swapfamily=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#5a6475;--accent:#00d4a8;--accent2:#00a882;--accent-glow:rgba(0,212,168,0.15);--red:#e24b4a;--amber:#f5a623;--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+
+    /* LAYOUT */
+    .page{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:start}
+    @media(max-width:900px){.page{grid-template-columns:1fr;padding:2rem 1.5rem}}
+
+    /* BREADCRUMB */
+    .breadcrumb{font-size:0.8rem;color:#4a5568;margin-bottom:1.5rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+
+    /* PAGE TITLE */
+    .page-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
+    .page-sub{font-size:0.95rem;color:var(--text2);margin-bottom:2rem;font-weight:300}
+
+    /* CALCULATOR CARD */
+    .calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.75rem}
+
+    /* ROWS TABLE */
+    .rows-header{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px}
+    .rows-header span{font-size:13px;font-weight:500;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;padding:0 2px}
+    .row-item{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px;align-items:center}
+    .row-num{font-size:13px;color:#4a5568;text-align:center;font-weight:500}
+    input[type="number"]{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none;transition:border-color 0.2s;-moz-appearance:textfield}
+    input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none}
+    input[type="number"]:focus{border-color:var(--accent)}
+    input[type="number"].error{border-color:var(--red)}
+    .label-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+    .input-label{font-size:14px;color:#4a5568;font-weight:400}
+    .btn-remove{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;color:#4a5568;font-size:16px;transition:border-color 0.2s,color 0.2s;flex-shrink:0}
+    .btn-remove:hover{border-color:var(--red);color:var(--red)}
+    .btn-remove:disabled{opacity:0.2;cursor:not-allowed}
+
+    /* BUTTONS */
+    .btn-add{width:100%;margin-top:4px;padding:10px;background:transparent;border:1px dashed var(--border2);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.88rem;color:var(--text2);cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-add:hover{border-color:var(--accent);color:var(--accent)}
+    .btn-calc{width:100%;margin-top:1.25rem;padding:13px;background:var(--accent);border:none;border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;color:#021a14;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .btn-calc:hover{background:#00eabe;transform:translateY(-1px)}
+    .btn-reset{width:100%;margin-top:8px;padding:10px;background:transparent;border:1px solid var(--border);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.85rem;color:#4a5568;cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-reset:hover{border-color:var(--border2);color:var(--text2)}
+
+    /* RESULTS */
+    .results{margin-top:1.5rem;display:none}
+    .results.visible{display:block}
+    .divider{height:1px;background:var(--border);margin:1.25rem 0}
+    .result-main{text-align:center;padding:1.25rem 0}
+    .result-label{font-size:14px;color:#4a5568;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+    .result-value{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent);letter-spacing:-0.02em}
+    .result-sub{font-size:0.82rem;color:var(--text2);margin-top:4px}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1rem}
+    .stat-box{background:var(--bg3);border-radius:var(--radius);padding:0.9rem 1rem}
+    .stat-box-label{font-size:13px;color:#4a5568;margin-bottom:4px;letter-spacing:0.04em}
+    .stat-box-val{font-size:1.05rem;font-weight:500;color:var(--text)}
+    .stat-box-val.green{color:var(--accent)}
+    .stat-box-val.red{color:var(--red)}
+    .stat-box-val.amber{color:var(--amber)}
+
+    /* BREAKDOWN TABLE */
+    .breakdown{margin-top:1.25rem}
+    .breakdown-title{font-size:14px;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.6rem}
+    .breakdown-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+    .breakdown-table th{text-align:left;color:#4a5568;font-weight:400;padding:4px 8px;border-bottom:1px solid var(--border)}
+    .breakdown-table td{padding:6px 8px;border-bottom:1px solid var(--border);color:var(--text2)}
+    .breakdown-table tr:last-child td{border-bottom:none}
+    .breakdown-table td:not(:first-child){text-align:right;color:var(--text)}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:1.5rem}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .side-text{font-size:0.85rem;color:var(--text2);line-height:1.7;font-weight:300}
+    .side-text p{margin-bottom:0.6rem}
+    .side-text p:last-child{margin-bottom:0}
+    .side-text strong{color:var(--text);font-weight:500}
+    .formula-box{background:var(--bg3);border-radius:var(--radius);padding:0.75rem 1rem;margin:0.75rem 0;font-family:monospace;font-size:0.82rem;color:var(--accent);line-height:1.6}
+    .tool-links{display:flex;flex-direction:column;gap:8px}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;transition:border-color 0.2s}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.85rem;color:var(--text)}
+    .tool-link-arr{font-size:0.75rem;color:#4a5568}
+
+    /* AD SLOTS */
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{padding:1rem 0}
+
+    /* SEO SECTION */
+    .seo-section{background:var(--bg2);border-top:1px solid var(--border);margin-top:3rem}
+    .seo-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+    .faq-item{margin-bottom:1.5rem}
+    h2.faq-h{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+    .faq-ans{font-size:0.9rem;color:var(--text2);line-height:1.75;font-weight:300}
+    h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:1.25rem}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+  @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#9aa5b4;--accent:#009e7e;--accent2:#007d63;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="active">Prezzo medio</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SLOT 1: Top of page — primo slot visibile, alto CTR -->
+<div style="max-width:1100px;margin:1.5rem auto 0;padding:0 2rem">
+  <div class="ad-slot">
+    <!-- ADSENSE SLOT 1 — Responsive Display (leaderboard)
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<div class="page">
+  <!-- MAIN COLUMN -->
+  <div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">CalcolatoreTrading.it</a>
+      <span aria-hidden="true">›</span>
+      <span>Calcolatore prezzo medio azioni</span>
+    </nav>
+
+    <h1 class="page-title">Calcolatore prezzo medio azioni</h1>
+    <p class="page-sub">Inserisci i tuoi acquisti e calcola il prezzo medio di carico in un secondo.</p>
+
+    <div class="calc-card">
+      <div class="rows-header">
+        <span>Prezzo per azione (€)</span>
+        <span>Quantità azioni</span>
+        <span></span>
+      </div>
+      <div id="rows-container"></div>
+      <button class="btn-add" onclick="addRow()">+ Aggiungi acquisto</button>
+
+      <!-- SLOT 2: In-content dentro la calcolatrice — CTR altissimo -->
+      <div class="ad-wrap">
+        <div class="ad-slot">
+          <!-- ADSENSE SLOT 2 — In-article (massima redditività)
+          <ins class="adsbygoogle"
+               style="display:block; text-align:center;"
+               data-ad-layout="in-article"
+               data-ad-format="fluid"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          -->
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calcola prezzo medio</button>
+      <button class="btn-reset" onclick="resetAll()">Azzera tutto</button>
+
+      <div class="results" id="results" aria-live="polite">
+        <div class="divider"></div>
+        <div class="result-main">
+          <div class="result-label">Prezzo medio di carico</div>
+          <div class="result-value" id="avg-price">—</div>
+          <div class="result-sub" id="avg-sub"></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-box-label">Totale azioni</div>
+            <div class="stat-box-val" id="total-qty">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Investimento totale</div>
+            <div class="stat-box-val" id="total-inv">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Acquisto più basso</div>
+            <div class="stat-box-val green" id="min-price">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Acquisto più alto</div>
+            <div class="stat-box-val amber" id="max-price">—</div>
+          </div>
+        </div>
+        <div class="breakdown" id="breakdown">
+          <div class="divider"></div>
+          <div class="breakdown-title">Dettaglio acquisti</div>
+          <table class="breakdown-table" aria-label="Dettaglio acquisti">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th style="text-align:right">Prezzo</th>
+                <th style="text-align:right">Quantità</th>
+                <th style="text-align:right">Subtotale</th>
+                <th style="text-align:right">Peso %</th>
+              </tr>
+            </thead>
+            <tbody id="breakdown-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLOT 3: Dopo la calcolatrice, prima del SEO — utente ha interagito -->
+    <div class="ad-wrap">
+      <div class="ad-slot">
+        <!-- ADSENSE SLOT 3 — Responsive Display
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Informazioni e altri strumenti">
+
+    <div class="side-card">
+      <div class="side-title">Come funziona</div>
+      <div class="side-text">
+        <p>Il <strong>prezzo medio di carico</strong> è la media ponderata dei prezzi a cui hai acquistato le azioni.</p>
+        <div class="formula-box">Prezzo medio =<br />Σ (prezzo × quantità)<br />─────────────────<br />Σ quantità totali</div>
+        <p>Più azioni acquisti a prezzi bassi, più il prezzo medio scende verso quei valori.</p>
+      </div>
+    </div>
+
+    <!-- SLOT 4: Sidebar — visibile per tutta la durata della sessione -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Display verticale sidebar (300x250 o 300x600)
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri strumenti</div>
+      <div class="tool-links">
+        <a href="/calcolatore-interesse-composto" class="tool-link">
+          <span class="tool-link-name">📈 Interesse composto</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+        <a href="/calcolatore-criterio-kelly" class="tool-link">
+          <span class="tool-link-name">⚖️ Criterio di Kelly</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo-section">
+  <div class="seo-inner">
+    <h2>Domande frequenti sul prezzo medio delle azioni</h2>
+    <div class="faq-item">
+      <h2 class="faq-h">Come si calcola il prezzo medio di carico delle azioni?</h2>
+      <p class="faq-ans">Il prezzo medio di carico si calcola dividendo il costo totale degli acquisti per il numero totale di azioni detenute. Per ogni tranche si moltiplica il prezzo pagato per la quantità acquistata, si sommano tutti i subtotali e si divide per la quantità totale. Il calcolatore qui sopra esegue questo calcolo automaticamente per qualsiasi numero di acquisti.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Cos'è il DCA (Dollar Cost Averaging)?</h2>
+      <p class="faq-ans">Il <strong>DCA</strong> è una strategia che consiste nell'acquistare una quantità fissa di un asset a intervalli regolari, indipendentemente dal prezzo corrente. Quando il prezzo scende si comprano più unità, quando sale meno. Nel tempo questo abbassa il prezzo medio di carico e riduce l'impatto della volatilità rispetto a un acquisto in un'unica soluzione.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Conviene mediare una posizione in perdita?</h2>
+      <p class="faq-ans">Mediare abbassa il prezzo medio di carico e avvicina il breakeven, ma aumenta l'esposizione sullo stesso asset. È una strategia efficace solo se si è convinti dei fondamentali dell'azienda o dell'asset. Usare questo calcolatore per simulare quante azioni e a quale prezzo servono per raggiungere il punto di pareggio desiderato, prima di decidere se mediare.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Il prezzo medio di carico include le commissioni?</h2>
+      <p class="faq-ans">Questo calcolatore non include le commissioni di intermediazione nel calcolo. Per un prezzo medio più preciso, aggiungere la commissione al prezzo di ogni acquisto prima di inserirlo. Ad esempio, se si acquistano 10 azioni a €50 con una commissione di €2, il prezzo da inserire è €50,20 per azione.</p>
+    </div>
+
+    <!-- SLOT 5: Fondo pagina SEO — utente ha letto tutto, alta intenzione -->
+    <div style="margin-top:2rem">
+      <div class="ad-slot">
+        <!-- ADSENSE SLOT 5 — Responsive Display (footer content)
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links" aria-label="Link footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  var rowCount = 0;
+
+  function fmt(n) {
+    return new Intl.NumberFormat('it-IT', {minimumFractionDigits:2, maximumFractionDigits:4}).format(n);
+  }
+  function fmtEur(n) {
+    return new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2}).format(n);
+  }
+
+  function addRow(price, qty) {
+    rowCount++;
+    var id = rowCount;
+    var container = document.getElementById('rows-container');
+    var div = document.createElement('div');
+    div.className = 'row-item';
+    div.id = 'row-' + id;
+    div.innerHTML =
+      '<input type="number" min="0.0001" step="any" placeholder="es. 45.50" aria-label="Prezzo acquisto ' + id + '" id="price-' + id + '" value="' + (price||'') + '" />' +
+      '<input type="number" min="1" step="1" placeholder="es. 100" aria-label="Quantità acquisto ' + id + '" id="qty-' + id + '" value="' + (qty||'') + '" />' +
+      '<button class="btn-remove" onclick="removeRow(' + id + ')" aria-label="Rimuovi acquisto ' + id + '">×</button>';
+    container.appendChild(div);
+    updateRemoveButtons();
+  }
+
+  function removeRow(id) {
+    var row = document.getElementById('row-' + id);
+    if (row) row.remove();
+    updateRemoveButtons();
+    if (document.getElementById('results').classList.contains('visible')) calculate();
+  }
+
+  function updateRemoveButtons() {
+    var rows = document.querySelectorAll('.row-item');
+    rows.forEach(function(r) {
+      var btn = r.querySelector('.btn-remove');
+      btn.disabled = rows.length <= 1;
+    });
+  }
+
+  function getRows() {
+    var rows = document.querySelectorAll('.row-item');
+    var data = [];
+    var valid = true;
+    rows.forEach(function(r) {
+      var pid = r.id.replace('row-', '');
+      var pEl = document.getElementById('price-' + pid);
+      var qEl = document.getElementById('qty-' + pid);
+      var p = parseFloat(pEl.value);
+      var q = parseFloat(qEl.value);
+      pEl.classList.remove('error');
+      qEl.classList.remove('error');
+      if (!p || p <= 0) { pEl.classList.add('error'); valid = false; }
+      if (!q || q <= 0) { qEl.classList.add('error'); valid = false; }
+      if (p > 0 && q > 0) data.push({price: p, qty: q});
+    });
+    return valid ? data : null;
+  }
+
+  function calculate() {
+    var data = getRows();
+    if (!data || data.length === 0) return;
+
+    var totalCost = 0, totalQty = 0;
+    var prices = data.map(function(d){ return d.price; });
+    data.forEach(function(d){ totalCost += d.price * d.qty; totalQty += d.qty; });
+
+    var avgPrice = totalCost / totalQty;
+    var minP = Math.min.apply(null, prices);
+    var maxP = Math.max.apply(null, prices);
+    var savings = (maxP - avgPrice) / maxP * 100;
+
+    document.getElementById('avg-price').textContent = fmtEur(avgPrice);
+    document.getElementById('avg-sub').textContent = 'Risparmiato ' + savings.toFixed(1) + '% rispetto al prezzo più alto';
+    document.getElementById('total-qty').textContent = new Intl.NumberFormat('it-IT').format(totalQty) + ' azioni';
+    document.getElementById('total-inv').textContent = fmtEur(totalCost);
+    document.getElementById('min-price').textContent = fmtEur(minP);
+    document.getElementById('max-price').textContent = fmtEur(maxP);
+
+    var tbody = document.getElementById('breakdown-body');
+    tbody.innerHTML = '';
+    data.forEach(function(d, i) {
+      var sub = d.price * d.qty;
+      var pct = (sub / totalCost * 100).toFixed(1);
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td style="color:#4a5568">' + (i+1) + '</td><td>' + fmtEur(d.price) + '</td><td>' + new Intl.NumberFormat('it-IT').format(d.qty) + '</td><td>' + fmtEur(sub) + '</td><td>' + pct + '%</td>';
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('results').classList.add('visible');
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  function resetAll() {
+    document.getElementById('rows-container').innerHTML = '';
+    rowCount = 0;
+    addRow();
+    addRow();
+    document.getElementById('results').classList.remove('visible');
+  }
+
+  // Init with 2 rows
+  addRow();
+  addRow();
+</script>
+</body>
+</html>
