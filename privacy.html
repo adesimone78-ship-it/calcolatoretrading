@@ -9,31 +9,30 @@
   <link rel="canonical" href="https://www.calcolatoretrading.it/privacy" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swapfamily=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--radius:12px;--radius-lg:20px}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#5a6475;--accent:#00d4a8;--radius:12px;--radius-lg:20px}
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
     nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
     .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
     .logo span{color:var(--accent)}
     .nav-links{display:flex;gap:1.5rem}
-    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a{font-size:0.85rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
     .nav-links a:hover{color:var(--text)}
-    .nav-links a.active{color:var(--accent)}
     .page{max-width:760px;margin:0 auto;padding:4rem 2rem 6rem}
-    .breadcrumb{font-size:0.8rem;color:var(--text3);margin-bottom:2rem}
-    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb{font-size:0.8rem;color:#4a5568;margin-bottom:2rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
     .breadcrumb a:hover{color:var(--text2)}
     .breadcrumb span{margin:0 6px}
-    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,2.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:0.5rem}
-    .updated{font-size:0.82rem;color:var(--text3);margin-bottom:3rem}
-    h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.3rem;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
-    p{font-size:0.95rem;line-height:1.7;color:var(--text2);margin-bottom:0.9rem;font-weight:300}
+    h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
+    .updated{font-size:0.82rem;color:#4a5568;margin-bottom:3rem}
+    h2{font-family:'Syne',sans-serif;font-weight:600;font-size:1.15rem;color:var(--text);margin:2.5rem 0 0.75rem}
+    p{font-size:0.95rem;color:var(--text2);margin-bottom:0.9rem;font-weight:300}
     ul{padding-left:1.25rem;margin-bottom:0.9rem}
-    li{font-size:0.95rem;line-height:1.7;color:var(--text2);margin-bottom:0.4rem;font-weight:300}
+    li{font-size:0.95rem;color:var(--text2);margin-bottom:0.4rem;font-weight:300}
     a.inline{color:var(--accent);text-decoration:none}
     a.inline:hover{text-decoration:underline}
     strong{color:var(--text);font-weight:500}
@@ -41,11 +40,11 @@
     .info-box p{margin-bottom:0}
     footer{border-top:1px solid var(--border);padding:2rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
     .footer-links{display:flex;gap:1.5rem}
-    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none}
     .footer-links a:hover{color:var(--text2)}
-    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#9aa5b4;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
   </style>
 </head>
 <body>
