@@ -45,6 +45,8 @@
     .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
     .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
     .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
     .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
     .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
     .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
@@ -87,6 +89,15 @@
     .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
     .footer-links a:hover{color:var(--text2)}
     @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
   </style>
 </head>
 <body>
@@ -178,6 +189,30 @@
     <h2>Come calcolarne il prezzo medio</h2>
     <p>Con più acquisti a prezzi diversi, il prezzo medio di carico si calcola dividendo il totale investito per il numero totale di quote/azioni acquistate. Con il nostro calcolatore puoi inserire ogni acquisto e ottenere immediatamente il prezzo medio, il totale investito e il dettaglio per ogni tranche.</p>
 
+    <h2>DCA su ETF vs singole azioni</h2>
+    <p>Il DCA è la strategia più naturale per gli <strong>ETF ad accumulazione</strong>, perché permette di costruire una posizione diversificata nel tempo senza dover scegliere il momento "giusto" per entrare su centinaia di titoli contemporaneamente. Applicare il DCA a una singola azione, invece, comporta un rischio diverso: se il titolo specifico entra in un declino strutturale (non temporaneo), mediare verso il basso significa aumentare l'esposizione a un'azienda in difficoltà, non semplicemente "comprare a sconto".</p>
+    <p>Per questo motivo molti consulenti finanziari raccomandano il DCA soprattutto su strumenti diversificati (ETF su indici ampi) e sono più cauti nel consigliarlo su singole azioni, dove la mediazione andrebbe accompagnata da un'analisi approfondita dei fondamentali dell'azienda.</p>
+
+    <h2>Errori comuni da evitare con il DCA</h2>
+    <ul>
+      <li><strong>Interrompere i versamenti durante i cali</strong> — è il momento in cui il DCA funziona meglio (si comprano più quote allo stesso importo), ma è anche il momento psicologicamente più difficile per continuare a investire.</li>
+      <li><strong>Cambiare strategia dopo un rialzo recente</strong> — passare dal DCA al lump sum "perché il mercato sta salendo" tradisce la logica stessa della strategia, che è pensata per funzionare indipendentemente dall'andamento di breve periodo.</li>
+      <li><strong>Ignorare le commissioni fisse</strong> — se il broker applica una commissione fissa per ogni operazione, versamenti troppo frequenti e di importo ridotto possono erodere il rendimento. Vale la pena verificare se il proprio intermediario offre piani di accumulo a costo zero o ridotto.</li>
+      <li><strong>Non avere un piano di lungo periodo</strong> — il DCA dà i suoi frutti migliori su orizzonti di anni, non di mesi. Iniziare e interrompere ripetutamente vanifica gran parte del beneficio.</li>
+    </ul>
+
+    <h2>DCA e fiscalità in Italia</h2>
+    <p>Un aspetto spesso trascurato di chi fa DCA in Italia riguarda la gestione fiscale dei molteplici acquisti a prezzi diversi. Ogni tranche di acquisto ha un proprio prezzo di carico, e in caso di vendita parziale, il calcolo della plusvalenza tassabile (attualmente al 26% per la maggior parte degli strumenti) dipende dal metodo di calcolo del costo adottato — generalmente il criterio <strong>LIFO</strong> (Last In First Out) per i titoli detenuti su piattaforme italiane in regime amministrato.</p>
+    <p>Tenere traccia manualmente di decine o centinaia di acquisti mensili può diventare complesso: per questo motivo molti investitori che fanno DCA in autonomia (fuori da piani automatici gestiti dal broker) tengono un registro separato di ogni acquisto, includendo data, quantità e prezzo, così da poter verificare in ogni momento il prezzo medio di carico complessivo — esattamente il tipo di calcolo che il nostro strumento automatizza.</p>
+
+    <h2>Domande frequenti sul Dollar Cost Averaging</h2>
+    <h3>Ogni quanto conviene investire con il DCA?</h3>
+    <p>Non esiste una frequenza "ottimale" in senso assoluto: mensile è la scelta più comune perché si allinea naturalmente con l'accredito dello stipendio, ma anche versamenti settimanali o trimestrali funzionano secondo la stessa logica. La costanza nel tempo conta più della frequenza specifica scelta.</p>
+    <h3>Il DCA garantisce un guadagno?</h3>
+    <p>No. Il DCA riduce l'impatto della volatilità e del market timing sbagliato, ma non elimina il rischio di mercato. Se l'asset scelto perde valore in modo strutturale e permanente nel lungo periodo, anche il DCA produrrà una perdita.</p>
+    <h3>Meglio DCA o investire tutto subito (lump sum)?</h3>
+    <p>Statisticamente il lump sum rende di più nella maggioranza dei casi storici, perché i mercati tendono a salire nel tempo. Il DCA resta comunque preferibile per chi non dispone di un capitale importante da investire subito, o per chi vuole ridurre lo stress psicologico legato al timing d'ingresso.</p>
+
     <div class="cta-box">
       <p>Calcola subito il tuo prezzo medio di carico su più acquisti.</p>
       <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">Apri il calcolatore prezzo medio →</a>
@@ -213,8 +248,15 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
-    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/privacy">Privacy</a><a href="/contatti">Contatti</a></nav>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
   </div>
 </footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

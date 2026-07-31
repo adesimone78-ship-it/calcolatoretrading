@@ -47,6 +47,8 @@
     .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
     .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
     .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
     .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
     .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
     .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
@@ -79,6 +81,15 @@
     .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
     .footer-links a:hover{color:var(--text2)}
     @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
   </style>
 </head>
 <body>
@@ -172,6 +183,26 @@
       <li>Non superare mai il 5-10% del capitale per operazione, indipendentemente da cosa dice il Kelly</li>
     </ol>
 
+    <h2>Kelly nel trading azionario vs nel forex e nelle opzioni</h2>
+    <p>Il criterio di Kelly nasce per scommesse a esito binario (vinci o perdi un importo fisso), ma nei mercati finanziari le operazioni hanno profili di rischio più complessi. Ecco come si adatta ai diversi contesti:</p>
+    <ul>
+      <li><strong>Trading azionario direzionale</strong> — è il caso più vicino al modello originale: si entra con uno stop loss e un target definiti, quindi win rate e reward/risk sono misurabili direttamente dallo storico delle operazioni.</li>
+      <li><strong>Forex a leva</strong> — il Kelly va applicato con estrema cautela, perché la leva amplifica sia i guadagni sia il rischio di rovina. Molti trader forex professionisti usano frazioni di Kelly molto più basse (1/8 o 1/10) proprio per questo motivo.</li>
+      <li><strong>Opzioni</strong> — i payoff non sono binari ma spesso asimmetrici (rischio limitato, guadagno potenzialmente illimitato o viceversa). Il Kelly classico va adattato con formule più complesse che tengono conto della distribuzione completa dei possibili esiti, non solo di due scenari.</li>
+    </ul>
+
+    <h2>Kelly e diversificazione: un limite spesso ignorato</h2>
+    <p>Un errore frequente è applicare il criterio di Kelly separatamente a ogni singola posizione, senza considerare l'esposizione complessiva del portafoglio. Se apri contemporaneamente 5 posizioni tutte dimensionate al 10% secondo Kelly, ma quelle posizioni sono <strong>correlate</strong> tra loro (ad esempio 5 azioni tech che si muovono insieme), il rischio reale del portafoglio è molto più vicino al 50% che alla somma pesata delle singole probabilità.</p>
+    <p>Le versioni più avanzate del criterio di Kelly per portafogli multi-asset (Kelly multivariato) tengono conto delle correlazioni tra le posizioni, ma richiedono strumenti statistici più sofisticati di una semplice calcolatrice. Per la maggior parte dei trader retail, la soluzione pratica è più semplice: applicare comunque un tetto massimo di esposizione complessiva del portafoglio, indipendentemente da cosa suggerisce Kelly posizione per posizione.</p>
+
+    <h2>Domande frequenti sul criterio di Kelly</h2>
+    <h3>Il criterio di Kelly funziona anche per investimenti di lungo periodo?</h3>
+    <p>Il criterio di Kelly nasce per operazioni ripetute con esito misurabile (come le operazioni di trading), non per investimenti buy-and-hold di lungo periodo dove non esiste un singolo "esito" da valutare. Per investimenti azionari di lungo periodo si usano altri approcci di asset allocation, come la diversificazione per classi di attivo.</p>
+    <h3>Perché quasi nessuno usa il Kelly pieno?</h3>
+    <p>Perché anche con stime corrette di win rate e reward/risk, il Kelly pieno produce drawdown molto profondi (spesso superiori al 50%) prima di riprendersi. Pochi trader hanno la disciplina psicologica per reggere un drawdown simile senza abbandonare la strategia nel momento peggiore.</p>
+    <h3>Cosa succede se le mie stime di win rate sono sbagliate?</h3>
+    <p>Il Kelly è molto sensibile agli errori di stima: sovrastimare il win rate porta a un dimensionamento della posizione troppo aggressivo, con rischio concreto di erosione rapida del capitale. È uno dei motivi principali per cui si raccomanda sempre il Kelly frazionato, che offre un margine di sicurezza contro stime imperfette.</p>
+
     <div class="cta-box">
       <p>Calcola subito la dimensione ottimale della tua posizione con il nostro calcolatore gratuito.</p>
       <a href="/calcolatore-criterio-kelly" class="cta-btn">Apri il calcolatore Kelly →</a>
@@ -211,10 +242,15 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-copy">© 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
-    <nav class="footer-links">
-      <a href="/">Home</a><a href="/blog">Blog</a><a href="/privacy">Privacy</a><a href="/contatti">Contatti</a>
-    </nav>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
   </div>
 </footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
