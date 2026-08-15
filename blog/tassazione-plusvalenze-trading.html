@@ -1,93 +1,240 @@
-<!--
-ISTRUZIONI PER IL CARICAMENTO (metodo file-per-file su github.dev):
-1. Nel repo calcolatoretrading, apri con "." un articolo esistente simile per struttura, es. blog/dca-dollar-cost-averaging.html
-2. Copia quel file in un nuovo file: blog/tassazione-plusvalenze-trading.html
-3. Nel nuovo file, sostituisci SOLO:
-   - il blocco <head> (canonical, meta-description, meta-keywords, title, og:*) con i valori qui sotto
-   - il contenuto tra il tag <article> (o <main>) e la chiusura, con il contenuto qui sotto
-   Lascia invariati header di navigazione, footer e banner cookie: sono già corretti e uguali su tutte le pagine.
-4. Aggiungi la pagina a sitemap.xml (stesso formato delle altre voci /blog/...)
-5. Aggiungi un link a questo articolo nella sezione "Altri articoli" degli altri 3 post del blog e/o nella pagina blog.html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tassazione plusvalenze trading: aliquota, minusvalenze e bollo | CalcolatoreTrading.it</title>
+  <meta name="description" content="Guida alla tassazione delle plusvalenze da trading in Italia: aliquota al 26%, regime amministrato e dichiarativo, minusvalenze e zainetto fiscale, imposta di bollo." />
+  <meta name="keywords" content="tassazione plusvalenze trading, tasse trading azioni, aliquota 26% trading, minusvalenze zainetto fiscale, regime amministrato, imposta di bollo titoli" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/blog/tassazione-plusvalenze-trading" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Tassazione plusvalenze trading: aliquota, minusvalenze e bollo" />
+  <meta property="og:description" content="Aliquota al 26%, regime amministrato e dichiarativo, zainetto fiscale e imposta di bollo sul dossier titoli." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/blog/tassazione-plusvalenze-trading" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Tassazione plusvalenze trading: aliquota, minusvalenze e bollo","description":"Aliquota al 26%, regime amministrato e dichiarativo, zainetto fiscale e imposta di bollo sul dossier titoli.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2026-08-15","dateModified":"2026-08-15","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.calcolatoretrading.it/blog/tassazione-plusvalenze-trading"}}</script>
 
-META TAG DA USARE:
-canonical: https://www.calcolatoretrading.it/blog/tassazione-plusvalenze-trading
-meta-description: Guida alla tassazione delle plusvalenze da trading in Italia: aliquota al 26%, regime amministrato e dichiarativo, minusvalenze e zainetto fiscale, imposta di bollo.
-meta-keywords: tassazione plusvalenze trading, tasse trading azioni, aliquota 26% trading, minusvalenze zainetto fiscale, regime amministrato, imposta di bollo titoli
-title: Tassazione plusvalenze trading: aliquota, minusvalenze e bollo | CalcolatoreTrading.it
-og:type: article
--->
+  <!-- GOOGLE ADSENSE
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script> -->
 
-<div class="breadcrumb">
-  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Tassazione plusvalenze
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Tassazione plusvalenze</span>
+    </nav>
+
+    <div class="post-tag">Fiscalit&agrave;</div>
+    <h1>Tassazione delle plusvalenze da trading in Italia: guida pratica</h1>
+    <div class="post-meta">
+      <span>15 agosto 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>L'aliquota: 26% sulla maggior parte degli strumenti</h2>
+    <p>Le plusvalenze realizzate su azioni, ETF armonizzati, obbligazioni societarie, fondi comuni e derivati sono tassate con un'aliquota fissa del <strong>26%</strong>, indipendentemente dal reddito complessivo del contribuente e dal periodo di possesso dello strumento. Non esiste, a differenza di altri paesi, una riduzione dell'aliquota per le posizioni mantenute a lungo termine.</p>
+    <p>Fa eccezione una categoria specifica: i <strong>titoli di Stato italiani</strong> (BTP, BOT, CCT) e i titoli di Stato dei paesi in white list, tassati con l'aliquota agevolata del <strong>12,5%</strong>. Chi fa trading su BTP, quindi, paga meno tasse sulle plusvalenze rispetto a chi opera su azioni o ETF.</p>
+
+    <h2>Regime amministrato vs regime dichiarativo</h2>
+    <p>Il modo in cui le tasse vengono effettivamente pagate dipende dal regime fiscale scelto presso il broker:</p>
+    <ul>
+      <li><strong>Regime amministrato</strong> — il broker italiano autorizzato agisce da sostituto d'imposta: calcola, trattiene e versa il 26% direttamente ad ogni plusvalenza realizzata. Non serve indicare nulla nella dichiarazione dei redditi. &Egrave; il regime di default per chi usa broker italiani (es. Fineco, Directa) o broker esteri con rappresentante fiscale in Italia.</li>
+      <li><strong>Regime dichiarativo</strong> — obbligatorio quando si usa un broker estero senza sostituto d'imposta italiano (es. molti broker europei online). In questo caso &egrave; il contribuente stesso a calcolare le plusvalenze e a dichiararle nel quadro RT del modello Redditi PF, versando le imposte tramite F24 (di norma entro giugno dell'anno successivo).</li>
+    </ul>
+    <p>Il regime dichiarativo richiede pi&ugrave; attenzione e tenuta dei conti, ma offre un vantaggio: permette una gestione pi&ugrave; flessibile della compensazione tra guadagni e perdite su broker diversi, cosa che il regime amministrato non consente automaticamente.</p>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>Minusvalenze e "zainetto fiscale": come funziona la compensazione</h2>
+    <p>Le perdite realizzate (minusvalenze) non si perdono: possono essere <strong>compensate</strong> con plusvalenze future della stessa natura, riducendo l'imposta dovuta. Questo meccanismo &egrave; comunemente chiamato "zainetto fiscale".</p>
+    <p>Punti chiave da conoscere:</p>
+    <ul>
+      <li>Le minusvalenze possono essere portate in compensazione entro i <strong>4 anni successivi</strong> a quello in cui sono state realizzate, oltre non sono pi&ugrave; utilizzabili.</li>
+      <li>In regime amministrato, la compensazione &egrave; automatica solo sulle operazioni fatte presso lo <strong>stesso broker</strong>. Se si opera su pi&ugrave; broker, le minusvalenze di uno non compensano automaticamente le plusvalenze di un altro.</li>
+      <li>Per compensare minusvalenze tra broker diversi serve il regime dichiarativo, oppure — con alcuni broker — la richiesta di certificazione fiscale da trasferire.</li>
+      <li>Le minusvalenze da strumenti "finanziari" (capital gain, redditi diversi) possono compensare solo plusvalenze della stessa categoria: non compensano ad esempio i dividendi, che sono tassati sempre per intero al 26% al momento dell'incasso.</li>
+    </ul>
+
+    <div class="example-box">
+      <div class="example-box-title">Esempio pratico</div>
+      <p>Nel 2026 realizzi una minusvalenza di &euro;2.000 vendendo in perdita un titolo. L'anno successivo realizzi una plusvalenza di &euro;3.000 su un altro titolo, stesso broker, stesso regime amministrato. L'imposta si calcola solo sulla differenza: (&euro;3.000 − &euro;2.000) &times; 26% = <strong>&euro;260</strong>, invece di &euro;780 che avresti pagato senza compensazione.</p>
+    </div>
+
+    <h2>L'imposta di bollo sul dossier titoli</h2>
+    <p>Oltre alla tassazione sulle plusvalenze, chi detiene un dossier titoli (conto in cui sono depositati azioni, ETF, obbligazioni) &egrave; soggetto all'<strong>imposta di bollo dello 0,20% annuo</strong> calcolata sul valore di mercato degli strumenti detenuti, indipendentemente dal fatto che si sia guadagnato o perso. Il bollo &egrave; dovuto anche se il portafoglio non si &egrave; mosso durante l'anno.</p>
+    <p>Sono esenti i dossier con valore medio annuo inferiore a <strong>5.000 &euro;</strong>. Per i conti deposito e i conti correnti si applica invece un'imposta di bollo fissa (non proporzionale) se la giacenza media supera 5.000 &euro;.</p>
+
+    <h2>Dividendi: tassazione separata dalle plusvalenze</h2>
+    <p>I dividendi incassati su azioni italiane ed estere sono tassati anch'essi al 26%, ma con una logica diversa dalle plusvalenze: l'imposta si applica sull'intero importo lordo incassato, senza possibilit&agrave; di compensazione con minusvalenze pregresse. Per i dividendi esteri pu&ograve; inoltre applicarsi una ritenuta alla fonte nel paese d'origine, recuperabile solo in parte tramite le convenzioni contro le doppie imposizioni — un aspetto che complica la fiscalit&agrave; di chi investe su azioni USA o di altri paesi extra-UE.</p>
+
+    <h2>Tenere traccia delle operazioni: perch&eacute; conviene</h2>
+    <p>Anche in regime amministrato, dove il broker fa i calcoli, tenere un registro personale delle operazioni (data, prezzo di carico, prezzo di vendita, minusvalenze residue) aiuta a verificare che il broker stia applicando correttamente le compensazioni e a valutare in anticipo l'impatto fiscale prima di chiudere una posizione. &Egrave; particolarmente utile per chi fa DCA su pi&ugrave; tranche di acquisto, dove il calcolo del prezzo medio di carico determina direttamente l'entit&agrave; della plusvalenza o minusvalenza al momento della vendita — puoi usare il nostro <a href="/calcolatore-prezzo-medio-azioni" class="inline">calcolatore di prezzo medio</a> per questo.</p>
+
+    <h2>Domande frequenti sulla tassazione del trading</h2>
+    <h3>Le perdite non compensate entro 4 anni sono perse definitivamente?</h3>
+    <p>S&igrave;. Trascorso il quarto anno successivo a quello di realizzo, la minusvalenza residua non &egrave; pi&ugrave; utilizzabile per compensare future plusvalenze e va persa.</p>
+    <h3>Conviene il regime amministrato o quello dichiarativo?</h3>
+    <p>Per chi opera su un solo broker italiano, il regime amministrato &egrave; pi&ugrave; semplice: nessun adempimento dichiarativo, imposta gestita automaticamente. Il regime dichiarativo diventa preferibile (o necessario) per chi usa broker esteri senza sostituto d'imposta italiano, o per chi vuole compensare minusvalenze tra broker diversi.</p>
+    <h3>Il 26% si applica anche alle criptovalute?</h3>
+    <p>Le plusvalenze su criptovalute seguono in Italia un regime fiscale con regole proprie (soglie e adempimenti dichiarativi specifici, quadro RW per il monitoraggio), non identico a quello di azioni ed ETF. Chi opera anche su crypto dovrebbe verificare la normativa aggiornata, perch&eacute; &egrave; un'area soggetta a modifiche pi&ugrave; frequenti rispetto alla tassazione azionaria.</p>
+    <h3>Serve un commercialista per gestire le tasse sul trading?</h3>
+    <p>In regime amministrato con un solo broker italiano, generalmente no: il broker fa tutto. Con pi&ugrave; broker, broker esteri, regime dichiarativo o volumi operativi elevati, un commercialista aiuta a evitare errori nella compensazione delle minusvalenze e nella compilazione del quadro RT.</p>
+    <p><em>Questo articolo ha scopo informativo generale e non sostituisce una consulenza fiscale personalizzata: per la tua situazione specifica verifica sempre con un commercialista.</em></p>
+
+    <div class="cta-box">
+      <p>Calcola il prezzo medio di carico dei tuoi acquisti per stimare plusvalenze e minusvalenze prima di vendere.</p>
+      <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">&#128290; Apri il calcolatore prezzo medio &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore prezzo medio</div>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Apri il calcolatore &rarr;</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/dca-dollar-cost-averaging" class="post-link"><div class="post-link-title">DCA: cos'&egrave; il Dollar Cost Averaging e quando usarlo</div></a>
+      <a href="/blog/interesse-composto-investimenti" class="post-link"><div class="post-link-title">Interesse composto: come far crescere i tuoi investimenti</div></a>
+    </div>
+  </aside>
 </div>
 
-<span class="category-tag">Fiscalità</span>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
 
-<h1>Tassazione delle plusvalenze da trading in Italia: guida pratica</h1>
-<p class="article-meta">15 agosto 2026 · 8 min di lettura</p>
-
-<p>Ogni guadagno realizzato vendendo azioni, ETF o altri strumenti finanziari è soggetto a tassazione in Italia. Le regole non sono complesse, ma ignorarle porta spesso a due errori opposti: pagare più tasse del dovuto non compensando le perdite, oppure trovarsi con un conguaglio inatteso a fine anno. Questa guida spiega aliquota, regimi fiscali e le situazioni pratiche più comuni per chi fa trading.</p>
-
-<h2>L'aliquota: 26% sulla maggior parte degli strumenti</h2>
-<p>Le plusvalenze realizzate su azioni, ETF armonizzati, obbligazioni societarie, fondi comuni e derivati sono tassate con un'aliquota fissa del <strong>26%</strong>, indipendentemente dal reddito complessivo del contribuente e dal periodo di possesso dello strumento. Non esiste, a differenza di altri paesi, una riduzione dell'aliquota per le posizioni mantenute a lungo termine.</p>
-<p>Fa eccezione una categoria specifica: i <strong>titoli di Stato italiani</strong> (BTP, BOT, CCT) e i titoli di Stato dei paesi in white list, tassati con l'aliquota agevolata del <strong>12,5%</strong>. Chi fa trading su BTP, quindi, paga meno tasse sulle plusvalenze rispetto a chi opera su azioni o ETF.</p>
-
-<h2>Regime amministrato vs regime dichiarativo</h2>
-<p>Il modo in cui le tasse vengono effettivamente pagate dipende dal regime fiscale scelto presso il broker:</p>
-<ul>
-<li><strong>Regime amministrato</strong> — il broker italiano autorizzato agisce da sostituto d'imposta: calcola, trattiene e versa il 26% direttamente ad ogni plusvalenza realizzata. Non serve indicare nulla nella dichiarazione dei redditi. È il regime di default per chi usa broker italiani (es. Fineco, Directa) o broker esteri con rappresentante fiscale in Italia.</li>
-<li><strong>Regime dichiarativo</strong> — obbligatorio quando si usa un broker estero senza sostituto d'imposta italiano (es. molti broker europei online). In questo caso è il contribuente stesso a calcolare le plusvalenze e a dichiararle nel quadro RT del modello Redditi PF, versando le imposte tramite F24 (di norma entro giugno dell'anno successivo).</li>
-</ul>
-<p>Il regime dichiarativo richiede più attenzione e tenuta dei conti, ma offre un vantaggio: permette una gestione più flessibile della compensazione tra guadagni e perdite su broker diversi, cosa che il regime amministrato non consente automaticamente.</p>
-
-<h2>Minusvalenze e "zainetto fiscale": come funziona la compensazione</h2>
-<p>Le perdite realizzate (minusvalenze) non si perdono: possono essere <strong>compensate</strong> con plusvalenze future della stessa natura, riducendo l'imposta dovuta. Questo meccanismo è comunemente chiamato "zainetto fiscale".</p>
-<p>Punti chiave da conoscere:</p>
-<ul>
-<li>Le minusvalenze possono essere portate in compensazione entro i <strong>4 anni successivi</strong> a quello in cui sono state realizzate, oltre non sono più utilizzabili.</li>
-<li>In regime amministrato, la compensazione è automatica solo sulle operazioni fatte presso lo <strong>stesso broker</strong>. Se si opera su più broker, le minusvalenze di uno non compensano automaticamente le plusvalenze di un altro.</li>
-<li>Per compensare minusvalenze tra broker diversi serve il regime dichiarativo, oppure — con alcuni broker — la richiesta di certificazione fiscale da trasferire.</li>
-<li>Le minusvalenze da strumenti "finanziari" (capital gain, redditi diversi) possono compensare solo plusvalenze della stessa categoria: non compensano ad esempio i dividendi, che sono tassati sempre per intero al 26% al momento dell'incasso.</li>
-</ul>
-
-<div class="example-box">
-<p><strong>Esempio pratico</strong></p>
-<p>Nel 2026 realizzi una minusvalenza di €2.000 vendendo in perdita un titolo. L'anno successivo realizzi una plusvalenza di €3.000 su un altro titolo, stesso broker, stesso regime amministrato. L'imposta si calcola solo sulla differenza: (€3.000 − €2.000) × 26% = <strong>€260</strong>, invece di €780 che avresti pagato senza compensazione.</p>
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
 </div>
 
-<h2>L'imposta di bollo sul dossier titoli</h2>
-<p>Oltre alla tassazione sulle plusvalenze, chi detiene un dossier titoli (conto in cui sono depositati azioni, ETF, obbligazioni) è soggetto all'<strong>imposta di bollo dello 0,20% annuo</strong> calcolata sul valore di mercato degli strumenti detenuti, indipendentemente dal fatto che si sia guadagnato o perso. Il bollo è dovuto anche se il portafoglio non si è mosso durante l'anno.</p>
-<p>Sono esenti i dossier con valore medio annuo inferiore a <strong>5.000 €</strong>. Per i conti deposito e i conti correnti si applica invece un'imposta di bollo fissa (non proporzionale) se la giacenza media supera 5.000 €.</p>
-
-<h2>Dividendi: tassazione separata dalle plusvalenze</h2>
-<p>I dividendi incassati su azioni italiane ed estere sono tassati anch'essi al 26%, ma con una logica diversa dalle plusvalenze: l'imposta si applica sull'intero importo lordo incassato, senza possibilità di compensazione con minusvalenze pregresse. Per i dividendi esteri può inoltre applicarsi una ritenuta alla fonte nel paese d'origine, recuperabile solo in parte tramite le convenzioni contro le doppie imposizioni — un aspetto che complica la fiscalità di chi investe su azioni USA o di altri paesi extra-UE.</p>
-
-<h2>Tenere traccia delle operazioni: perché conviene</h2>
-<p>Anche in regime amministrato, dove il broker fa i calcoli, tenere un registro personale delle operazioni (data, prezzo di carico, prezzo di vendita, minusvalenze residue) aiuta a verificare che il broker stia applicando correttamente le compensazioni e a valutare in anticipo l'impatto fiscale prima di chiudere una posizione. È particolarmente utile per chi fa DCA su più tranche di acquisto, dove il calcolo del prezzo medio di carico determina direttamente l'entità della plusvalenza o minusvalenza al momento della vendita — puoi usare il nostro <a href="https://calcolatoretrading.it/calcolatore-prezzo-medio-azioni">calcolatore di prezzo medio</a> per questo.</p>
-
-<h2>Domande frequenti sulla tassazione del trading</h2>
-
-<h3>Le perdite non compensate entro 4 anni sono perse definitivamente?</h3>
-<p>Sì. Trascorso il quarto anno successivo a quello di realizzo, la minusvalenza residua non è più utilizzabile per compensare future plusvalenze e va persa.</p>
-
-<h3>Conviene il regime amministrato o quello dichiarativo?</h3>
-<p>Per chi opera su un solo broker italiano, il regime amministrato è più semplice: nessun adempimento dichiarativo, imposta gestita automaticamente. Il regime dichiarativo diventa preferibile (o necessario) per chi usa broker esteri senza sostituto d'imposta italiano, o per chi vuole compensare minusvalenze tra broker diversi.</p>
-
-<h3>Il 26% si applica anche alle criptovalute?</h3>
-<p>Le plusvalenze su criptovalute seguono in Italia un regime fiscale con regole proprie (soglie e adempimenti dichiarativi specifici, quadro RW per il monitoraggio), non identico a quello di azioni ed ETF. Chi opera anche su crypto dovrebbe verificare la normativa aggiornata, perché è un'area soggetta a modifiche più frequenti rispetto alla tassazione azionaria.</p>
-
-<h3>Serve un commercialista per gestire le tasse sul trading?</h3>
-<p>In regime amministrato con un solo broker italiano, generalmente no: il broker fa tutto. Con più broker, broker esteri, regime dichiarativo o volumi operativi elevati, un commercialista aiuta a evitare errori nella compensazione delle minusvalenze e nella compilazione del quadro RT.</p>
-
-<p>Questo articolo ha scopo informativo generale e non sostituisce una consulenza fiscale personalizzata: per la tua situazione specifica verifica sempre con un commercialista.</p>
-
-<div class="cta-box">
-<p>Calcola il prezzo medio di carico dei tuoi acquisti per stimare plusvalenze e minusvalenze prima di vendere.</p>
-<a href="https://calcolatoretrading.it/calcolatore-prezzo-medio-azioni">🔢 Apri il calcolatore prezzo medio →</a>
-</div>
-
-<div class="related-articles">
-<h3>Altri articoli</h3>
-<a href="https://calcolatoretrading.it/blog/dca-dollar-cost-averaging">DCA: cos'è il Dollar Cost Averaging e quando usarlo</a>
-<a href="https://calcolatoretrading.it/blog/interesse-composto-investimenti">Interesse composto: come far crescere i tuoi investimenti</a>
-</div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

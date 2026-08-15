@@ -1,75 +1,232 @@
-<!--
-ISTRUZIONI PER IL CARICAMENTO: stesse istruzioni del file tassazione-plusvalenze-trading.html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diversificazione di portafoglio: quante posizioni servono davvero | CalcolatoreTrading.it</title>
+  <meta name="description" content="Quante posizioni aprire e come diversificare davvero un portafoglio: correlazione tra asset, diversificazione settoriale e geografica, errori comuni." />
+  <meta name="keywords" content="diversificazione portafoglio, quante azioni comprare, correlazione asset, diversificazione settoriale, diversificazione geografica, rischio concentrazione" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/blog/diversificazione-portafoglio-trading" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Diversificazione di portafoglio: quante posizioni servono davvero" />
+  <meta property="og:description" content="Non &egrave; il numero di titoli che conta ma la correlazione tra loro. Quanto diversificare e quando si esagera." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/blog/diversificazione-portafoglio-trading" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Diversificazione di portafoglio: quante posizioni servono davvero","description":"Non &egrave; il numero di titoli che conta ma la correlazione tra loro. Quanto diversificare e quando si esagera.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2026-08-15","dateModified":"2026-08-15","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.calcolatoretrading.it/blog/diversificazione-portafoglio-trading"}}</script>
 
-META TAG DA USARE:
-canonical: https://www.calcolatoretrading.it/blog/diversificazione-portafoglio-trading
-meta-description: Quante posizioni aprire e come diversificare davvero un portafoglio: correlazione tra asset, diversificazione settoriale e geografica, errori comuni.
-meta-keywords: diversificazione portafoglio, quante azioni comprare, correlazione asset, diversificazione settoriale, diversificazione geografica, rischio concentrazione
-title: Diversificazione di portafoglio: quante posizioni servono davvero | CalcolatoreTrading.it
-og:type: article
--->
+  <!-- GOOGLE ADSENSE
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script> -->
 
-<div class="breadcrumb">
-  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Diversificazione di portafoglio
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Diversificazione di portafoglio</span>
+    </nav>
+
+    <div class="post-tag">Gestione del rischio</div>
+    <h1>Diversificazione di portafoglio: quante posizioni servono davvero</h1>
+    <div class="post-meta">
+      <span>15 agosto 2026</span>
+      <span>7 min di lettura</span>
+    </div>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <p>"Diversificare" &egrave; uno dei consigli pi&ugrave; ripetuti in finanza e uno dei meno capiti nella pratica. Molti investitori credono di essere diversificati perch&eacute; possiedono 15 titoli diversi, salvo poi scoprire che sono tutte aziende tech americane che si muovono all'unisono. La diversificazione reale non dipende dal numero di posizioni, ma da quanto quelle posizioni sono correlate tra loro.</p>
+
+    <h2>Perch&eacute; la diversificazione riduce il rischio</h2>
+    <p>Il principio &egrave; statistico: se due asset non si muovono in modo perfettamente sincronizzato, combinarli in portafoglio riduce la volatilit&agrave; complessiva rispetto alla media ponderata delle volatilit&agrave; individuali, senza necessariamente ridurre il rendimento atteso.</p>
+    <p>Il caso limite opposto &egrave; la concentrazione: un portafoglio con una sola posizione ha un rischio specifico massimo — se quell'azienda ha un problema, l'intero portafoglio ne risente senza alcuna compensazione.</p>
+
+    <h2>Quante posizioni servono per diversificare?</h2>
+    <p>La ricerca accademica classica sul tema (a partire dagli studi di Evans e Archer degli anni '70) indica che gran parte del rischio specifico di un portafoglio azionario viene eliminata gi&agrave; con <strong>15-20 titoli</strong> non correlati tra loro, appartenenti a settori diversi. Oltre questa soglia, i benefici marginali calano rapidamente.</p>
+    <p>Questo numero &egrave; indicativo, non una regola rigida. Un portafoglio con 20 azioni tutte del settore bancario italiano &egrave; meno diversificato di uno con 8 azioni distribuite su settori e paesi diversi.</p>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>La correlazione &egrave; il vero fattore, non il conteggio</h2>
+    <ul>
+      <li><strong>Settore</strong> — banche italiane, semiconduttori, petrolifere: all'interno dello stesso settore la correlazione &egrave; tipicamente alta.</li>
+      <li><strong>Fattore di mercato comune</strong> — in fasi di forte avversione al rischio, quasi tutte le azioni scendono insieme, proprio nei momenti in cui la diversificazione servirebbe di pi&ugrave;.</li>
+      <li><strong>Esposizione valutaria</strong> — azioni USA, ETF su Nasdaq e obbligazioni in dollari condividono un'esposizione euro/dollaro che si somma su tutte le posizioni.</li>
+      <li><strong>ETF che si sovrappongono</strong> — un ETF su S&amp;P 500 e uno su Nasdaq 100 condividono buona parte delle stesse aziende.</li>
+    </ul>
+
+    <h2>Le dimensioni della diversificazione</h2>
+    <ul>
+      <li><strong>Settoriale</strong> — distribuire l'esposizione tra settori con driver economici diversi.</li>
+      <li><strong>Geografica</strong> — non concentrarsi su un solo mercato o una sola valuta.</li>
+      <li><strong>Per asset class</strong> — azioni, obbligazioni, materie prime e liquidit&agrave; rispondono in modo diverso alle stesse condizioni macro.</li>
+      <li><strong>Temporale</strong> — costruire le posizioni nel tempo (vedi il nostro approfondimento sul <a href="/blog/dca-dollar-cost-averaging" class="inline">DCA</a>) riduce il rischio di concentrare gli ingressi in un momento sfavorevole.</li>
+    </ul>
+
+    <h2>Il legame con il position sizing</h2>
+    <p>Anche un portafoglio con 20 titoli diversi pu&ograve; essere di fatto concentrato se una sola posizione pesa il 40% del capitale. Una regola pratica diffusa &egrave; non superare il 5-10% del portafoglio su una singola posizione. Chi dimensiona le posizioni con il <a href="/blog/criterio-di-kelly-trading" class="inline">criterio di Kelly</a> dovrebbe ricordare che il calcolo standard va applicato posizione per posizione: se pi&ugrave; posizioni sono correlate, il rischio aggregato &egrave; pi&ugrave; alto della somma pesata delle singole probabilit&agrave;.</p>
+
+    <h2>Sovra-diversificazione: il limite opposto</h2>
+    <p>Un portafoglio con 60-80 posizioni diventa difficile da monitorare, con costi di transazione pi&ugrave; alti e un beneficio di riduzione del rischio ormai marginale rispetto a un portafoglio di 20-25 posizioni ben scelte.</p>
+
+    <h2>Domande frequenti sulla diversificazione</h2>
+    <h3>Un solo ETF globale &egrave; gi&agrave; abbastanza diversificato?</h3>
+    <p>Offre una diversificazione geografica e settoriale molto ampia, ma resta esposto al rischio sistematico dell'intero mercato azionario.</p>
+    <h3>Diversificare riduce anche il rendimento atteso?</h3>
+    <p>Non necessariamente: riduce principalmente il rischio specifico, non compensato da un rendimento atteso pi&ugrave; alto secondo la teoria di portafoglio moderna.</p>
+    <h3>Come si misura la correlazione tra due asset in pratica?</h3>
+    <p>Il coefficiente di correlazione varia tra -1 e +1. In assenza di strumenti dedicati, un'euristica ragionevole &egrave; guardare al settore e all'area geografica come proxy.</p>
+
+    <div class="cta-box">
+      <p>Prima di aggiungere una nuova posizione, verifica la dimensione ottimale in base al tuo rischio complessivo.</p>
+      <a href="/calcolatore-criterio-kelly" class="cta-btn">&#9878;&#65039; Apri il calcolatore Kelly &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore Kelly</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Apri il calcolatore &rarr;</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio azioni</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/criterio-di-kelly-trading" class="post-link"><div class="post-link-title">Criterio di Kelly: cos'&egrave; e come usarlo nel trading</div></a>
+      <a href="/blog/etf-vs-azioni-singole-dca" class="post-link"><div class="post-link-title">ETF vs azioni singole: cosa scegliere per il DCA</div></a>
+    </div>
+  </aside>
 </div>
 
-<span class="category-tag">Gestione del rischio</span>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
 
-<h1>Diversificazione di portafoglio: quante posizioni servono davvero</h1>
-<p class="article-meta">15 agosto 2026 · 7 min di lettura</p>
-
-<p>"Diversificare" è uno dei consigli più ripetuti in finanza e uno dei meno capiti nella pratica. Molti investitori credono di essere diversificati perché possiedono 15 titoli diversi, salvo poi scoprire che sono tutte aziende tech americane che si muovono all'unisono nello stesso senso. La diversificazione reale non dipende dal numero di posizioni, ma da quanto quelle posizioni sono correlate tra loro.</p>
-
-<h2>Perché la diversificazione riduce il rischio</h2>
-<p>Il principio è statistico: se due asset non si muovono in modo perfettamente sincronizzato, combinarli in portafoglio riduce la volatilità complessiva rispetto alla media ponderata delle volatilità individuali, senza necessariamente ridurre il rendimento atteso. Questo effetto è tanto più forte quanto più bassa (o negativa) è la <strong>correlazione</strong> tra gli asset.</p>
-<p>Il caso limite opposto è la concentrazione: un portafoglio con una sola posizione ha un rischio specifico massimo — se quell'azienda ha un problema (contabile, legale, di prodotto), l'intero portafoglio ne risente senza alcuna compensazione.</p>
-
-<h2>Quante posizioni servono per diversificare?</h2>
-<p>La ricerca accademica classica sul tema (a partire dagli studi di Evans e Archer degli anni '70, più volte aggiornati) indica che gran parte del rischio specifico (non sistematico) di un portafoglio azionario viene eliminata già con <strong>15-20 titoli</strong> non correlati tra loro, appartenenti a settori diversi. Oltre questa soglia, i benefici marginali della diversificazione calano rapidamente: aggiungere il trentesimo titolo riduce il rischio molto meno di quanto abbia fatto il quinto.</p>
-<p>Questo numero è indicativo, non una regola rigida, e vale per titoli genuinamente diversi tra loro. Un portafoglio con 20 azioni tutte del settore bancario italiano è meno diversificato di uno con 8 azioni distribuite su settori e paesi diversi.</p>
-
-<h2>La correlazione è il vero fattore, non il conteggio</h2>
-<p>Due posizioni possono sembrare distinte e comportarsi in modo quasi identico. Esempi tipici di correlazione nascosta:</p>
-<ul>
-<li><strong>Settore</strong> — banche italiane, produttori di semiconduttori, compagnie petrolifere: all'interno dello stesso settore la correlazione è tipicamente alta, perché rispondono agli stessi driver macro (tassi, prezzo del petrolio, ciclo dei chip).</li>
-<li><strong>Fattore di mercato comune</strong> — in fasi di forte avversione al rischio, quasi tutte le azioni scendono insieme indipendentemente dal settore: la correlazione tra asset tende ad aumentare proprio nei momenti in cui la diversificazione servirebbe di più.</li>
-<li><strong>Esposizione valutaria</strong> — un portafoglio di azioni USA, ETF su Nasdaq e obbligazioni in dollari ha, oltre al rischio azionario, un'esposizione valutaria concentrata sull'euro/dollaro che si somma su tutte le posizioni.</li>
-<li><strong>ETF che si sovrappongono</strong> — un ETF su S&P 500 e uno su Nasdaq 100 condividono buona parte delle stesse aziende (le grandi tech), riducendo la diversificazione reale rispetto a quanto sembri avendo "due ETF diversi".</li>
-</ul>
-
-<h2>Le dimensioni della diversificazione</h2>
-<p>Diversificare in modo efficace significa lavorare su più assi contemporaneamente, non solo aumentare il numero di titoli:</p>
-<ul>
-<li><strong>Settoriale</strong> — distribuire l'esposizione tra settori con driver economici diversi (tecnologia, energia, salute, consumo, finanza).</li>
-<li><strong>Geografica</strong> — non concentrarsi su un solo mercato o una sola valuta; mercati diversi non sono mai perfettamente sincronizzati nei cicli economici.</li>
-<li><strong>Per asset class</strong> — azioni, obbligazioni, materie prime e liquidità rispondono in modo diverso alle stesse condizioni macro (es. le obbligazioni tendono storicamente ad avere una correlazione più bassa o negativa con le azioni nelle fasi di crisi, anche se questa relazione non è garantita in ogni scenario).</li>
-<li><strong>Temporale</strong> — costruire le posizioni nel tempo (vedi il nostro approfondimento sul <a href="https://calcolatoretrading.it/blog/dca-dollar-cost-averaging">DCA</a>) riduce il rischio di concentrare tutti gli ingressi in un momento di mercato sfavorevole.</li>
-</ul>
-
-<h2>Il legame con il position sizing</h2>
-<p>Diversificazione e dimensionamento delle posizioni sono facce della stessa medaglia. Anche un portafoglio con 20 titoli diversi può essere di fatto concentrato se una sola posizione pesa il 40% del capitale. Una regola pratica diffusa tra i gestori è non superare il 5-10% del portafoglio su una singola posizione, indipendentemente da quanto si è convinti della view. Chi dimensiona le posizioni con il <a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">criterio di Kelly</a> dovrebbe inoltre ricordare che il calcolo standard va applicato posizione per posizione: se più posizioni sono correlate, il rischio aggregato del portafoglio è più alto della somma pesata delle singole probabilità.</p>
-
-<h2>Sovra-diversificazione: il limite opposto</h2>
-<p>Esiste anche un eccesso di diversificazione. Un portafoglio con 60-80 posizioni diventa difficile da monitorare, con costi di transazione più alti e un beneficio di riduzione del rischio ormai marginale rispetto a un portafoglio di 20-25 posizioni ben scelte. In questi casi conviene spesso sostituire un numero eccessivo di singoli titoli con pochi ETF diversificati, che offrono un'esposizione ampia con una sola posizione da gestire.</p>
-
-<h2>Domande frequenti sulla diversificazione</h2>
-
-<h3>Un solo ETF globale è già abbastanza diversificato?</h3>
-<p>Un ETF su un indice azionario mondiale (es. MSCI World) offre una diversificazione geografica e settoriale molto ampia con una singola posizione. Resta comunque esposto al rischio sistematico del mercato azionario nel suo complesso: non protegge da un ribasso generalizzato delle borse, solo dal rischio specifico di singole aziende o settori.</p>
-
-<h3>Diversificare riduce anche il rendimento atteso?</h3>
-<p>Non necessariamente. La diversificazione riduce principalmente il rischio specifico (non sistematico), che non è compensato da un rendimento atteso più alto secondo la teoria di portafoglio moderna. Concentrarsi su poche posizioni aumenta la volatilità senza un corrispondente premio di rendimento garantito.</p>
-
-<h3>Come si misura la correlazione tra due asset in pratica?</h3>
-<p>Il coefficiente di correlazione varia tra -1 (movimento perfettamente opposto) e +1 (movimento perfettamente sincronizzato). Molte piattaforme di analisi e broker offrono strumenti per calcolarlo sui rendimenti storici di due strumenti; in assenza di questi strumenti, un'euristica ragionevole è guardare al settore e all'area geografica come proxy della correlazione attesa.</p>
-
-<div class="cta-box">
-<p>Prima di aggiungere una nuova posizione, verifica la dimensione ottimale in base al tuo rischio complessivo.</p>
-<a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">⚖️ Apri il calcolatore Kelly →</a>
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
 </div>
 
-<div class="related-articles">
-<h3>Altri articoli</h3>
-<a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">Criterio di Kelly: cos'è e come usarlo nel trading</a>
-<a href="https://calcolatoretrading.it/blog/etf-vs-azioni-singole-dca">ETF vs azioni singole: cosa scegliere per il DCA</a>
-</div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,90 +1,244 @@
-<!--
-ISTRUZIONI PER IL CARICAMENTO: stesse istruzioni del file tassazione-plusvalenze-trading.html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backtest di una strategia di trading: come farlo bene | CalcolatoreTrading.it</title>
+  <meta name="description" content="Come fare un backtest affidabile di una strategia di trading: dati necessari, errori comuni come overfitting e survivorship bias, metriche chiave." />
+  <meta name="keywords" content="backtest trading, come fare backtest, overfitting strategia trading, survivorship bias, metriche backtest, drawdown massimo, sharpe ratio" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.calcolatoretrading.it/blog/backtest-strategia-trading" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Backtest di una strategia di trading: come farlo bene" />
+  <meta property="og:description" content="Overfitting, survivorship bias e le metriche che contano davvero oltre il rendimento totale." />
+  <meta property="og:url" content="https://www.calcolatoretrading.it/blog/backtest-strategia-trading" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Backtest di una strategia di trading: come farlo bene","description":"Overfitting, survivorship bias e le metriche che contano davvero oltre il rendimento totale.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2026-08-15","dateModified":"2026-08-15","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.calcolatoretrading.it/blog/backtest-strategia-trading"}}</script>
 
-META TAG DA USARE:
-canonical: https://www.calcolatoretrading.it/blog/backtest-strategia-trading
-meta-description: Come fare un backtest affidabile di una strategia di trading: dati necessari, errori comuni come overfitting e survivorship bias, metriche chiave da valutare.
-meta-keywords: backtest trading, come fare backtest, overfitting strategia trading, survivorship bias, metriche backtest, drawdown massimo, sharpe ratio
-title: Backtest di una strategia di trading: come farlo bene | CalcolatoreTrading.it
-og:type: article
--->
+  <!-- GOOGLE ADSENSE
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script> -->
 
-<div class="breadcrumb">
-  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Backtest di una strategia
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Backtest di una strategia</span>
+    </nav>
+
+    <div class="post-tag">Strategie</div>
+    <h1>Backtest di una strategia di trading: come farlo bene</h1>
+    <div class="post-meta">
+      <span>15 agosto 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <p>Un backtest fatto male &egrave; peggio di nessun backtest: d&agrave; una falsa sicurezza su una strategia che nella realt&agrave; non funzioner&agrave;. La differenza tra un backtest affidabile e uno fuorviante non sta nella sofisticazione del codice, ma in pochi principi metodologici spesso ignorati.</p>
+
+    <h2>Cos'&egrave; un backtest e a cosa serve davvero</h2>
+    <p>Un backtest simula l'applicazione di una strategia su dati storici, per stimare come si sarebbe comportata nel passato. Il suo scopo <strong>non</strong> &egrave; dimostrare che una strategia funzioner&agrave; in futuro — nessun backtest pu&ograve; garantirlo — ma verificare se l'idea ha una logica statisticamente coerente e stimare il profilo di rischio a cui ci si espone.</p>
+
+    <h2>I dati: la base di tutto</h2>
+    <ul>
+      <li><strong>Qualit&agrave; e pulizia dei dati</strong> — errori nei prezzi storici o split azionari non corretti falsano i risultati in modo silenzioso.</li>
+      <li><strong>Survivorship bias</strong> — se il dataset include solo le aziende ancora quotate oggi, esclude quelle fallite o delistate, gonfiando i rendimenti storici.</li>
+      <li><strong>Periodo testato sufficientemente lungo</strong> — un backtest su 1-2 anni pu&ograve; catturare solo un regime di mercato, non rappresentativo di uno scenario ribassista o laterale.</li>
+      <li><strong>Coerenza tra dati e strumento reale</strong> — se si testa su dati giornalieri ma si intende operare intraday, il backtest non cattura la dinamica reale.</li>
+    </ul>
+
+    <h2>L'errore pi&ugrave; pericoloso: l'overfitting</h2>
+    <p>L'overfitting si verifica quando una strategia viene "ottimizzata" scegliendo i parametri che hanno funzionato meglio sui dati storici disponibili, adattandosi al rumore statistico invece che a un pattern reale e ripetibile.</p>
+    <div class="example-box">
+      <div class="example-box-title">Segnali di overfitting da riconoscere</div>
+      <p>Una strategia con pi&ugrave; di 4-5 parametri liberi testata su un singolo dataset &egrave; ad alto rischio di overfitting. Se piccole variazioni nei parametri cambiano drasticamente il risultato, la strategia sta probabilmente catturando rumore, non un pattern reale.</p>
+    </div>
+    <p>Metodi per ridurre il rischio di overfitting:</p>
+    <ul>
+      <li><strong>Out-of-sample testing</strong> — dividere i dati in un periodo di sviluppo e uno (mai visto) di validazione.</li>
+      <li><strong>Walk-forward analysis</strong> — ripetere ottimizzazione e validazione su finestre temporali successive.</li>
+      <li><strong>Semplicit&agrave; dei parametri</strong> — strategie con pochi parametri e una logica economica chiara generalizzano meglio.</li>
+    </ul>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+
+    <h2>Costi di transazione: l'elemento che quasi tutti dimenticano</h2>
+    <p>Un backtest che non include commissioni, spread e slippage sovrastima sistematicamente la profittabilit&agrave; della strategia, specialmente per strategie ad alta frequenza di operazioni.</p>
+
+    <h2>Le metriche da guardare, non solo il rendimento totale</h2>
+    <table>
+      <thead><tr><th>Metrica</th><th>Cosa misura</th></tr></thead>
+      <tbody>
+        <tr><td>Drawdown massimo</td><td>La perdita massima dal picco al minimo successivo</td></tr>
+        <tr><td>Sharpe ratio</td><td>Rendimento per unit&agrave; di rischio (volatilit&agrave;)</td></tr>
+        <tr><td>Win rate e rapporto R:R</td><td>Definiscono insieme l'aspettativa per operazione — vedi <a href="/blog/stop-loss-take-profit" class="inline">stop loss e take profit</a></td></tr>
+        <tr><td>Numero di operazioni</td><td>Un campione troppo piccolo non &egrave; statisticamente significativo</td></tr>
+        <tr><td>Durata media del drawdown</td><td>Quanto tempo la strategia impiega storicamente per recuperare da una perdita massima</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Dal backtest al trading reale: il paper trading</h2>
+    <p>Prima di allocare capitale reale, &egrave; buona pratica testare la strategia in <strong>paper trading</strong> per verificare che l'esecuzione pratica non introduca scostamenti significativi rispetto ai risultati simulati.</p>
+
+    <h2>Domande frequenti sul backtest</h2>
+    <h3>Quante operazioni servono per un backtest statisticamente significativo?</h3>
+    <p>Indicativamente sotto le 100 operazioni i risultati vanno considerati con molta cautela.</p>
+    <h3>Un backtest con ottimi risultati garantisce risultati simili in futuro?</h3>
+    <p>No. &Egrave; uno strumento di validazione della logica e del profilo di rischio, non una previsione del rendimento futuro.</p>
+    <h3>Meglio backtestare su un solo titolo o su pi&ugrave; strumenti?</h3>
+    <p>Testare la stessa logica su pi&ugrave; strumenti aiuta a verificare se la strategia cattura un pattern realmente generalizzabile.</p>
+
+    <div class="cta-box">
+      <p>Una volta validata la strategia, calcola il position sizing corretto in base al win rate e al rapporto rischio/rendimento osservati.</p>
+      <a href="/calcolatore-criterio-kelly" class="cta-btn">&#9878;&#65039; Apri il calcolatore Kelly &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore Kelly</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Apri il calcolatore &rarr;</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio azioni</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/stop-loss-take-profit" class="post-link"><div class="post-link-title">Stop loss e take profit: come impostarli correttamente</div></a>
+      <a href="/blog/criterio-di-kelly-trading" class="post-link"><div class="post-link-title">Criterio di Kelly: cos'&egrave; e come usarlo nel trading</div></a>
+    </div>
+  </aside>
 </div>
 
-<span class="category-tag">Strategie</span>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2025 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
 
-<h1>Backtest di una strategia di trading: come farlo bene</h1>
-<p class="article-meta">15 agosto 2026 · 8 min di lettura</p>
-
-<p>Un backtest fatto male è peggio di nessun backtest: dà una falsa sicurezza su una strategia che nella realtà non funzionerà. La differenza tra un backtest affidabile e uno fuorviante non sta nella sofisticazione del codice, ma in pochi principi metodologici spesso ignorati da chi inizia a testare le proprie idee di trading.</p>
-
-<h2>Cos'è un backtest e a cosa serve davvero</h2>
-<p>Un backtest simula l'applicazione di una strategia su dati storici, per stimare come si sarebbe comportata nel passato. Il suo scopo <strong>non</strong> è dimostrare che una strategia funzionerà in futuro — nessun backtest può garantirlo — ma verificare se l'idea ha una logica statisticamente coerente e stimare il profilo di rischio (drawdown, volatilità dei risultati) a cui ci si espone applicandola.</p>
-
-<h2>I dati: la base di tutto</h2>
-<p>Un backtest è affidabile solo quanto i dati su cui si basa. Punti da verificare prima di iniziare:</p>
-<ul>
-<li><strong>Qualità e pulizia dei dati</strong> — errori nei prezzi storici, dati mancanti o split azionari non corretti falsano i risultati in modo silenzioso.</li>
-<li><strong>Survivorship bias</strong> — se il dataset include solo le aziende ancora quotate oggi, esclude quelle fallite o delistate nel periodo testato, gonfiando artificialmente i rendimenti storici della strategia.</li>
-<li><strong>Periodo testato sufficientemente lungo</strong> — un backtest su 1-2 anni può catturare solo un regime di mercato (es. solo un mercato rialzista), non rappresentativo di come la strategia si comporterebbe in un mercato ribassista o laterale.</li>
-<li><strong>Coerenza tra dati e strumento reale</strong> — se si testa una strategia su dati giornalieri ma la si intende operare intraday, il backtest non cattura la dinamica reale rilevante.</li>
-</ul>
-
-<h2>L'errore più pericoloso: l'overfitting</h2>
-<p>L'overfitting si verifica quando una strategia viene "ottimizzata" scegliendo i parametri che hanno funzionato meglio sui dati storici disponibili, fino ad adattarsi al rumore statistico di quel campione specifico invece che a un pattern reale e ripetibile. Il sintomo tipico: una strategia con risultati eccellenti nel backtest e prestazioni deludenti (o negative) quando applicata in tempo reale (trading forward o paper trading).</p>
-
-<div class="example-box">
-<p><strong>Segnali di overfitting da riconoscere</strong></p>
-<p>Una strategia con più di 4-5 parametri liberi (soglie, medie mobili, filtri) testata su un singolo dataset è ad alto rischio di overfitting. Se piccole variazioni nei parametri (es. media mobile a 20 giorni invece di 21) cambiano drasticamente il risultato, la strategia sta probabilmente catturando rumore, non un pattern reale.</p>
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
 </div>
 
-<p>Metodi per ridurre il rischio di overfitting:</p>
-<ul>
-<li><strong>Out-of-sample testing</strong> — dividere i dati storici in due periodi: uno per sviluppare/ottimizzare la strategia, uno (mai visto durante lo sviluppo) per validarla. Se la performance crolla nel periodo out-of-sample, la strategia era overfittata.</li>
-<li><strong>Walk-forward analysis</strong> — ripetere il processo di ottimizzazione e validazione su finestre temporali successive, per verificare che la strategia regga in condizioni di mercato diverse nel tempo.</li>
-<li><strong>Semplicità dei parametri</strong> — strategie con pochi parametri, scelti per una logica economica/comportamentale chiara (non solo perché "hanno funzionato"), tendono a generalizzare meglio.</li>
-</ul>
-
-<h2>Costi di transazione: l'elemento che quasi tutti dimenticano</h2>
-<p>Un backtest che non include commissioni, spread e slippage (la differenza tra prezzo atteso e prezzo di esecuzione reale) sovrastima sistematicamente la profittabilità della strategia, specialmente per strategie ad alta frequenza di operazioni. Una strategia che sembra profittevole con centinaia di operazioni all'anno può risultare in perdita una volta sottratti i costi reali di ogni transazione.</p>
-
-<h2>Le metriche da guardare, non solo il rendimento totale</h2>
-<p>Il rendimento totale del periodo testato è la metrica meno informativa da sola. Altre metriche più rilevanti per valutare se una strategia è davvero utilizzabile:</p>
-
-<table>
-<thead><tr><th>Metrica</th><th>Cosa misura</th></tr></thead>
-<tbody>
-<tr><td>Drawdown massimo</td><td>La perdita massima dal picco al minimo successivo: indica quanto stress psicologico e finanziario richiede seguire la strategia</td></tr>
-<tr><td>Sharpe ratio</td><td>Rendimento per unità di rischio (volatilità): permette di confrontare strategie con rendimenti simili ma rischio diverso</td></tr>
-<tr><td>Win rate e rapporto R:R</td><td>Come discusso nell'articolo su <a href="https://calcolatoretrading.it/blog/stop-loss-take-profit">stop loss e take profit</a>, definiscono insieme l'aspettativa per operazione</td></tr>
-<tr><td>Numero di operazioni</td><td>Un campione troppo piccolo (poche decine di operazioni) non è statisticamente significativo per trarre conclusioni affidabili</td></tr>
-<tr><td>Durata media del drawdown</td><td>Quanto tempo, storicamente, la strategia ha impiegato per recuperare da una perdita massima — spesso più rilevante psicologicamente della sua entità</td></tr>
-</tbody>
-</table>
-
-<h2>Dal backtest al trading reale: il paper trading</h2>
-<p>Anche il miglior backtest resta una simulazione basata su dati passati. Prima di allocare capitale reale, è buona pratica testare la strategia in <strong>paper trading</strong> (simulazione in tempo reale su dati live, senza denaro vero) per verificare che l'esecuzione pratica — inclusi i tempi di reazione, la disciplina nel seguire le regole, l'impatto psicologico delle perdite reali — non introduca scostamenti significativi rispetto ai risultati simulati.</p>
-
-<h2>Domande frequenti sul backtest</h2>
-
-<h3>Quante operazioni servono per un backtest statisticamente significativo?</h3>
-<p>Non esiste una soglia fissa, ma indicativamente sotto le 100 operazioni i risultati vanno considerati con molta cautela: il campione è troppo piccolo per distinguere un vantaggio statistico reale da una sequenza fortunata (o sfortunata) di eventi casuali.</p>
-
-<h3>Un backtest con ottimi risultati garantisce risultati simili in futuro?</h3>
-<p>No. Il backtest stima come la strategia si sarebbe comportata nel passato, sotto condizioni di mercato che potrebbero non ripetersi. È uno strumento di validazione della logica e del profilo di rischio, non una previsione del rendimento futuro.</p>
-
-<h3>Meglio backtestare su un solo titolo o su più strumenti?</h3>
-<p>Testare la stessa logica su più strumenti e mercati diversi (non solo sul titolo su cui è nata l'idea) è un buon modo per verificare se la strategia cattura un pattern realmente generalizzabile o se funziona solo per le caratteristiche specifiche di quel singolo titolo nel periodo testato.</p>
-
-<div class="cta-box">
-<p>Una volta validata la strategia, calcola il position sizing corretto in base al win rate e al rapporto rischio/rendimento osservati nel backtest.</p>
-<a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">⚖️ Apri il calcolatore Kelly →</a>
-</div>
-
-<div class="related-articles">
-<h3>Altri articoli</h3>
-<a href="https://calcolatoretrading.it/blog/stop-loss-take-profit">Stop loss e take profit: come impostarli correttamente</a>
-<a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">Criterio di Kelly: cos'è e come usarlo nel trading</a>
-</div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
