@@ -1,0 +1,89 @@
+<!--
+ISTRUZIONI PER IL CARICAMENTO: stesse istruzioni del file tassazione-plusvalenze-trading.html
+(duplica un articolo esistente su github.dev, sostituisci head + contenuto, aggiorna sitemap.xml e link "altri articoli")
+
+META TAG DA USARE:
+canonical: https://www.calcolatoretrading.it/blog/stop-loss-take-profit
+meta-description: Come impostare correttamente stop loss e take profit nel trading: rapporto rischio/rendimento, errori comuni e metodi di posizionamento.
+meta-keywords: stop loss, take profit, rapporto rischio rendimento, risk reward ratio, gestione del rischio trading, dove mettere lo stop loss
+title: Stop loss e take profit: come impostarli correttamente | CalcolatoreTrading.it
+og:type: article
+-->
+
+<div class="breadcrumb">
+  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Stop loss e take profit
+</div>
+
+<span class="category-tag">Gestione del rischio</span>
+
+<h1>Stop loss e take profit: come impostarli correttamente</h1>
+<p class="article-meta">15 agosto 2026 · 7 min di lettura</p>
+
+<p>Lo stop loss e il take profit sono gli ordini che definiscono, prima ancora di entrare in posizione, dove sbagli e dove hai ragione. Eppure sono anche gli strumenti più mal utilizzati dai trader alle prime armi: stop troppo stretti che vengono colpiti dal rumore di mercato, target irrealistici mai raggiunti, oppure — peggio — nessuno dei due, con la posizione lasciata "a mercato" nella speranza che si sistemi da sola.</p>
+
+<h2>Cosa sono e a cosa servono</h2>
+<p>Lo <strong>stop loss</strong> è un ordine che chiude automaticamente la posizione a un prezzo prestabilito, limitando la perdita massima accettabile. Il <strong>take profit</strong> fa l'opposto: chiude la posizione in guadagno a un livello di prezzo target, senza bisogno di monitorare il mercato in tempo reale.</p>
+<p>Insieme definiscono il <strong>rapporto rischio/rendimento</strong> dell'operazione: la distanza tra prezzo di ingresso e stop loss è il rischio, la distanza tra prezzo di ingresso e take profit è il potenziale guadagno. Questo rapporto (es. 1:2, 1:3) è lo stesso input che serve per calcolare il position sizing con il <a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">criterio di Kelly</a>.</p>
+
+<h2>Dove posizionare lo stop loss: i metodi principali</h2>
+<p>Non esiste una distanza "giusta" in assoluto: dipende dalla volatilità dello strumento e dalla strategia. I metodi più usati:</p>
+<ul>
+<li><strong>Stop tecnico</strong> — posizionato sotto un supporto (per posizioni long) o sopra una resistenza (per posizioni short), sul presupposto che la rottura di quel livello invalidi la view che ha motivato l'ingresso.</li>
+<li><strong>Stop su volatilità (ATR)</strong> — calcolato come multiplo dell'Average True Range, in modo che la distanza si adatti automaticamente alla volatilità recente dello strumento. Uno stop a 2×ATR su un titolo molto volatile sarà più largo dello stesso multiplo su un titolo calmo.</li>
+<li><strong>Stop percentuale fisso</strong> — una percentuale fissa dal prezzo di ingresso (es. -5%), semplice da applicare ma cieco rispetto al contesto tecnico e alla volatilità specifica del titolo.</li>
+<li><strong>Stop monetario</strong> — determinato a partire dal rischio massimo che si vuole accettare in euro sulla singola operazione, da cui si deriva a ritroso la size della posizione (è l'approccio più coerente con una gestione del capitale rigorosa).</li>
+</ul>
+<p>L'errore più comune è impostare lo stop in base a "quanto sono disposto a perdere" senza guardare il grafico, invece che in base a "dove il mio scenario di trading viene smentito". Uno stop troppo stretto rispetto alla volatilità normale del titolo viene colpito quasi sempre dal rumore, indipendentemente da quanto la view di fondo fosse corretta.</p>
+
+<h2>Il rapporto rischio/rendimento: perché conta più del win rate</h2>
+<p>Un errore diffuso è concentrarsi solo sulla percentuale di operazioni vincenti (win rate), ignorando quanto si guadagna quando si vince e quanto si perde quando si sbaglia. Un sistema con win rate del 40% può essere profittevole se il rapporto rischio/rendimento medio è di 1:3, mentre un sistema con win rate del 60% può essere in perdita se il rapporto è sfavorevole.</p>
+
+<table>
+<thead><tr><th>Win rate</th><th>Rapporto R:R</th><th>Aspettativa per operazione</th></tr></thead>
+<tbody>
+<tr><td>40%</td><td>1:3</td><td>Positiva</td></tr>
+<tr><td>50%</td><td>1:1</td><td>In pareggio (al netto dei costi, negativa)</td></tr>
+<tr><td>60%</td><td>1:0.5</td><td>Negativa</td></tr>
+<tr><td>70%</td><td>1:1</td><td>Positiva</td></tr>
+</tbody>
+</table>
+
+<p>Questo è lo stesso principio su cui si basa il <a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">criterio di Kelly</a>: la dimensione ottimale della posizione dipende sia dal win rate sia dal rapporto rischio/rendimento, non da uno dei due soltanto.</p>
+
+<h2>Take profit: fisso o dinamico?</h2>
+<p>Anche per il take profit esistono due approcci principali:</p>
+<ul>
+<li><strong>Target fisso</strong> — un livello di prezzo o una distanza percentuale/ATR stabilita in anticipo, semplice e disciplinato ma che può tagliare corto un movimento più ampio del previsto.</li>
+<li><strong>Trailing stop</strong> — uno stop che si muove a favore della posizione man mano che il prezzo si sposta nella direzione desiderata, permettendo di catturare trend più lunghi senza dover indovinare in anticipo il punto di massimo. Il rovescio della medaglia: restituisce parte del guadagno prima di chiudere.</li>
+</ul>
+<p>Molti trader esperti usano un approccio ibrido: un primo target parziale a rapporto 1:1 o 1:1.5 (per ridurre il rischio e assicurare parte del guadagno), e un trailing stop sulla parte restante della posizione per catturare movimenti più ampi.</p>
+
+<h2>Errori comuni</h2>
+<ul>
+<li><strong>Spostare lo stop loss in perdita</strong> — allargare lo stop dopo che il prezzo si è mosso contro la posizione, nella speranza che "torni indietro". È probabilmente l'errore più costoso e diffuso: trasforma una perdita gestita in una perdita illimitata.</li>
+<li><strong>Non impostare uno stop loss</strong> — operare "a mercato" senza un livello di uscita predefinito espone a perdite potenzialmente molto superiori a quanto pianificato in origine.</li>
+<li><strong>Stop troppo stretto rispetto alla volatilità</strong> — genera un tasso di "stop out" elevato anche su operazioni che, con più margine, sarebbero risultate vincenti.</li>
+<li><strong>Ignorare i costi di transazione nel calcolo del rapporto R:R</strong> — commissioni e spread riducono il guadagno netto e aumentano la perdita netta, specialmente su rapporti rischio/rendimento stretti.</li>
+</ul>
+
+<h2>Domande frequenti su stop loss e take profit</h2>
+
+<h3>Qual è il rapporto rischio/rendimento minimo consigliato?</h3>
+<p>Molti trader professionisti considerano 1:2 come soglia minima ragionevole, in modo da restare profittevoli anche con un win rate sotto il 50%. Non è una regola universale: dipende dalla strategia e dal win rate storico verificato, non da una convenzione fissa.</p>
+
+<h3>Meglio uno stop loss stretto o largo?</h3>
+<p>Dipende dalla volatilità dello strumento, non da una preferenza personale. Uno stop troppo stretto su un titolo volatile genera falsi segnali; uno stop troppo largo su un titolo poco volatile espone a perdite superiori al necessario. Il metodo ATR aiuta ad adattare la distanza al contesto specifico.</p>
+
+<h3>Il trailing stop è sempre la scelta migliore?</h3>
+<p>No. Il trailing stop è utile per catturare trend prolungati, ma su strategie con target di breve periodo un take profit fisso può essere più efficiente e prevedibile, oltre a evitare di restituire guadagno durante ritracciamenti temporanei.</p>
+
+<div class="cta-box">
+<p>Calcola la dimensione ottimale della posizione a partire dal tuo win rate e dal rapporto rischio/rendimento.</p>
+<a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">⚖️ Apri il calcolatore Kelly →</a>
+</div>
+
+<div class="related-articles">
+<h3>Altri articoli</h3>
+<a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">Criterio di Kelly: cos'è e come usarlo nel trading</a>
+<a href="https://calcolatoretrading.it/blog/backtest-strategia-trading">Backtest di una strategia: come farlo bene</a>
+</div>

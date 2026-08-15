@@ -1,0 +1,90 @@
+<!--
+ISTRUZIONI PER IL CARICAMENTO: stesse istruzioni del file tassazione-plusvalenze-trading.html
+
+META TAG DA USARE:
+canonical: https://www.calcolatoretrading.it/blog/backtest-strategia-trading
+meta-description: Come fare un backtest affidabile di una strategia di trading: dati necessari, errori comuni come overfitting e survivorship bias, metriche chiave da valutare.
+meta-keywords: backtest trading, come fare backtest, overfitting strategia trading, survivorship bias, metriche backtest, drawdown massimo, sharpe ratio
+title: Backtest di una strategia di trading: come farlo bene | CalcolatoreTrading.it
+og:type: article
+-->
+
+<div class="breadcrumb">
+  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Backtest di una strategia
+</div>
+
+<span class="category-tag">Strategie</span>
+
+<h1>Backtest di una strategia di trading: come farlo bene</h1>
+<p class="article-meta">15 agosto 2026 · 8 min di lettura</p>
+
+<p>Un backtest fatto male è peggio di nessun backtest: dà una falsa sicurezza su una strategia che nella realtà non funzionerà. La differenza tra un backtest affidabile e uno fuorviante non sta nella sofisticazione del codice, ma in pochi principi metodologici spesso ignorati da chi inizia a testare le proprie idee di trading.</p>
+
+<h2>Cos'è un backtest e a cosa serve davvero</h2>
+<p>Un backtest simula l'applicazione di una strategia su dati storici, per stimare come si sarebbe comportata nel passato. Il suo scopo <strong>non</strong> è dimostrare che una strategia funzionerà in futuro — nessun backtest può garantirlo — ma verificare se l'idea ha una logica statisticamente coerente e stimare il profilo di rischio (drawdown, volatilità dei risultati) a cui ci si espone applicandola.</p>
+
+<h2>I dati: la base di tutto</h2>
+<p>Un backtest è affidabile solo quanto i dati su cui si basa. Punti da verificare prima di iniziare:</p>
+<ul>
+<li><strong>Qualità e pulizia dei dati</strong> — errori nei prezzi storici, dati mancanti o split azionari non corretti falsano i risultati in modo silenzioso.</li>
+<li><strong>Survivorship bias</strong> — se il dataset include solo le aziende ancora quotate oggi, esclude quelle fallite o delistate nel periodo testato, gonfiando artificialmente i rendimenti storici della strategia.</li>
+<li><strong>Periodo testato sufficientemente lungo</strong> — un backtest su 1-2 anni può catturare solo un regime di mercato (es. solo un mercato rialzista), non rappresentativo di come la strategia si comporterebbe in un mercato ribassista o laterale.</li>
+<li><strong>Coerenza tra dati e strumento reale</strong> — se si testa una strategia su dati giornalieri ma la si intende operare intraday, il backtest non cattura la dinamica reale rilevante.</li>
+</ul>
+
+<h2>L'errore più pericoloso: l'overfitting</h2>
+<p>L'overfitting si verifica quando una strategia viene "ottimizzata" scegliendo i parametri che hanno funzionato meglio sui dati storici disponibili, fino ad adattarsi al rumore statistico di quel campione specifico invece che a un pattern reale e ripetibile. Il sintomo tipico: una strategia con risultati eccellenti nel backtest e prestazioni deludenti (o negative) quando applicata in tempo reale (trading forward o paper trading).</p>
+
+<div class="example-box">
+<p><strong>Segnali di overfitting da riconoscere</strong></p>
+<p>Una strategia con più di 4-5 parametri liberi (soglie, medie mobili, filtri) testata su un singolo dataset è ad alto rischio di overfitting. Se piccole variazioni nei parametri (es. media mobile a 20 giorni invece di 21) cambiano drasticamente il risultato, la strategia sta probabilmente catturando rumore, non un pattern reale.</p>
+</div>
+
+<p>Metodi per ridurre il rischio di overfitting:</p>
+<ul>
+<li><strong>Out-of-sample testing</strong> — dividere i dati storici in due periodi: uno per sviluppare/ottimizzare la strategia, uno (mai visto durante lo sviluppo) per validarla. Se la performance crolla nel periodo out-of-sample, la strategia era overfittata.</li>
+<li><strong>Walk-forward analysis</strong> — ripetere il processo di ottimizzazione e validazione su finestre temporali successive, per verificare che la strategia regga in condizioni di mercato diverse nel tempo.</li>
+<li><strong>Semplicità dei parametri</strong> — strategie con pochi parametri, scelti per una logica economica/comportamentale chiara (non solo perché "hanno funzionato"), tendono a generalizzare meglio.</li>
+</ul>
+
+<h2>Costi di transazione: l'elemento che quasi tutti dimenticano</h2>
+<p>Un backtest che non include commissioni, spread e slippage (la differenza tra prezzo atteso e prezzo di esecuzione reale) sovrastima sistematicamente la profittabilità della strategia, specialmente per strategie ad alta frequenza di operazioni. Una strategia che sembra profittevole con centinaia di operazioni all'anno può risultare in perdita una volta sottratti i costi reali di ogni transazione.</p>
+
+<h2>Le metriche da guardare, non solo il rendimento totale</h2>
+<p>Il rendimento totale del periodo testato è la metrica meno informativa da sola. Altre metriche più rilevanti per valutare se una strategia è davvero utilizzabile:</p>
+
+<table>
+<thead><tr><th>Metrica</th><th>Cosa misura</th></tr></thead>
+<tbody>
+<tr><td>Drawdown massimo</td><td>La perdita massima dal picco al minimo successivo: indica quanto stress psicologico e finanziario richiede seguire la strategia</td></tr>
+<tr><td>Sharpe ratio</td><td>Rendimento per unità di rischio (volatilità): permette di confrontare strategie con rendimenti simili ma rischio diverso</td></tr>
+<tr><td>Win rate e rapporto R:R</td><td>Come discusso nell'articolo su <a href="https://calcolatoretrading.it/blog/stop-loss-take-profit">stop loss e take profit</a>, definiscono insieme l'aspettativa per operazione</td></tr>
+<tr><td>Numero di operazioni</td><td>Un campione troppo piccolo (poche decine di operazioni) non è statisticamente significativo per trarre conclusioni affidabili</td></tr>
+<tr><td>Durata media del drawdown</td><td>Quanto tempo, storicamente, la strategia ha impiegato per recuperare da una perdita massima — spesso più rilevante psicologicamente della sua entità</td></tr>
+</tbody>
+</table>
+
+<h2>Dal backtest al trading reale: il paper trading</h2>
+<p>Anche il miglior backtest resta una simulazione basata su dati passati. Prima di allocare capitale reale, è buona pratica testare la strategia in <strong>paper trading</strong> (simulazione in tempo reale su dati live, senza denaro vero) per verificare che l'esecuzione pratica — inclusi i tempi di reazione, la disciplina nel seguire le regole, l'impatto psicologico delle perdite reali — non introduca scostamenti significativi rispetto ai risultati simulati.</p>
+
+<h2>Domande frequenti sul backtest</h2>
+
+<h3>Quante operazioni servono per un backtest statisticamente significativo?</h3>
+<p>Non esiste una soglia fissa, ma indicativamente sotto le 100 operazioni i risultati vanno considerati con molta cautela: il campione è troppo piccolo per distinguere un vantaggio statistico reale da una sequenza fortunata (o sfortunata) di eventi casuali.</p>
+
+<h3>Un backtest con ottimi risultati garantisce risultati simili in futuro?</h3>
+<p>No. Il backtest stima come la strategia si sarebbe comportata nel passato, sotto condizioni di mercato che potrebbero non ripetersi. È uno strumento di validazione della logica e del profilo di rischio, non una previsione del rendimento futuro.</p>
+
+<h3>Meglio backtestare su un solo titolo o su più strumenti?</h3>
+<p>Testare la stessa logica su più strumenti e mercati diversi (non solo sul titolo su cui è nata l'idea) è un buon modo per verificare se la strategia cattura un pattern realmente generalizzabile o se funziona solo per le caratteristiche specifiche di quel singolo titolo nel periodo testato.</p>
+
+<div class="cta-box">
+<p>Una volta validata la strategia, calcola il position sizing corretto in base al win rate e al rapporto rischio/rendimento osservati nel backtest.</p>
+<a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">⚖️ Apri il calcolatore Kelly →</a>
+</div>
+
+<div class="related-articles">
+<h3>Altri articoli</h3>
+<a href="https://calcolatoretrading.it/blog/stop-loss-take-profit">Stop loss e take profit: come impostarli correttamente</a>
+<a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">Criterio di Kelly: cos'è e come usarlo nel trading</a>
+</div>

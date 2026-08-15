@@ -1,0 +1,80 @@
+<!--
+ISTRUZIONI PER IL CARICAMENTO: stesse istruzioni del file tassazione-plusvalenze-trading.html
+
+META TAG DA USARE:
+canonical: https://www.calcolatoretrading.it/blog/leva-finanziaria-rischi
+meta-description: Come funziona la leva finanziaria nel trading, come calcolare l'esposizione reale di una posizione a leva e cos'è la margin call.
+meta-keywords: leva finanziaria trading, come funziona la leva, margin call, esposizione a leva, rischio leva finanziaria, CFD leva
+title: Leva finanziaria nel trading: come funziona e quali rischi comporta | CalcolatoreTrading.it
+og:type: article
+-->
+
+<div class="breadcrumb">
+  <a href="https://calcolatoretrading.it/">Home</a> › <a href="https://calcolatoretrading.it/blog">Blog</a> › Leva finanziaria
+</div>
+
+<span class="category-tag">Gestione del rischio</span>
+
+<h1>Leva finanziaria nel trading: come funziona e quali rischi comporta</h1>
+<p class="article-meta">15 agosto 2026 · 7 min di lettura</p>
+
+<p>La leva finanziaria è probabilmente lo strumento più frainteso del trading: amplifica i guadagni con la stessa forza con cui amplifica le perdite, ma viene spesso presentata guardando solo al primo lato della medaglia. Capire come si calcola l'esposizione reale di una posizione a leva è il primo passo per usarla senza esporsi a rischi che non si è consapevoli di correre.</p>
+
+<h2>Cos'è la leva finanziaria</h2>
+<p>La leva finanziaria permette di aprire una posizione di valore superiore al capitale effettivamente depositato, prendendo in prestito la differenza dal broker (o dal meccanismo del prodotto, come nei CFD e nei futures). Una leva di 1:10 significa che con €1.000 di capitale (margine) si controlla una posizione dal valore nominale di €10.000.</p>
+<p>Il concetto chiave da interiorizzare: la leva non cambia il rischio in termini assoluti sul valore della posizione, lo amplifica in termini <strong>relativi al capitale investito</strong>. Un movimento del 2% sul sottostante genera un movimento del 20% sul capitale con leva 1:10.</p>
+
+<h2>Come si calcola l'esposizione reale</h2>
+<p>L'esposizione reale è il valore nominale della posizione, non il margine versato. È l'errore concettuale più comune: pensare che il rischio massimo sia limitato al capitale depositato per aprire la posizione.</p>
+
+<div class="example-box">
+<p><strong>Esempio pratico</strong></p>
+<p>Depositi €2.000 di margine per aprire una posizione con leva 1:5 su un titolo. L'esposizione reale è €10.000 (2.000 × 5). Se il titolo scende del 15%, la perdita non è il 15% di €2.000 (€300), ma il 15% di €10.000 = <strong>€1.500</strong>, ovvero il 75% del capitale depositato.</p>
+</div>
+
+<table>
+<thead><tr><th>Leva</th><th>Margine</th><th>Esposizione</th><th>Movimento -10% sul sottostante → perdita sul capitale</th></tr></thead>
+<tbody>
+<tr><td>1:1 (senza leva)</td><td>€1.000</td><td>€1.000</td><td>-10%</td></tr>
+<tr><td>1:5</td><td>€1.000</td><td>€5.000</td><td>-50%</td></tr>
+<tr><td>1:10</td><td>€1.000</td><td>€10.000</td><td>-100% (azzeramento margine)</td></tr>
+<tr><td>1:20</td><td>€1.000</td><td>€20.000</td><td>Perdita superiore al margine depositato</td></tr>
+</tbody>
+</table>
+
+<h2>Cos'è la margin call e perché va temuta</h2>
+<p>Quando le perdite su una posizione a leva erodono il margine disponibile sotto una soglia minima richiesta dal broker, scatta la <strong>margin call</strong>: una richiesta di versare ulteriore capitale per mantenere la posizione aperta, oppure la chiusura forzata (automatica) della posizione da parte del broker per limitare il rischio.</p>
+<p>La chiusura forzata avviene tipicamente nel momento peggiore possibile: durante un movimento avverso rapido, spesso vicino ai minimi locali, trasformando una perdita temporanea in una perdita realizzata e definitiva, senza possibilità di attendere un recupero del prezzo.</p>
+
+<h2>Leva e volatilità: una combinazione che si moltiplica</h2>
+<p>L'effetto della leva non è lineare rispetto al rischio quando si combina con la volatilità dello strumento sottostante. Applicare la stessa leva a un titolo poco volatile e a uno molto volatile (es. una small cap o una criptovaluta) produce un profilo di rischio molto diverso: più alta è la volatilità del sottostante, più stretto è il margine di sicurezza prima di una margin call, a parità di leva applicata.</p>
+<p>Per questo motivo, molti trader esperti riducono la leva utilizzata proporzionalmente all'aumentare della volatilità dello strumento, invece di applicare un multiplo fisso indipendentemente da cosa stanno operando.</p>
+
+<h2>Leva e position sizing: un errore da evitare</h2>
+<p>Un errore diffuso è confondere la leva disponibile con la leva da utilizzare. Il fatto che un broker offra leva 1:30 non significa che vada usata al massimo: la leva effettivamente utilizzata dovrebbe derivare dal dimensionamento della posizione calcolato con criteri di gestione del rischio (es. <a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">criterio di Kelly frazionato</a>), non dal limite massimo concesso dal broker.</p>
+<p>Una posizione dimensionata correttamente in termini di rischio assoluto (es. non rischiare più del 2% del capitale per operazione) può anche non richiedere leva, o richiederne molto meno di quella disponibile.</p>
+
+<h2>Costi impliciti della leva</h2>
+<p>Oltre al rischio di perdite amplificate, le posizioni a leva mantenute overnight comportano tipicamente un costo di finanziamento (swap o interesse sulla parte presa a prestito), che erode progressivamente il rendimento delle posizioni tenute aperte a lungo. Questo rende la leva uno strumento pensato più per operazioni di breve/medio periodo che per investimenti di lungo termine.</p>
+
+<h2>Domande frequenti sulla leva finanziaria</h2>
+
+<h3>Con la leva si può perdere più del capitale depositato?</h3>
+<p>Dipende dal prodotto e dal broker. Su molti prodotti retail regolamentati in Europa è prevista la protezione dal saldo negativo, che impedisce di perdere più del capitale depositato sul conto. Su altri prodotti o in altre giurisdizioni questa protezione potrebbe non essere garantita: va sempre verificata nelle condizioni contrattuali del broker prima di operare a leva.</p>
+
+<h3>Qual è una leva "sicura" da usare?</h3>
+<p>Non esiste un numero universalmente sicuro: dipende dalla volatilità dello strumento, dallo stop loss impostato e dal rischio percentuale che si accetta sul capitale totale. Una leva alta con uno stop loss stretto e un rischio per operazione contenuto può essere meno pericolosa di una leva bassa senza alcuno stop loss.</p>
+
+<h3>La leva è la stessa cosa dei CFD?</h3>
+<p>No: i CFD (Contract for Difference) sono uno strumento specifico che tipicamente incorpora la leva, ma la leva finanziaria esiste anche su altri prodotti (futures, opzioni, margin trading su azioni). I CFD sono uno dei veicoli più comuni con cui i trader retail accedono alla leva, non un sinonimo del concetto stesso.</p>
+
+<div class="cta-box">
+<p>Calcola la dimensione ottimale della posizione prima di decidere quanta leva applicare.</p>
+<a href="https://calcolatoretrading.it/calcolatore-criterio-kelly">⚖️ Apri il calcolatore Kelly →</a>
+</div>
+
+<div class="related-articles">
+<h3>Altri articoli</h3>
+<a href="https://calcolatoretrading.it/blog/stop-loss-take-profit">Stop loss e take profit: come impostarli correttamente</a>
+<a href="https://calcolatoretrading.it/blog/criterio-di-kelly-trading">Criterio di Kelly: cos'è e come usarlo nel trading</a>
+</div>
