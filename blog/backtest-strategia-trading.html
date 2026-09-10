@@ -13,7 +13,7 @@
   <meta property="og:description" content="Overfitting, survivorship bias e le metriche che contano davvero oltre il rendimento totale." />
   <meta property="og:url" content="https://www.calcolatoretrading.it/blog/backtest-strategia-trading" />
   <meta property="og:locale" content="it_IT" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Backtest di una strategia di trading: come farlo bene","description":"Overfitting, survivorship bias e le metriche che contano davvero oltre il rendimento totale.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2026-08-15","dateModified":"2026-08-15","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.calcolatoretrading.it/blog/backtest-strategia-trading"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Backtest di una strategia di trading: come farlo bene","description":"Overfitting, survivorship bias e le metriche che contano davvero oltre il rendimento totale.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://www.calcolatoretrading.it/"},"datePublished":"2026-08-15","dateModified":"2026-09-10","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.calcolatoretrading.it/blog/backtest-strategia-trading"}}</script>
 
   <!-- GOOGLE ADSENSE
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script> -->
@@ -122,7 +122,7 @@
     <h1>Backtest di una strategia di trading: come farlo bene</h1>
     <div class="post-meta">
       <span>15 agosto 2026</span>
-      <span>8 min di lettura</span>
+      <span>11 min di lettura</span>
     </div>
 
     <!-- SLOT 1: Top articolo -->
@@ -182,6 +182,22 @@
 
     <h2>Dal backtest al trading reale: il paper trading</h2>
     <p>Prima di allocare capitale reale, &egrave; buona pratica testare la strategia in <strong>paper trading</strong> per verificare che l'esecuzione pratica non introduca scostamenti significativi rispetto ai risultati simulati.</p>
+
+    <h2>Un esempio numerico: stesso rendimento, rischio molto diverso</h2>
+    <p>Due backtest possono chiudere con lo stesso rendimento totale e raccontare storie completamente diverse. La sequenza dei numeri, non solo il risultato finale, &egrave; ci&ograve; che rivela la reale rischiosit&agrave; di una strategia.</p>
+    <div class="example-box">
+      <div class="example-box-title">Strategia A vs Strategia B</div>
+      <p><strong>Strategia A</strong>: 120 operazioni, win rate 65%, rapporto medio rischio/rendimento 1:1, drawdown massimo 12%. Rendimento totale simulato: +38% in due anni.</p>
+      <p><strong>Strategia B</strong>: 40 operazioni, win rate 35%, rapporto medio rischio/rendimento 1:4, drawdown massimo 31%. Rendimento totale simulato: +38% negli stessi due anni.</p>
+      <p>Stesso rendimento sulla carta, ma la Strategia B richiede una tolleranza psicologica molto pi&ugrave; alta: due terzi delle operazioni chiudono in perdita, e il capitale pu&ograve; scendere di quasi un terzo prima di risalire. Guardare solo il rendimento totale nasconderebbe questa differenza.</p>
+    </div>
+
+    <h2>Data snooping: il rischio di testare troppe strategie sullo stesso dataset</h2>
+    <p>Un errore meno noto dell'overfitting sui parametri, ma altrettanto insidioso, &egrave; il <strong>data snooping</strong> (o curve fitting): testare decine o centinaia di varianti di strategia sullo stesso set di dati storici finch&eacute; una non produce risultati eccellenti "per caso" statistico, non per una logica reale.</p>
+    <p>Pi&ugrave; strategie si testano sullo stesso dataset, pi&ugrave; aumenta la probabilit&agrave; che almeno una risulti profittevole solo per coincidenza — esattamente come lanciare una moneta cento volte aumenta la probabilit&agrave; di trovare una sequenza di dieci teste consecutive, senza che la moneta sia truccata. La difesa pi&ugrave; efficace &egrave; limitare il numero di varianti testate e riservare sempre una porzione di dati mai toccata durante lo sviluppo per la validazione finale.</p>
+
+    <h2>Il backtest non &egrave; statico: il rischio del cambio di regime</h2>
+    <p>Una strategia validata su un backtest condotto interamente in un mercato rialzista a bassa volatilit&agrave; pu&ograve; comportarsi in modo radicalmente diverso in un mercato laterale o in una fase di alta volatilit&agrave;. Includere nel periodo testato almeno un ciclo completo — una fase rialzista, una correzione significativa e una fase laterale — riduce il rischio di costruire un edge che esiste solo in un particolare regime di mercato, destinato a sparire non appena le condizioni cambiano.</p>
 
     <h2>Domande frequenti sul backtest</h2>
     <h3>Quante operazioni servono per un backtest statisticamente significativo?</h3>
