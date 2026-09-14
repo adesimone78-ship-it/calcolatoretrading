@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.calcolatoretrading.it/sitemap.xml
+Sitemap: https://calcolatoretrading.it/sitemap.xml
