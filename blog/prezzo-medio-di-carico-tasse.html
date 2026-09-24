@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prezzo medio di carico e tasse: costo medio ponderato o LIFO | CalcolatoreTrading.it</title>
+  <meta name="description" content="Come si calcola il costo fiscale delle azioni vendute in Italia: costo medio ponderato in regime amministrato, LIFO in dichiarativo, commissioni, ETF e cambio. Esempio numerico completo." />
+  <meta name="keywords" content="prezzo medio di carico, costo fiscale azioni, costo medio ponderato, LIFO regime dichiarativo, plusvalenza vendita parziale, commissioni costo fiscale" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Prezzo medio di carico e tasse: costo medio ponderato o LIFO" />
+  <meta property="og:description" content="Costo medio ponderato o LIFO, commissioni incluse: esempio numerico completo su quanto si paga di tasse vendendo una parte delle azioni." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Prezzo medio di carico e tasse: costo medio ponderato o LIFO","description":"Costo medio ponderato o LIFO, commissioni incluse: esempio numerico completo su quanto si paga di tasse vendendo una parte delle azioni.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://calcolatoretrading.it/"},"datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse"}}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Prezzo medio di carico e tasse</span>
+    </nav>
+
+    <div class="post-tag">Fiscalit&agrave;</div>
+    <h1>Prezzo medio di carico e tasse: perch&eacute; la plusvalenza del broker non coincide con la tua</h1>
+    <div class="post-meta">
+      <span>24 settembre 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <p>Chi compra la stessa azione in pi&ugrave; momenti, per esempio facendo un piano di accumulo o mediando una posizione in perdita, prima o poi si trova davanti a una domanda concreta: vendo una parte delle azioni, quanto pagher&ograve; di tasse? E spesso il numero che si aspetta non coincide con quello che il broker trattiene. Il motivo non &egrave; un errore del broker: in Italia il costo fiscale delle azioni vendute si calcola con regole diverse a seconda del regime fiscale, e le commissioni entrano nel conto. In questa guida vediamo le regole con un esempio numerico completo, calcolato euro per euro.</p>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Due numeri diversi per la stessa posizione</h2>
+    <p>Quando si parla di "prezzo medio" si mescolano spesso due concetti:</p>
+    <ul>
+      <li><strong>Il prezzo medio di mercato</strong>: la media ponderata dei prezzi pagati per azione, senza costi. &Egrave; quello che mostrano molte app e che serve per capire a che prezzo la posizione va in pareggio.</li>
+      <li><strong>Il costo fiscale</strong>: il valore che il Fisco considera come "costo di acquisto" quando vendi. Qui entrano le commissioni di acquisto e, soprattutto, il criterio con cui si decide <em>quali</em> azioni hai venduto quando ne vendi solo una parte.</li>
+    </ul>
+    <p>La differenza tra i due pu&ograve; sembrare piccola su un singolo acquisto, ma diventa rilevante con molte tranche, con commissioni fisse su importi piccoli (tipico dei piani di accumulo) e con vendite parziali.</p>
+
+    <h2>Regime amministrato: il costo medio ponderato</h2>
+    <p>La maggior parte degli investitori italiani usa il <strong>regime amministrato</strong>: il broker agisce da sostituto d'imposta e trattiene il 26% direttamente su ogni plusvalenza. In questo regime il costo delle azioni vendute si calcola con il <strong>costo medio ponderato</strong>: il broker somma tutto ci&ograve; che hai speso per quel titolo (prezzi pi&ugrave; commissioni di acquisto) e lo divide per il numero di azioni possedute. Quando vendi, ogni azione venduta "costa" quel valore medio, indipendentemente da quando l'hai comprata.</p>
+    <p>Le commissioni di acquisto non vanno perse: la legge prevede che il costo di acquisto sia aumentato degli oneri inerenti (art. 68 del TUIR), quindi alzano il costo fiscale e riducono la plusvalenza tassabile. In genere il broker considera anche la commissione di vendita, riducendo l'importo incassato su cui si calcola il guadagno.</p>
+
+    <h2>Un esempio completo, euro per euro</h2>
+    <p>Prendiamo un investitore che compra la stessa azione in tre momenti, pagando ogni volta una commissione fissa di 5 &euro;:</p>
+    <table>
+      <thead><tr><th>Acquisto</th><th>Azioni</th><th>Prezzo</th><th>Commissione</th><th>Costo totale</th></tr></thead>
+      <tbody>
+        <tr><td>1&ordf; tranche</td><td>100</td><td>20,00 &euro;</td><td>5 &euro;</td><td>2.005,00 &euro;</td></tr>
+        <tr><td>2&ordf; tranche</td><td>150</td><td>16,00 &euro;</td><td>5 &euro;</td><td>2.405,00 &euro;</td></tr>
+        <tr><td>3&ordf; tranche</td><td>50</td><td>18,40 &euro;</td><td>5 &euro;</td><td>925,00 &euro;</td></tr>
+        <tr><td><strong>Totale</strong></td><td><strong>300</strong></td><td></td><td><strong>15 &euro;</strong></td><td><strong>5.335,00 &euro;</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Il <strong>prezzo medio di mercato</strong> (senza commissioni) &egrave; 5.320 &euro; / 300 = <strong>17,733 &euro;</strong>. Il <strong>costo medio fiscale</strong> (con commissioni) &egrave; 5.335 &euro; / 300 = <strong>17,783 &euro;</strong>.</p>
+    <p>Ora l'investitore vende <strong>120 azioni a 21,00 &euro;</strong>, con 5 &euro; di commissione. Incassa 120 &times; 21 = 2.520 &euro;, meno 5 &euro; di commissione: <strong>2.515 &euro;</strong>.</p>
+
+    <div class="example-box">
+      <div class="example-box-title">Regime amministrato (costo medio ponderato)</div>
+      <p>Costo fiscale delle 120 azioni vendute: 120 &times; 17,7833 &euro; = <strong>2.134,00 &euro;</strong></p>
+      <p>Plusvalenza: 2.515,00 &minus; 2.134,00 = <strong>381,00 &euro;</strong></p>
+      <p>Imposta al 26%: <strong>99,06 &euro;</strong>, trattenuta dal broker. Le 180 azioni rimaste mantengono lo stesso costo medio di 17,7833 &euro;.</p>
+    </div>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Regime dichiarativo: si vendono per prime le ultime comprate (LIFO)</h2>
+    <p>Chi usa un broker estero senza sostituto d'imposta italiano &egrave; in <strong>regime dichiarativo</strong>: calcola da s&eacute; le plusvalenze e le indica nel quadro RT della dichiarazione dei redditi. Per le azioni, in questo regime si applica il criterio <strong>LIFO</strong> (<em>last in, first out</em>): si considerano vendute per prime le azioni acquistate pi&ugrave; di recente.</p>
+    <p>Stessa vendita di 120 azioni, stesso incasso di 2.515 &euro;, ma costo diverso:</p>
+
+    <div class="example-box">
+      <div class="example-box-title">Regime dichiarativo (LIFO)</div>
+      <p>Si vendono prima le 50 azioni della 3&ordf; tranche (costo 18,50 &euro; ciascuna, commissione inclusa): 925,00 &euro;</p>
+      <p>Poi 70 azioni della 2&ordf; tranche (costo 16,0333 &euro; ciascuna): 1.122,33 &euro;</p>
+      <p>Costo totale: 2.047,33 &euro;. Plusvalenza: 2.515,00 &minus; 2.047,33 = <strong>467,67 &euro;</strong></p>
+      <p>Imposta al 26%: <strong>121,59 &euro;</strong>, circa 22,50 &euro; in pi&ugrave; rispetto al regime amministrato, in questo caso.</p>
+    </div>
+
+    <h2>Nel lungo periodo le tasse totali sono le stesse</h2>
+    <p>Il confronto sopra pu&ograve; far pensare che un regime "costi di pi&ugrave;". Non &egrave; cos&igrave;: il criterio sposta la plusvalenza nel tempo, non la cambia nel totale. Se l'investitore vende anche le 180 azioni rimaste a 21,00 &euro; (con 5 &euro; di commissione):</p>
+    <table>
+      <thead><tr><th></th><th>Amministrato</th><th>Dichiarativo (LIFO)</th></tr></thead>
+      <tbody>
+        <tr><td>Plusvalenza 1&ordf; vendita (120 azioni)</td><td>381,00 &euro;</td><td>467,67 &euro;</td></tr>
+        <tr><td>Plusvalenza 2&ordf; vendita (180 azioni)</td><td>574,00 &euro;</td><td>487,33 &euro;</td></tr>
+        <tr><td><strong>Plusvalenza totale</strong></td><td><strong>955,00 &euro;</strong></td><td><strong>955,00 &euro;</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Quello che cambia &egrave; <strong>quando</strong> paghi. Con il LIFO, se hai comprato le ultime tranche a prezzi alti, la prima vendita parziale pu&ograve; generare una plusvalenza pi&ugrave; bassa (o una minusvalenza) e viceversa. Questo conta se vendi a cavallo di due anni fiscali o se hai minusvalenze in scadenza da compensare: in quel caso sapere in anticipo quale costo verr&agrave; usato permette di decidere quante azioni vendere e quando.</p>
+
+    <h2>ETF e fondi: sempre costo medio, ma attenzione alle perdite</h2>
+    <p>Per ETF e fondi comuni il criterio &egrave; il <strong>costo medio ponderato</strong> in qualsiasi regime, quindi anche chi &egrave; in dichiarativo non usa il LIFO per questi strumenti. C'&egrave; per&ograve; una particolarit&agrave; tutta italiana: i guadagni sugli ETF armonizzati sono <strong>redditi di capitale</strong>, mentre le perdite sono <strong>redditi diversi</strong>. Le due categorie non si compensano tra loro: una minusvalenza su un ETF pu&ograve; compensare una plusvalenza su un'azione, ma un guadagno su un ETF non assorbe le minusvalenze accumulate nello "zainetto fiscale". Per chi fa un piano di accumulo su ETF con molte tranche, il calcolo del costo medio resta semplice, ma la gestione delle perdite va pianificata.</p>
+
+    <h2>Azioni estere: il cambio entra nel calcolo</h2>
+    <p>Per le azioni quotate in valuta estera, per esempio in dollari, il costo di acquisto e l'incasso di vendita vengono convertiti in euro al cambio delle rispettive date. Il risultato &egrave; che la plusvalenza fiscale in euro pu&ograve; essere diversa da quella che vedi in dollari: un titolo venduto allo stesso prezzo in dollari a cui l'hai comprato pu&ograve; generare una plusvalenza o una minusvalenza solo per effetto del cambio. Se usi il calcolatore per queste posizioni, inserisci i prezzi gi&agrave; convertiti in euro al cambio del giorno di ogni acquisto.</p>
+
+    <h2>Come usare il calcolatore per stimare le tasse prima di vendere</h2>
+    <p>Il nostro <a href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a> calcola la media ponderata degli acquisti che inserisci. Per ottenere direttamente il costo medio fiscale del regime amministrato:</p>
+    <ol>
+      <li>per ogni tranche, aggiungi al prezzo la commissione divisa per il numero di azioni (nell'esempio, la 1&ordf; tranche diventa 20,00 + 5/100 = 20,05 &euro;);</li>
+      <li>inserisci tutte le tranche: il risultato &egrave; il costo medio fiscale (17,783 &euro; nell'esempio);</li>
+      <li>moltiplica il costo medio per le azioni che vuoi vendere e confrontalo con l'incasso previsto al netto della commissione di vendita: la differenza &egrave; la plusvalenza stimata, e il 26% &egrave; l'imposta.</li>
+    </ol>
+    <p>Per il regime dichiarativo, inserisci nel calcolatore solo le tranche pi&ugrave; recenti che coprono la quantit&agrave; che vuoi vendere, partendo dall'ultima: otterrai il costo LIFO delle azioni vendute.</p>
+
+    <h2>Domande frequenti</h2>
+    <h3>Perch&eacute; il prezzo medio sull'app del broker &egrave; diverso dal mio calcolo?</h3>
+    <p>Di solito perch&eacute; il broker include le commissioni di acquisto nel prezzo di carico, oppure perch&eacute; hai fatto vendite parziali: dopo una vendita, in regime amministrato il costo medio delle azioni rimaste resta invariato, mentre un calcolo "a mano" che toglie le azioni vendute a un prezzo specifico d&agrave; un risultato diverso.</p>
+    <h3>Mediare una posizione in perdita riduce le tasse?</h3>
+    <p>No. Mediare abbassa il costo medio e quindi avvicina il punto di pareggio, ma l'imposta si calcola sempre sulla differenza tra quanto incassi e quanto hai speso in totale per le azioni vendute. Se il titolo risale, la plusvalenza sar&agrave; semplicemente calcolata su un costo medio pi&ugrave; basso.</p>
+    <h3>Le commissioni di custodia o il bollo si possono aggiungere al costo?</h3>
+    <p>No. Il costo fiscale comprende gli oneri legati all'acquisto del titolo, come la commissione di negoziazione. L'imposta di bollo sul dossier e i canoni del conto sono costi di gestione del conto, non del singolo acquisto.</p>
+    <h3>Posso scegliere io quale criterio usare?</h3>
+    <p>No, il criterio dipende dal regime e dallo strumento: costo medio ponderato in regime amministrato e per ETF e fondi, LIFO per le azioni in regime dichiarativo. Puoi per&ograve; scegliere il regime, attraverso la scelta del broker.</p>
+    <p><em>Questo articolo ha scopo informativo generale e non sostituisce una consulenza fiscale personalizzata: per la tua situazione specifica verifica sempre con un commercialista. Esempio numerico a scopo illustrativo, calcolato con aliquota del 26%.</em></p>
+
+    <div class="cta-box">
+      <p>Inserisci le tue tranche (con le commissioni) e calcola il costo medio della tua posizione.</p>
+      <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">&#128290; Apri il calcolatore prezzo medio &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore prezzo medio</div>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Apri il calcolatore &rarr;</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/tassazione-plusvalenze-trading" class="post-link"><div class="post-link-title">Tassazione plusvalenze trading: aliquota, minusvalenze e bollo</div></a>
+      <a href="/blog/dca-dollar-cost-averaging" class="post-link"><div class="post-link-title">DCA: cos'&egrave; il Dollar Cost Averaging e quando usarlo</div></a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
