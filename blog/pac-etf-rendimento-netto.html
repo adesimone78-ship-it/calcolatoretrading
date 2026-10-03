@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAC in ETF: quanto resta davvero dopo costi, bollo e tasse | CalcolatoreTrading.it</title>
+  <meta name="description" content="Un PAC da 200 € al mese in ETF per 20 anni: quanto incidono TER, imposta di bollo, commissioni e tassazione al 26%. Esempio numerico completo e come rifare il calcolo." />
+  <meta name="keywords" content="PAC ETF rendimento netto, piano di accumulo ETF tasse, imposta di bollo ETF, TER ETF, tassazione ETF 26%, PAC 200 euro al mese" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/pac-etf-rendimento-netto" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="PAC in ETF: quanto resta davvero dopo costi, bollo e tasse" />
+  <meta property="og:description" content="200 € al mese per 20 anni: l'effetto di TER, bollo, commissioni e 26% di tasse, calcolato euro per euro." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/pac-etf-rendimento-netto" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PAC in ETF: quanto resta davvero dopo costi, bollo e tasse","description":"200 € al mese per 20 anni: l'effetto di TER, bollo, commissioni e 26% di tasse, calcolato euro per euro.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://calcolatoretrading.it/"},"datePublished":"2026-10-02","dateModified":"2026-10-02","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://calcolatoretrading.it/blog/pac-etf-rendimento-netto"}}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>PAC in ETF: rendimento netto</span>
+    </nav>
+
+    <div class="post-tag">Investire</div>
+    <h1>PAC in ETF: quanto resta davvero dopo costi, bollo e tasse</h1>
+    <div class="post-meta">
+      <span>2 ottobre 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <p>Le simulazioni di un piano di accumulo che si trovano online mostrano quasi sempre una cifra finale lorda: versi 200 &euro; al mese, applichi un rendimento del 6% e dopo vent'anni ti ritrovi con oltre 90.000 &euro;. &Egrave; un numero corretto dal punto di vista matematico, ma non &egrave; quello che arriva sul conto. In mezzo ci sono quattro voci che un investitore italiano paga sempre: il costo annuo dell'ETF, l'imposta di bollo sul dossier titoli, le commissioni di acquisto e il 26% di tasse sul guadagno. In questo articolo le aggiungiamo una alla volta allo stesso esempio, per vedere quanto pesa ciascuna e quale conviene davvero tenere d'occhio.</p>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Le ipotesi dell'esempio</h2>
+    <p>Usiamo un caso tipico di chi inizia un PAC su un ETF azionario globale ad accumulazione:</p>
+    <ul>
+      <li><strong>Versamento</strong>: 200 &euro; all'inizio di ogni mese, per 20 anni (240 rate, 48.000 &euro; versati in totale).</li>
+      <li><strong>Rendimento lordo</strong>: 6% annuo costante. &Egrave; un'ipotesi di lavoro, non una previsione: nella realt&agrave; i rendimenti variano molto da un anno all'altro e possono essere negativi.</li>
+      <li><strong>TER dell'ETF</strong>: 0,20% annuo, un valore comune per i grandi ETF azionari globali.</li>
+      <li><strong>Imposta di bollo</strong>: 0,20% annuo sul valore del dossier titoli a fine anno.</li>
+      <li><strong>Tassazione</strong>: 26% sul guadagno, pagato una sola volta alla vendita finale.</li>
+    </ul>
+    <p>Tutti i numeri che seguono sono calcolati mese per mese con queste ipotesi e arrotondati all'euro.</p>
+
+    <h2>Passo 1: il risultato lordo</h2>
+    <p>Senza costi e senza tasse, 240 versamenti da 200 &euro; capitalizzati al 6% annuo diventano <strong>91.129 &euro;</strong>. Il guadagno lordo &egrave; di 43.129 &euro; su 48.000 &euro; versati: quasi il 90% in pi&ugrave; di quanto hai messo. &Egrave; questo il numero che vedi nella maggior parte dei simulatori.</p>
+
+    <h2>Passo 2: il TER dell'ETF</h2>
+    <p>Il TER (<em>total expense ratio</em>) &egrave; il costo annuo di gestione dell'ETF. Non lo paghi con un addebito separato: viene sottratto ogni giorno dal valore delle quote, quindi in pratica riduce il rendimento. Con un TER dello 0,20% il rendimento passa dal 6% al 5,80% annuo e il valore finale scende a <strong>89.102 &euro;</strong>: circa 2.000 &euro; in meno in vent'anni.</p>
+    <p>Sembra poco per uno 0,20%, ed &egrave; proprio questo il punto: un ETF a basso costo pesa relativamente poco. Lo stesso calcolo con un fondo attivo all'1,5% annuo, cifra non rara per i fondi venduti allo sportello, porterebbe via circa 14.000 &euro; dello stesso risultato.</p>
+
+    <h2>Passo 3: l'imposta di bollo</h2>
+    <p>Ogni anno sul dossier titoli si paga l'<strong>imposta di bollo dello 0,20%</strong> calcolata sul valore di mercato degli strumenti detenuti. Per le persone fisiche non c'&egrave; un tetto massimo, quindi cresce insieme al portafoglio: i primi anni costa pochi euro, verso la fine centinaia di euro l'anno.</p>
+    <p>Nel nostro esempio in vent'anni si pagano in totale <strong>1.520 &euro;</strong> di bollo. L'effetto sul valore finale per&ograve; &egrave; un po' pi&ugrave; alto, perch&eacute; ogni euro pagato di bollo smette di rendere: il valore finale scende a <strong>86.934 &euro;</strong>, circa 2.170 &euro; in meno rispetto al passo precedente. In pratica il bollo pesa quanto il TER di un ETF economico, ma a differenza del TER non dipende dal prodotto che scegli: lo pagano tutti.</p>
+
+    <div class="example-box">
+      <div class="example-box-title">Riepilogo prima delle tasse</div>
+      <p>Valore lordo senza costi: <strong>91.129 &euro;</strong></p>
+      <p>Dopo il TER (0,20%): <strong>89.102 &euro;</strong> (&minus;2.027 &euro;)</p>
+      <p>Dopo il bollo (0,20%): <strong>86.934 &euro;</strong> (&minus;2.168 &euro;)</p>
+    </div>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Passo 4: le tasse alla vendita</h2>
+    <p>Per gli ETF armonizzati il guadagno &egrave; un reddito di capitale tassato al <strong>26%</strong> nel momento in cui vendi. Con un ETF ad accumulazione, che reinveste i dividendi invece di distribuirli, durante i vent'anni non si paga nessuna imposta sul rendimento: tutto viene tassato alla fine.</p>
+    <p>Nel nostro esempio il guadagno &egrave; 86.934 &minus; 48.000 = 38.934 &euro;. L'imposta del 26% &egrave; di <strong>10.123 &euro;</strong> e sul conto restano <strong>76.811 &euro;</strong>.</p>
+
+    <table>
+      <thead><tr><th>Voce</th><th>Valore finale</th><th>Differenza</th></tr></thead>
+      <tbody>
+        <tr><td>Lordo, nessun costo</td><td>91.129 &euro;</td><td>&mdash;</td></tr>
+        <tr><td>Meno TER 0,20%</td><td>89.102 &euro;</td><td>&minus;2.027 &euro;</td></tr>
+        <tr><td>Meno bollo 0,20%</td><td>86.934 &euro;</td><td>&minus;2.168 &euro;</td></tr>
+        <tr><td>Meno tasse 26% alla vendita</td><td>76.811 &euro;</td><td>&minus;10.123 &euro;</td></tr>
+        <tr><td><strong>Guadagno netto su 48.000 &euro; versati</strong></td><td><strong>28.811 &euro;</strong></td><td></td></tr>
+      </tbody>
+    </table>
+    <p>Il guadagno netto &egrave; di 28.811 &euro; contro i 43.129 &euro; lordi: un terzo del guadagno se ne va tra costi e imposte. Tradotto in rendimento annuo, il 6% lordo diventa circa il <strong>4,5% netto</strong>. &Egrave; questo il numero da usare quando pianifichi un obiettivo, non quello lordo.</p>
+
+    <h2>Le commissioni di acquisto: piccole ma su ogni rata</h2>
+    <p>Molti broker offrono PAC in ETF senza commissioni, altri applicano una commissione fissa a ogni acquisto. Su una rata da 200 &euro;, una commissione di 2 &euro; vale l'1% del versamento, ed &egrave; un costo che si ripete 240 volte.</p>
+    <p>Ripetendo il calcolo completo con 2 &euro; a rata (quindi 198 &euro; effettivamente investiti ogni mese) il netto finale scende da 76.811 a <strong>76.043 &euro;</strong>: 768 &euro; in meno, a fronte di 480 &euro; di commissioni pagate. Non &egrave; il costo principale, ma con rate piccole conviene un broker che non applica commissioni sul PAC, oppure accorpare gli acquisti, per esempio 400 &euro; ogni due mesi invece di 200 &euro; al mese.</p>
+
+    <h2>Il vantaggio nascosto: pagare le tasse solo alla fine</h2>
+    <p>C'&egrave; un dettaglio che lavora a favore di chi accumula: il 26% si paga solo quando vendi. Fino ad allora la parte di guadagno che un giorno andr&agrave; al Fisco resta investita e continua a rendere.</p>
+    <p>Per capire quanto vale, rifacciamo l'esempio come se il 26% venisse pagato ogni anno sul guadagno maturato, come succederebbe vendendo e ricomprando ogni dicembre. Alla fine dei vent'anni, gi&agrave; al netto di tutte le imposte, resterebbero <strong>73.603 &euro;</strong> invece di 76.811 &euro;: oltre 3.200 &euro; in meno. Per questo, se l'obiettivo &egrave; accumulare nel lungo periodo, vendere e ricomprare senza un motivo preciso ha un costo fiscale reale, oltre alle commissioni.</p>
+
+    <h2>E se il rendimento fosse diverso?</h2>
+    <p>Il 6% &egrave; solo un'ipotesi. Ecco lo stesso PAC, con TER, bollo e tasse, a tre rendimenti lordi diversi:</p>
+    <table>
+      <thead><tr><th>Rendimento lordo annuo</th><th>Valore lordo</th><th>Netto finale</th><th>Guadagno netto</th></tr></thead>
+      <tbody>
+        <tr><td>4%</td><td>73.007 &euro;</td><td>64.119 &euro;</td><td>16.119 &euro;</td></tr>
+        <tr><td>6%</td><td>91.129 &euro;</td><td>76.811 &euro;</td><td>28.811 &euro;</td></tr>
+        <tr><td>8%</td><td>114.532 &euro;</td><td>93.187 &euro;</td><td>45.187 &euro;</td></tr>
+      </tbody>
+    </table>
+    <p>La differenza tra uno scenario e l'altro &egrave; molto pi&ugrave; grande di quella dovuta ai costi: il rendimento effettivo del mercato resta la variabile principale, e nessuno lo conosce in anticipo. I costi invece sono certi e si possono scegliere. Per questo ha senso concentrarsi su quello che controlli: un ETF con TER basso, un broker senza commissioni sul PAC e nessuna vendita inutile.</p>
+    <p>Infine, tutte queste cifre sono nominali: con un'inflazione media del 2% annuo, 76.811 &euro; tra vent'anni equivalgono a circa 52.000 &euro; di oggi in termini di potere d'acquisto.</p>
+
+    <h2>Come rifare il calcolo con i tuoi numeri</h2>
+    <p>Puoi stimare il tuo caso con il nostro <a class="inline" href="/calcolatore-interesse-composto">calcolatore di interesse composto</a>, in tre passaggi:</p>
+    <ol>
+      <li>inserisci capitale iniziale 0 (o quello che hai gi&agrave;), il versamento mensile e gli anni;</li>
+      <li>come tasso usa il rendimento lordo meno TER e bollo: nell'esempio 6% &minus; 0,20% &minus; 0,20% = <strong>5,6%</strong>. Il calcolatore restituisce circa 88.150 &euro;, un po' pi&ugrave; dei nostri 86.934 &euro; perch&eacute; usa una convenzione di capitalizzazione leggermente diversa, ma l'ordine di grandezza &egrave; lo stesso;</li>
+      <li>togli dal risultato i versamenti totali e calcola il 26% sulla differenza: (88.152 &minus; 48.000) &times; 26% = 10.440 &euro; di imposte, per un netto di circa 77.700 &euro;.</li>
+    </ol>
+    <p>Se invece vuoi sapere a che prezzo medio stai comprando le quote nel corso del piano, usa il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a>. Per il funzionamento del metodo di accumulo trovi la guida al <a class="inline" href="/blog/dca-dollar-cost-averaging">Dollar Cost Averaging</a>, e per le regole fiscali in dettaglio l'articolo sulla <a class="inline" href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>.</p>
+
+    <h2>Domande frequenti</h2>
+    <h3>Il bollo si paga anche se l'ETF &egrave; in perdita?</h3>
+    <p>S&igrave;. L'imposta di bollo &egrave; patrimoniale: si calcola sul valore degli strumenti detenuti, non sul guadagno. Si paga anche negli anni negativi, anche se su un valore pi&ugrave; basso.</p>
+    <h3>Meglio un ETF ad accumulazione o a distribuzione per un PAC?</h3>
+    <p>Per chi accumula e non ha bisogno di una rendita, l'accumulazione &egrave; di solito pi&ugrave; efficiente: i dividendi vengono reinvestiti senza essere tassati subito. Con un ETF a distribuzione ogni dividendo incassato &egrave; tassato al 26% nell'anno in cui arriva, e per reinvestirlo devi fare un nuovo acquisto.</p>
+    <h3>Le perdite su un ETF si possono compensare con il guadagno finale?</h3>
+    <p>Non sempre. In Italia i guadagni sugli ETF armonizzati sono redditi di capitale e non possono assorbire le minusvalenze accumulate in passato. Le perdite su ETF, invece, possono compensare plusvalenze su azioni, obbligazioni o certificati entro il quarto anno successivo.</p>
+    <h3>Il TER compare tra i costi addebitati dal broker?</h3>
+    <p>No. Il TER &egrave; gi&agrave; incluso nel prezzo delle quote, quindi non lo vedi come addebito. Lo trovi nel documento informativo dell'ETF (KID) e nel rendiconto annuale dei costi che il broker &egrave; tenuto a inviarti.</p>
+    <p><em>Questo articolo ha scopo informativo generale e non costituisce consulenza finanziaria o fiscale personalizzata. I rendimenti ipotizzati sono esempi di calcolo, non previsioni: i mercati possono generare anche perdite. Imposte calcolate con le aliquote in vigore a ottobre 2026 (26% sui redditi finanziari, bollo 0,20% annuo). Per semplicit&agrave; le commissioni di acquisto non sono state incluse nel costo fiscale: alcuni broker le includono nel prezzo di carico, riducendo leggermente l'imposta finale.</em></p>
+
+    <div class="cta-box">
+      <p>Simula il tuo piano di accumulo con versamento mensile, anni e rendimento netto.</p>
+      <a href="/calcolatore-interesse-composto" class="cta-btn">&#128200; Apri il calcolatore di interesse composto &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatore interesse composto</div>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Apri il calcolatore &rarr;</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio</span></a>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/dca-dollar-cost-averaging" class="post-link"><div class="post-link-title">DCA: cos'&egrave; il Dollar Cost Averaging e quando usarlo</div></a>
+      <a href="/blog/etf-vs-azioni-singole-dca" class="post-link"><div class="post-link-title">ETF vs azioni singole: cosa scegliere per il DCA</div></a>
+      <a href="/blog/prezzo-medio-di-carico-tasse" class="post-link"><div class="post-link-title">Prezzo medio di carico e tasse: costo medio ponderato o LIFO</div></a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+<div id="cookie-banner" class="cookie-banner hidden">
+  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
+  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
+</div>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
