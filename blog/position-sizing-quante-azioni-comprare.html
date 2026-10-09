@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Position sizing: quante azioni comprare rischiando l'1% del capitale | CalcolatoreTrading.it</title>
+  <meta name="description" content="Come calcolare quante azioni comprare in base allo stop loss e al rischio massimo per operazione: formula, esempi in euro con commissioni, gap di apertura e un mini calcolatore." />
+  <meta name="keywords" content="position sizing, quante azioni comprare, dimensione posizione trading, regola 1 per cento, money management, rischio per operazione, stop loss" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/position-sizing-quante-azioni-comprare" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Position sizing: quante azioni comprare rischiando l'1% del capitale" />
+  <meta property="og:description" content="Formula, esempi in euro con commissioni e gap, tetto per posizione e un mini calcolatore per sapere quante azioni comprare." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/position-sizing-quante-azioni-comprare" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Position sizing: quante azioni comprare rischiando l\u00271% del capitale","description":"Formula, esempi in euro con commissioni e gap, tetto per posizione e un mini calcolatore per sapere quante azioni comprare.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://calcolatoretrading.it/"},"datePublished":"2026-10-09","dateModified":"2026-10-09","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://calcolatoretrading.it/blog/position-sizing-quante-azioni-comprare"}}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    .calc-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:1.75rem 0;font-family:'Syne',sans-serif}
+    .calc-box h3{margin-top:0 !important}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem}
+    @media(max-width:600px){.calc-grid{grid-template-columns:1fr}}
+    .calc-grid label{display:block;font-size:0.78rem;color:var(--text2);margin-bottom:4px}
+    .calc-grid input{width:100%;padding:9px 11px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:'Syne',sans-serif;font-size:0.9rem}
+    .calc-out{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--text2);line-height:1.9}
+    .calc-out strong{color:var(--accent);font-size:1.05rem}
+    .calc-warn{color:#e0a43a;font-size:0.82rem;margin-top:0.5rem}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Position sizing</span>
+    </nav>
+
+    <div class="post-tag">Gestione del rischio</div>
+    <h1>Position sizing: quante azioni comprare rischiando l'1% del capitale</h1>
+    <div class="post-meta">
+      <span>9 ottobre 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <p>Quasi tutti i trader alle prime armi decidono quante azioni comprare partendo dalla cifra: "ci metto 2.000 euro". &Egrave; il modo pi&ugrave; naturale, ma lascia senza risposta la domanda che conta davvero: <strong>quanto perdo se l'operazione va male?</strong> Il <em>position sizing</em> ribalta il ragionamento: prima decidi quanto sei disposto a perdere su quella singola operazione, poi calcoli quante azioni puoi comprare in base a dove metti lo stop loss. In questa guida vediamo la formula, un esempio completo in euro con commissioni, i limiti del metodo e un piccolo calcolatore per rifare i conti con i tuoi numeri.</p>
+
+    <!-- SLOT 1: Top articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>La formula in una riga</h2>
+    <div class="formula-box">
+      Azioni = (Capitale &times; Rischio %) &divide; (Prezzo di ingresso &minus; Stop loss)
+      <span>Il numeratore &egrave; la perdita massima che accetti in euro; il denominatore &egrave; quanto perdi per ogni azione se il prezzo arriva allo stop.</span>
+    </div>
+    <p>La regola pi&ugrave; diffusa &egrave; rischiare tra lo <strong>0,5% e il 2% del capitale per operazione</strong>, e l'1% &egrave; il punto di partenza pi&ugrave; usato. Non &egrave; una legge: &egrave; una scelta di prudenza che ha un motivo preciso, lo vediamo pi&ugrave; avanti con i numeri delle serie di perdite.</p>
+
+    <h2>Un esempio completo, euro per euro</h2>
+    <p>Capitale sul conto: <strong>20.000 &euro;</strong>. Rischio deciso: <strong>1%</strong>, cio&egrave; 200 &euro; per operazione. Vuoi comprare un'azione che quota <strong>25,00 &euro;</strong> e, guardando il grafico, metti lo stop sotto l'ultimo minimo, a <strong>23,50 &euro;</strong>. Il rischio per azione &egrave; quindi 1,50 &euro;.</p>
+    <div class="example-box">
+      <div class="example-box-title">Senza commissioni</div>
+      <p>Azioni: 200 &divide; 1,50 = 133,3 &rarr; <strong>133 azioni</strong> (si arrotonda sempre per difetto)</p>
+      <p>Controvalore: 133 &times; 25,00 = <strong>3.325 &euro;</strong>, circa il 16,6% del capitale</p>
+      <p>Perdita se scatta lo stop: 133 &times; 1,50 = <strong>199,50 &euro;</strong></p>
+    </div>
+    <p>Nota il punto chiave: non hai deciso di investire 3.325 &euro;. Quella cifra &egrave; il <em>risultato</em> del calcolo, ricavato dal rischio che accetti e dalla distanza dello stop.</p>
+
+    <h3>Con le commissioni</h3>
+    <p>Con un broker che applica 5 &euro; per ordine, tra acquisto e vendita sullo stop spendi 10 &euro;. Per restare davvero entro i 200 &euro; di perdita, il budget per il movimento del prezzo scende a 190 &euro;: 190 &divide; 1,50 = <strong>126 azioni</strong>, per un controvalore di 3.150 &euro;. Se lo stop scatta perdi 126 &times; 1,50 + 10 = <strong>199 &euro;</strong>. Su capitali piccoli le commissioni fisse pesano molto: con 2.000 &euro; di capitale e l'1% di rischio, 10 &euro; di commissioni si mangerebbero met&agrave; del rischio disponibile.</p>
+
+    <!-- SLOT 2: Meta articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Stop pi&ugrave; largo = meno azioni (e viceversa)</h2>
+    <p>Lo stop va messo dove l'idea di trading smette di essere valida, per esempio sotto un minimo o un supporto, non alla cifra che fa comodo. Il position sizing serve proprio a questo: lo stop lo decide il grafico, la quantit&agrave; si adatta.</p>
+    <table>
+      <thead><tr><th>Stop loss</th><th>Rischio per azione</th><th>Azioni (190 &euro; di budget)</th><th>Controvalore</th></tr></thead>
+      <tbody>
+        <tr><td>22,00 &euro; (largo)</td><td>3,00 &euro;</td><td>63</td><td>1.575 &euro;</td></tr>
+        <tr><td>23,50 &euro;</td><td>1,50 &euro;</td><td>126</td><td>3.150 &euro;</td></tr>
+        <tr><td>24,60 &euro; (stretto)</td><td>0,40 &euro;</td><td>475</td><td>11.875 &euro;</td></tr>
+      </tbody>
+    </table>
+    <p>L'ultima riga mostra il problema opposto: uno stop molto vicino porta a una posizione da quasi il 60% del capitale. Il rischio "sulla carta" &egrave; sempre 200 &euro;, ma basta un'apertura in forte ribasso per perdere molto di pi&ugrave;. Per questo serve un secondo limite.</p>
+
+    <h2>Il secondo limite: un tetto per posizione</h2>
+    <p>Oltre al rischio per operazione, molti trader fissano un <strong>controvalore massimo per singola posizione</strong>, per esempio il 20-25% del capitale. Con 20.000 &euro; e un tetto del 25%, non si superano 5.000 &euro; per titolo, cio&egrave; 200 azioni a 25 &euro;, anche se la formula ne darebbe 475. Si applica il pi&ugrave; basso dei due numeri. &Egrave; lo stesso principio che trovi nella guida alla <a class="inline" href="/blog/diversificazione-portafoglio-trading">diversificazione del portafoglio</a>: nessuna singola posizione deve poter fare troppo danno da sola.</p>
+
+    <h2>Lo stop non &egrave; garantito: il rischio del gap</h2>
+    <p>Uno stop loss normale diventa un ordine al meglio quando il prezzo lo tocca. Se il titolo chiude a 24 &euro; e il giorno dopo apre a 22 &euro; per una notizia, lo stop viene eseguito intorno a 22, non a 23,50. Nell'esempio con 126 azioni la perdita diventerebbe 126 &times; 3,00 + 10 = <strong>388 &euro;</strong>, quasi il 2% invece dell'1%. Non si pu&ograve; eliminare del tutto, ma si pu&ograve; contenere: rischio per operazione basso, tetto per posizione, e attenzione alle date delle trimestrali e degli eventi societari, quando i gap sono pi&ugrave; probabili.</p>
+
+    <h2>Perch&eacute; proprio l'1%: i numeri delle serie di perdite</h2>
+    <p>Anche una strategia valida attraversa serie di perdite consecutive. Ecco cosa resta del capitale dopo <strong>10 perdite di fila</strong> con diversi livelli di rischio, e quanto serve poi per tornare al punto di partenza:</p>
+    <table>
+      <thead><tr><th>Rischio per operazione</th><th>Capitale dopo 10 perdite</th><th>Guadagno necessario per recuperare</th></tr></thead>
+      <tbody>
+        <tr><td>1%</td><td>90,4%</td><td>+10,6%</td></tr>
+        <tr><td>2%</td><td>81,7%</td><td>+22,4%</td></tr>
+        <tr><td>5%</td><td>59,9%</td><td>+67,0%</td></tr>
+        <tr><td>10%</td><td>34,9%</td><td>+186,8%</td></tr>
+      </tbody>
+    </table>
+    <p>Il recupero non &egrave; simmetrico: dopo un &minus;20% serve un +25%, dopo un &minus;50% serve un +100%. Con l'1% una serie negativa resta un incidente da cui si esce; con il 5-10% pu&ograve; chiudere l'esperienza di trading. &Egrave; lo stesso motivo per cui chi usa il <a class="inline" href="/blog/criterio-di-kelly-trading">criterio di Kelly</a> spesso ne applica solo una frazione: il Kelly pieno massimizza la crescita teorica, ma con oscillazioni che pochi riescono a sopportare.</p>
+
+    <div class="calc-box" id="calc-position">
+      <h3>Mini calcolatore: quante azioni posso comprare?</h3>
+      <div class="calc-grid">
+        <div><label for="ps-cap">Capitale (&euro;)</label><input id="ps-cap" type="number" min="0" step="any" value="20000"></div>
+        <div><label for="ps-risk">Rischio per operazione (%)</label><input id="ps-risk" type="number" min="0" step="0.1" value="1"></div>
+        <div><label for="ps-entry">Prezzo di ingresso (&euro;)</label><input id="ps-entry" type="number" min="0" step="any" value="25"></div>
+        <div><label for="ps-stop">Stop loss (&euro;)</label><input id="ps-stop" type="number" min="0" step="any" value="23.5"></div>
+        <div><label for="ps-comm">Commissioni totali andata e ritorno (&euro;)</label><input id="ps-comm" type="number" min="0" step="any" value="10"></div>
+        <div><label for="ps-cap-pos">Tetto per posizione (% del capitale)</label><input id="ps-cap-pos" type="number" min="0" step="1" value="25"></div>
+      </div>
+      <div class="calc-out" id="ps-out" aria-live="polite"></div>
+    </div>
+
+    <h2>Come usarlo insieme agli altri calcolatori</h2>
+    <p>Il <a class="inline" href="/calcolatore-criterio-kelly">calcolatore del criterio di Kelly</a> ti dice, in base a percentuale di successo e rapporto vincita/perdita della tua strategia, quale frazione del capitale sarebbe teoricamente ottimale: usalo come limite superiore, non come obiettivo. Se compri in pi&ugrave; tranche, il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a> ti aiuta a ricalcolare il rischio effettivo della posizione complessiva rispetto allo stop. E per il rapporto tra stop e obiettivo di prezzo trovi la guida a <a class="inline" href="/blog/stop-loss-take-profit">stop loss e take profit</a>.</p>
+
+    <h2>Domande frequenti</h2>
+    <h3>Il capitale da usare &egrave; quello iniziale o quello attuale?</h3>
+    <p>Quello attuale. Ricalcolare il rischio sul capitale del momento fa s&igrave; che dopo le perdite le posizioni si riducano da sole, e dopo i guadagni crescano gradualmente.</p>
+    <h3>Vale anche per gli ETF in un piano di accumulo?</h3>
+    <p>No, il position sizing riguarda operazioni con uno stop loss definito. Un piano di accumulo di lungo periodo non usa stop e si gestisce con importi fissi e diversificazione: lo trovi nella guida al <a class="inline" href="/blog/dca-dollar-cost-averaging">Dollar Cost Averaging</a>.</p>
+    <h3>Le perdite chiuse con lo stop hanno un risvolto fiscale?</h3>
+    <p>S&igrave;. In Italia una vendita in perdita genera una minusvalenza che pu&ograve; essere compensata con plusvalenze future entro il quarto anno successivo, con le eccezioni viste nella guida alla <a class="inline" href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>. Non rende la perdita meno reale, ma va considerata nel conto complessivo.</p>
+    <h3>E con la leva o i CFD?</h3>
+    <p>La formula &egrave; la stessa, ma il controvalore esposto pu&ograve; superare il capitale e le perdite possono andare oltre il margine versato. &Egrave; un motivo in pi&ugrave; per tenere basso il rischio per operazione: vedi la guida sulla <a class="inline" href="/blog/leva-finanziaria-rischi">leva finanziaria</a>.</p>
+    <p><em>Questo articolo ha scopo informativo e non costituisce consulenza finanziaria personalizzata. Gli esempi numerici sono illustrativi: il trading comporta il rischio di perdere anche l'intero capitale investito.</em></p>
+
+    <div class="cta-box">
+      <p>Stima la frazione massima di capitale per la tua strategia con il criterio di Kelly.</p>
+      <a href="/calcolatore-criterio-kelly" class="cta-btn">&#9878;&#65039; Apri il calcolatore di Kelly &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatori</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly &rarr;</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/stop-loss-take-profit" class="post-link"><div class="post-link-title">Stop loss e take profit: come impostarli correttamente</div></a>
+      <a href="/blog/criterio-di-kelly-trading" class="post-link"><div class="post-link-title">Criterio di Kelly: cos'&egrave; e come usarlo nel trading</div></a>
+      <a href="/blog/diversificazione-portafoglio-trading" class="post-link"><div class="post-link-title">Diversificazione di portafoglio: quante posizioni servono davvero</div></a>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var ids=['ps-cap','ps-risk','ps-entry','ps-stop','ps-comm','ps-cap-pos'];
+  var out=document.getElementById('ps-out'); if(!out) return;
+  var f=function(n,d){return n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d});};
+  function v(id){var x=parseFloat(String(document.getElementById(id).value).replace(',','.'));return isNaN(x)?0:x;}
+  function calc(){
+    var cap=v('ps-cap'),risk=v('ps-risk')/100,e=v('ps-entry'),s=v('ps-stop'),c=v('ps-comm'),tp=v('ps-cap-pos')/100;
+    var per=e-s;
+    if(cap<=0||e<=0||per<=0){out.innerHTML='Inserisci capitale e prezzi validi: lo stop deve essere sotto il prezzo di ingresso.';return;}
+    var budget=cap*risk-c;
+    if(budget<=0){out.innerHTML='Le commissioni superano il rischio massimo: con questo capitale servono commissioni pi&ugrave; basse o un rischio pi&ugrave; alto.';return;}
+    var qRisk=Math.floor(budget/per), qCap=tp>0?Math.floor(cap*tp/e):qRisk, q=Math.min(qRisk,qCap);
+    var html='Azioni da comprare: <strong>'+f(q,0)+'</strong><br>Controvalore: '+f(q*e,2)+' &euro; ('+f(q*e/cap*100,1)+'% del capitale)<br>Perdita se scatta lo stop: '+f(q*per+c,2)+' &euro; ('+f((q*per+c)/cap*100,2)+'% del capitale)';
+    if(qCap<qRisk) html+='<div class="calc-warn">Il tetto per posizione riduce la quantit&agrave; da '+f(qRisk,0)+' a '+f(qCap,0)+' azioni: lo stop &egrave; molto vicino al prezzo.</div>';
+    out.innerHTML=html;
+  }
+  ids.forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

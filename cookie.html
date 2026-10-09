@@ -58,7 +58,11 @@
     .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
     .btn-sm:hover{opacity:0.85}
     @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
   </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -82,7 +86,7 @@
   </nav>
 
   <h1>Cookie Policy</h1>
-  <div class="updated">Ultimo aggiornamento: 24 luglio 2026</div>
+  <div class="updated">Ultimo aggiornamento: 9 ottobre 2026</div>
 
   <div class="info-box">
     <p>Questa Cookie Policy spiega cosa sono i cookie, quali utilizza <strong>CalcolatoreTrading.it</strong> e come puoi gestire le tue preferenze in conformità al GDPR (Regolamento UE 2016/679) e alle linee guida del Garante Privacy italiano.</p>
@@ -91,9 +95,9 @@
   <h2>1. Cosa sono i cookie</h2>
   <p>I cookie sono piccoli file di testo che i siti visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Servono a far funzionare correttamente i siti, a renderli più sicuri, a garantire una migliore esperienza di navigazione e, in alcuni casi, a mostrare pubblicità pertinente.</p>
 
-  <h2>2. Come mostriamo il banner di consenso</h2>
-  <p>Al primo accesso al sito, ti viene mostrato un banner che ti chiede di <strong>accettare</strong> o <strong>rifiutare</strong> l'uso dei cookie non essenziali. Nessun cookie pubblicitario viene installato prima della tua scelta esplicita. La scelta viene salvata nel tuo browser (tramite localStorage) e ti verrà richiesta di nuovo se cancelli i dati di navigazione o cambi browser/dispositivo.</p>
-  <p>Puoi in qualsiasi momento cambiare idea cancellando i dati di navigazione del browser relativi a questo sito e ricaricando la pagina: il banner ricomparirà.</p>
+  <h2>2. Come raccogliamo il consenso</h2>
+  <p>Al primo accesso al sito ti viene mostrato il messaggio di consenso di Google, una piattaforma di gestione del consenso certificata secondo il Transparency &amp; Consent Framework di IAB Europe. Puoi <strong>accettare</strong>, <strong>rifiutare</strong> o scegliere nel dettaglio quali finalità autorizzare. Nessun cookie pubblicitario personalizzato viene installato prima della tua scelta.</p>
+  <p>Puoi cambiare idea in qualsiasi momento: <a href="#" data-cookie-settings>modifica le tue preferenze cookie</a>. In alternativa puoi cancellare i dati di navigazione del browser relativi a questo sito: al successivo accesso il messaggio ricomparirà.</p>
 
   <h2>3. Tipologie di cookie utilizzati</h2>
   <table>
@@ -108,7 +112,7 @@
   <p>Puoi gestire le preferenze pubblicitarie di Google direttamente su <a href="https://www.google.com/settings/ads" class="inline" target="_blank" rel="noopener">Impostazioni annunci Google</a>, oppure disattivare i cookie pubblicitari di più fornitori contemporaneamente su <a href="https://www.aboutads.info/choices/" class="inline" target="_blank" rel="noopener">aboutads.info</a>.</p>
 
   <h2>5. Come gestire i cookie dal browser</h2>
-  <p>Oltre al banner presente sul sito, puoi controllare e/o eliminare i cookie direttamente dalle impostazioni del tuo browser. Disattivare tutti i cookie potrebbe impedire il corretto funzionamento di alcune parti del sito.</p>
+  <p>Oltre al messaggio di consenso presente sul sito, puoi controllare e/o eliminare i cookie direttamente dalle impostazioni del tuo browser. Disattivare tutti i cookie potrebbe impedire il corretto funzionamento di alcune parti del sito.</p>
   <ul>
     <li>Google Chrome: Impostazioni → Privacy e sicurezza → Cookie</li>
     <li>Safari: Preferenze → Privacy</li>
@@ -117,7 +121,7 @@
   </ul>
 
   <h2>6. Durata dei cookie</h2>
-  <p>I cookie tecnici legati alla scelta sul banner restano memorizzati nel browser fino a cancellazione manuale. I cookie di Google AdSense hanno durate variabili stabilite da Google stessa, generalmente fino a 13 mesi, in linea con le policy pubblicitarie europee.</p>
+  <p>Le scelte espresse nel messaggio di consenso sono memorizzate nei cookie tecnici di Google FCCDCF e FCNEC (fino a 13 mesi). I cookie di Google AdSense hanno durate variabili stabilite da Google stessa, generalmente fino a 13 mesi, in linea con le policy pubblicitarie europee.</p>
 
   <h2>7. Modifiche a questa Cookie Policy</h2>
   <p>Questa policy può essere aggiornata periodicamente, ad esempio in caso di modifiche normative o di nuovi servizi integrati nel sito. Ti invitiamo a consultarla periodicamente. La data di ultimo aggiornamento è indicata in cima alla pagina.</p>
@@ -126,10 +130,6 @@
   <p>Per domande su questa Cookie Policy: <a href="mailto:privacy@calcolatoretrading.it" class="inline">privacy@calcolatoretrading.it</a>, oppure visita la pagina <a href="/contatti" class="inline">Contatti</a>. Per approfondimenti sul trattamento dei dati personali, consulta la <a href="/privacy" class="inline">Privacy Policy</a>.</p>
 </div>
 
-<div id="cookie-banner" class="cookie-banner hidden">
-  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
-  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
-</div>
 
 <footer>
   <div class="footer-inner">

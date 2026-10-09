@@ -57,7 +57,11 @@
     .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
     .btn-sm:hover{opacity:0.85}
     @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
   </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -113,10 +117,6 @@
   <p>Per domande su questo disclaimer scrivi a: <a href="mailto:info@calcolatoretrading.it" class="inline">info@calcolatoretrading.it</a>, oppure visita la pagina <a href="/contatti" class="inline">Contatti</a>.</p>
 </div>
 
-<div id="cookie-banner" class="cookie-banner hidden">
-  <p>Questo sito utilizza cookie tecnici e, previo consenso, cookie pubblicitari di terze parti (Google AdSense). <a href="/cookie">Cookie Policy</a>.</p>
-  <div class="actions"><button class="btn-sm btn-secondary" data-cookie="reject">Rifiuta</button><button class="btn-sm btn-primary" data-cookie="accept">Accetta</button></div>
-</div>
 
 <footer>
   <div class="footer-inner">
