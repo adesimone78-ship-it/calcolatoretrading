@@ -1,0 +1,12 @@
+calcolatoretrading.it — articolo #3 (15/10/2026)
+
+- NUOVO blog/minusvalenze-in-scadenza-recupero.html (~1.580 parole, mini calcolatore)
+- blog.html: card del nuovo articolo in cima
+- blog/tassazione-plusvalenze-trading.html e blog/prezzo-medio-di-carico-tasse.html:
+  un link al nuovo articolo
+- sitemap.xml: 23 URL
+
+COME CARICARE: GitHub → repo calcolatoretrading → Add file → Upload files →
+trascina tutto il contenuto della cartella (tranne questo file). Un commit.
+Poi Search Console → Controllo URL → Richiedi indicizzazione di
+https://calcolatoretrading.it/blog/minusvalenze-in-scadenza-recupero

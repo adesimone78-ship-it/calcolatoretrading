@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minusvalenze in scadenza: come recuperarle prima del 31 dicembre | CalcolatoreTrading.it</title>
+  <meta name="description" content="Le minusvalenze scadono dopo quattro anni: come recuperarle vendendo e ricomprando, perché con gli ETF non funziona, la regola del 48,08% sui BTP e un mini calcolatore." />
+  <meta name="keywords" content="minusvalenze in scadenza, zainetto fiscale, recuperare minusvalenze, minusvalenze ETF, vendere e ricomprare, minusvalenze 4 anni, compensazione minusvalenze" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/minusvalenze-in-scadenza-recupero" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Minusvalenze in scadenza: come recuperarle prima del 31 dicembre" />
+  <meta property="og:description" content="Scadenze, vendita e riacquisto, ETF, titoli di Stato e un mini calcolatore per non perdere lo zainetto fiscale." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/minusvalenze-in-scadenza-recupero" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Minusvalenze in scadenza: come recuperarle prima del 31 dicembre", "description": "Scadenze, vendita e riacquisto, ETF, titoli di Stato e un mini calcolatore per non perdere lo zainetto fiscale.", "author": {"@type": "Organization", "name": "CalcolatoreTrading.it"}, "publisher": {"@type": "Organization", "name": "CalcolatoreTrading.it", "url": "https://calcolatoretrading.it/"}, "datePublished": "2026-10-15", "dateModified": "2026-10-15", "inLanguage": "it", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://calcolatoretrading.it/blog/minusvalenze-in-scadenza-recupero"}}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    .calc-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:1.75rem 0;font-family:'Syne',sans-serif}
+    .calc-box h3{margin-top:0 !important}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem}
+    @media(max-width:600px){.calc-grid{grid-template-columns:1fr}}
+    .calc-grid label{display:block;font-size:0.78rem;color:var(--text2);margin-bottom:4px}
+    .calc-grid input{width:100%;padding:9px 11px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:'Syne',sans-serif;font-size:0.9rem}
+    .calc-out{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--text2);line-height:1.9}
+    .calc-out strong{color:var(--accent);font-size:1.05rem}
+    .calc-warn{color:#e0a43a;font-size:0.82rem;margin-top:0.5rem}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Minusvalenze in scadenza</span>
+    </nav>
+
+    <div class="post-tag">Fiscalit&agrave;</div>
+    <h1>Minusvalenze in scadenza: come recuperarle prima del 31 dicembre</h1>
+    <div class="post-meta">
+      <span>15 ottobre 2026</span>
+      <span>8 min di lettura</span>
+    </div>
+
+    <p>Ogni anno, a dicembre, migliaia di investitori italiani lasciano scadere crediti fiscali che valevano centinaia di euro. Sono le <strong>minusvalenze</strong>: perdite realizzate vendendo un titolo sotto il prezzo di carico, che il fisco permette di usare per abbattere le tasse sui guadagni futuri. Hanno per&ograve; una data di scadenza, e chi non le usa in tempo le perde.</p>
+    <p>In questa guida vediamo come capire quali minusvalenze stanno per scadere, come recuperarle con un'operazione di vendita e riacquisto, perch&eacute; con gli ETF spesso non funziona e cosa cambia con i titoli di Stato. Le regole generali sulla tassazione al 26% le trovi nella guida alla <a class="inline" href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>; qui ci concentriamo su cosa fare entro fine anno.</p>
+
+    <h2>Quando scadono le minusvalenze</h2>
+    <p>Una minusvalenza pu&ograve; essere compensata con le plusvalenze dello stesso anno e dei <strong>quattro anni successivi</strong>. Scade quindi il 31 dicembre del quarto anno dopo quello in cui l'hai realizzata:</p>
+    <table>
+      <thead><tr><th>Minusvalenza realizzata nel</th><th>Ultimo giorno utile per usarla</th></tr></thead>
+      <tbody>
+        <tr><td>2022</td><td><strong>31 dicembre 2026</strong></td></tr>
+        <tr><td>2023</td><td>31 dicembre 2027</td></tr>
+        <tr><td>2024</td><td>31 dicembre 2028</td></tr>
+        <tr><td>2025</td><td>31 dicembre 2029</td></tr>
+        <tr><td>2026</td><td>31 dicembre 2030</td></tr>
+      </tbody>
+    </table>
+    <p>Quest'anno scadono quindi le perdite del <strong>2022</strong>, l'anno del forte calo di azioni e obbligazioni: chi ha venduto in perdita allora potrebbe avere uno "zainetto fiscale" pieno che tra poche settimane non varr&agrave; pi&ugrave; nulla.</p>
+    <p>Se sei in <strong>regime amministrato</strong> (il caso tipico con una banca o un broker italiano), lo zainetto lo gestisce l'intermediario: trovi le minusvalenze residue, divise per anno di origine, nel rendiconto fiscale o in una sezione dedicata dell'area clienti. La compensazione &egrave; automatica, ma solo con le plusvalenze realizzate <strong>sullo stesso deposito titoli</strong>. Di norma lLe minusvalenze vengono usate in ordine di anzianit&agrave;: prima le pi&ugrave; vecchie.apos;intermediario usa per prime le minusvalenze piLe minusvalenze vengono usate in ordine di anzianit&agrave;: prima le pi&ugrave; vecchie.ugrave; vecchie.</p>
+
+    <h2>Il metodo: vendere e ricomprare</h2>
+    <p>Se hai minusvalenze in scadenza e in portafoglio hai titoli in guadagno che non vuoi vendere, puoi <strong>realizzare la plusvalenza e ricomprare subito</strong> gli stessi titoli. La plusvalenza viene assorbita dalla minusvalenza in scadenza, quindi non paghi nulla, e il tuo nuovo prezzo di carico sale al prezzo attuale. In pratica trasformi un credito che stava per sparire in un prezzo di carico pi&ugrave; alto, cio&egrave; in meno tasse quando venderai davvero.</p>
+    <p>In Italia non esiste una regola come la "wash sale" americana, che negli Stati Uniti limita l'uso fiscale delle perdite se si ricompra lo stesso titolo entro 30 giorni: vendere e riacquistare &egrave; una pratica diffusa, e i costi sono solo quelli dell'operazione.</p>
+
+    <div class="example-box">
+      <div class="example-box-title">Esempio numerico</div>
+      <p>Nello zainetto hai <strong>3.000 &euro;</strong> di minusvalenze del 2022, che scadono il 31/12/2026. In portafoglio, sullo stesso deposito, hai 200 azioni comprate a 40 &euro; oggi valgono 65 &euro;. Paghi 5 &euro; di commissione per ordine.</p>
+      <p>Ti basta vendere <strong>121 azioni</strong>: plusvalenza = 121 &times; (65 &minus; 40) &minus; 5 di commissione = <strong>3.020 &euro;</strong>. I primi 3.000 &euro; sono compensati dalla minusvalenza, i 20 &euro; in eccesso pagano 5,20 &euro; di imposta.</p>
+      <p>Ricompri subito le 121 azioni a 65 &euro;. Imposta risparmiata: 3.000 &times; 26% = <strong>780 &euro;</strong>. Costi: due commissioni (10 &euro;) pi&ugrave; lo spread denaro-lettera, qualche euro su un titolo liquido.</p>
+      <p>Il nuovo prezzo medio di carico delle 200 azioni passa da 40 &euro; a (79 &times; 40 + 121 &times; 65 + 5) / 200 = <strong>55,15 &euro;</strong>: quando venderai, la plusvalenza tassabile sar&agrave; pi&ugrave; bassa di 3.030 &euro;.</p>
+    </div>
+
+    <p>Il punto chiave &egrave; che non stai solo rimandando le tasse: senza l'operazione, quei 3.000 &euro; di minusvalenza sarebbero scaduti, e avresti pagato le tasse sull'intera plusvalenza in futuro. Con l'operazione, il credito viene usato e il beneficio diventa definitivo.</p>
+
+    <!-- SLOT 1: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h3>Quante azioni vendere: il mini calcolatore</h3>
+    <p>Inserisci i tuoi dati: il calcolatore trova il numero minimo di azioni da vendere per assorbire tutta la minusvalenza in scadenza, l'imposta risparmiata e il nuovo prezzo medio dopo il riacquisto (con il costo medio ponderato, il criterio usato dagli intermediari italiani in regime amministrato).</p>
+    <div class="calc-box">
+      <h3>Recupero minusvalenze</h3>
+      <div class="calc-grid">
+        <div><label for="mv-min">Minusvalenze in scadenza (&euro;)</label><input id="mv-min" type="number" inputmode="decimal" value="3000" min="0" step="any"></div>
+        <div><label for="mv-qty">Azioni possedute</label><input id="mv-qty" type="number" inputmode="numeric" value="200" min="0" step="1"></div>
+        <div><label for="mv-pc">Prezzo medio di carico (&euro;)</label><input id="mv-pc" type="number" inputmode="decimal" value="40" min="0" step="any"></div>
+        <div><label for="mv-px">Prezzo attuale (&euro;)</label><input id="mv-px" type="number" inputmode="decimal" value="65" min="0" step="any"></div>
+        <div><label for="mv-comm">Commissione per ordine (&euro;)</label><input id="mv-comm" type="number" inputmode="decimal" value="5" min="0" step="any"></div>
+      </div>
+      <div class="calc-out" id="mv-out" aria-live="polite"></div>
+    </div>
+    <p>Per controllare il prezzo medio con pi&ugrave; acquisti a prezzi diversi puoi usare il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio delle azioni</a>; per i criteri fiscali (costo medio ponderato o LIFO) vedi la guida al <a class="inline" href="/blog/prezzo-medio-di-carico-tasse">prezzo medio di carico e tasse</a>.</p>
+
+    <h3>Quattro cautele prima di farlo</h3>
+    <ul>
+      <li><strong>Stesso deposito</strong>: in regime amministrato la plusvalenza deve nascere sul deposito dove si trova la minusvalenza, altrimenti non si compensano.</li>
+      <li><strong>Esecuzione ravvicinata</strong>: vendi e ricompra a pochi minuti di distanza, in orari di mercato liquidi, per non esporti a un movimento di prezzo tra le due operazioni.</li>
+      <li><strong>Entro l'anno</strong>: conta la data dell'operazione nell'anno solare. Non aspettare gli ultimi giorni di dicembre, quando i mercati chiudono prima e la liquidit&agrave; &egrave; bassa.</li>
+      <li><strong>Costi proporzionati</strong>: con una minusvalenza piccola (qualche decina di euro) commissioni e spread possono mangiarsi il beneficio.</li>
+    </ul>
+
+    <h2>Il problema degli ETF</h2>
+    <p>Qui molti investitori scoprono una brutta sorpresa. Per gli ETF e i fondi armonizzati il fisco italiano tratta i due casi in modo asimmetrico:</p>
+    <ul>
+      <li>le <strong>perdite</strong> sono <em>redditi diversi</em>: generano minusvalenze che finiscono nello zainetto;</li>
+      <li>i <strong>guadagni</strong> sono <em>redditi di capitale</em>: sono tassati per intero al 26% e <strong>non possono essere compensati</strong> con le minusvalenze.</li>
+    </ul>
+    <p>Chi investe solo in ETF, quindi, non pu&ograve; recuperare le minusvalenze vendendo e ricomprando i propri ETF in guadagno: pagherebbe il 26% sulla plusvalenza e lo zainetto resterebbe pieno. Nell'esempio di prima, se le 200 quote fossero di un ETF, la vendita costerebbe 780 &euro; di tasse e i 3.000 &euro; di minusvalenza scadrebbero comunque.</p>
+    <p>Per usare le minusvalenze servono plusvalenze classificate come redditi diversi, che nascono per esempio da:</p>
+    <ul>
+      <li><strong>azioni</strong> singole;</li>
+      <li><strong>obbligazioni e titoli di Stato</strong> venduti prima della scadenza (con l'avvertenza del paragrafo successivo);</li>
+      <li><strong>ETC ed ETN</strong>, per esempio quelli sulle materie prime;</li>
+      <li><strong>certificati</strong> e strumenti derivati.</li>
+    </ul>
+    <p>Se hai minusvalenze consistenti e investi solo in ETF, ha senso valutare se una parte del portafoglio possa essere tenuta con uno di questi strumenti, a patto che abbia senso anche dal punto di vista dell'investimento e del rischio: non vale la pena comprare uno strumento che non conosci solo per recuperare un credito fiscale. Anche i <strong>dividendi e le cedole</strong> sono redditi di capitale: non si compensano mai con le minusvalenze. Il discorso sul costo fiscale degli ETF nel lungo periodo lo trovi nella guida al <a class="inline" href="/blog/pac-etf-rendimento-netto">rendimento netto di un PAC in ETF</a>.</p>
+
+    <!-- SLOT 2: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Titoli di Stato: la compensazione vale meno della met&agrave;</h2>
+    <p>I guadagni sui titoli di Stato italiani e dei Paesi della white list sono tassati al 12,5% invece che al 26%. Per mantenere questo vantaggio, le plusvalenze e le minusvalenze su questi titoli entrano nella compensazione solo per il <strong>48,08%</strong> del loro valore (cio&egrave; 12,5 diviso 26).</p>
+    <div class="formula-box">
+      Plusvalenza su BTP = 2.000 &euro;<br>
+      Parte compensabile = 2.000 &times; 48,08% = 961,60 &euro;<br>
+      Minusvalenza usata = 961,60 &euro; &rarr; imposta risparmiata = 250 &euro;
+      <span>Il risparmio (250 &euro;) &egrave; esattamente il 12,5% della plusvalenza: realizzare guadagni su BTP consuma meno di met&agrave; della minusvalenza.</span>
+    </div>
+    <p>Quindi i titoli di Stato possono aiutare, ma servono plusvalenze circa doppie per assorbire la stessa minusvalenza. Vale anche al contrario: una perdita su un BTP genera una minusvalenza pari solo al 48,08% della perdita.</p>
+
+    <h2>Se hai pi&ugrave; broker o cambi banca</h2>
+    <p>Le minusvalenze di un deposito non passano da sole a un altro. Se chiudi il rapporto con un intermediario, puoi chiedere la <strong>certificazione delle minusvalenze</strong> residue: puoi consegnarla a un nuovo intermediario, per un deposito con la stessa intestazione, oppure usarla nella dichiarazione dei redditi (quadro RT del modello Redditi).</p>
+    <p>In <strong>regime dichiarativo</strong>, tipico di chi usa broker esteri, sei tu a fare i conti nel quadro RT: puoi compensare plusvalenze e minusvalenze realizzate presso intermediari diversi, sempre entro i quattro anni e con le stesse regole su ETF e titoli di Stato. Per evitare errori, in questo caso conviene farsi seguire da un commercialista.</p>
+
+    <h2>Domande frequenti</h2>
+    <h3>Posso ricomprare lo stesso titolo subito dopo averlo venduto?</h3>
+    <p>S&igrave;. In Italia non c'&egrave; un divieto di riacquisto entro un certo periodo: la plusvalenza realizzata con la vendita &egrave; valida ai fini fiscali e il nuovo acquisto entra nel prezzo medio di carico al prezzo pagato.</p>
+    <h3>Le minusvalenze di un ETF possono compensare le plusvalenze delle azioni?</h3>
+    <p>S&igrave;. La perdita su un ETF &egrave; un reddito diverso e si compensa con le plusvalenze su azioni, obbligazioni, ETC, certificati e derivati. &Egrave; il contrario che non funziona: il guadagno su un ETF non assorbe le minusvalenze.</p>
+    <h3>Come faccio a sapere quanto ho nello zainetto?</h3>
+    <p>In regime amministrato lo indica l'intermediario nel rendiconto fiscale o nell'area clienti, con l'importo e l'anno di scadenza di ogni minusvalenza. Se non lo trovi, chiedilo all'assistenza: &egrave; un dato che la banca deve tenere aggiornato.</p>
+    <h3>Conviene vendere in perdita a fine anno per creare minusvalenze?</h3>
+    <p>Solo se avresti venduto comunque o se la minusvalenza ti serve davvero per compensare plusvalenze gi&agrave; realizzate o prevedibili. Vendere un buon titolo solo per il beneficio fiscale ha costi e rischi, e il credito vale solo se riuscirai a usarlo entro quattro anni.</p>
+    <p><em>Questo articolo ha scopo informativo e non costituisce consulenza fiscale o finanziaria personalizzata. Le regole descritte valgono per persone fisiche residenti in Italia; per la tua situazione verifica con il tuo intermediario o con un commercialista.</em></p>
+
+    <div class="cta-box">
+      <p>Calcola il nuovo prezzo medio di carico dopo vendite e riacquisti.</p>
+      <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">&#128290; Apri il calcolatore del prezzo medio &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatori</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly &rarr;</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/tassazione-plusvalenze-trading" class="post-link"><div class="post-link-title">Tassazione plusvalenze trading: aliquota, minusvalenze e bollo</div></a>
+      <a href="/blog/prezzo-medio-di-carico-tasse" class="post-link"><div class="post-link-title">Prezzo medio di carico e tasse: costo medio ponderato o LIFO</div></a>
+      <a href="/blog/pac-etf-rendimento-netto" class="post-link"><div class="post-link-title">PAC in ETF: quanto resta davvero dopo costi, bollo e tasse</div></a>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var ids=['mv-min','mv-qty','mv-pc','mv-px','mv-comm'];
+  var out=document.getElementById('mv-out'); if(!out) return;
+  var f=function(n,d){return n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d});};
+  function v(id){var x=parseFloat(String(document.getElementById(id).value).replace(',','.'));return isNaN(x)?0:x;}
+  function calc(){
+    var m=v('mv-min'),n=Math.floor(v('mv-qty')),pc=v('mv-pc'),px=v('mv-px'),c=v('mv-comm');
+    var g=px-pc;
+    if(m<=0||n<=0||pc<=0||px<=0){out.innerHTML='Inserisci valori maggiori di zero.';return;}
+    if(g<=0){out.innerHTML='Il titolo non &egrave; in guadagno: vendendolo non realizzi una plusvalenza utile a compensare.';return;}
+    var q=Math.ceil((m+c)/g), warn='';
+    if(q>n){q=n;warn='<div class="calc-warn">Anche vendendo tutte le azioni non assorbi l&apos;intera minusvalenza: ne restano '+f(m-(n*g-c),2)+' &euro; da compensare con altri titoli.</div>';}
+    var plus=q*g-c, used=Math.max(0,Math.min(plus,m)), extra=Math.max(0,plus-m);
+    var pm=((n-q)*pc+q*px+c)/n;
+    var html='Azioni da vendere e ricomprare: <strong>'+f(q,0)+'</strong><br>Plusvalenza realizzata: '+f(plus,2)+' &euro; (compensata: '+f(used,2)+' &euro;)<br>Imposta risparmiata (26%): <strong>'+f(used*0.26,2)+' &euro;</strong>';
+    if(extra>0) html+='<br>Imposta sulla parte eccedente: '+f(extra*0.26,2)+' &euro;';
+    html+='<br>Commissioni (vendita + riacquisto): '+f(2*c,2)+' &euro;<br>Nuovo prezzo medio di carico: '+f(pm,2)+' &euro;';
+    out.innerHTML=html+warn;
+  }
+  ids.forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
