@@ -105,6 +105,8 @@
     .calc-out{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--text2);line-height:1.9}
     .calc-out strong{color:var(--accent);font-size:1.05rem}
     .calc-warn{color:#e0a43a;font-size:0.82rem;margin-top:0.5rem}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}}
   </style>
 </head>
 <body>

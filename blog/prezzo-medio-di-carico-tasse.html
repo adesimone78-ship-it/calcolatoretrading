@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prezzo medio di carico e tasse: costo medio ponderato o LIFO | CalcolatoreTrading.it</title>
-  <meta name="description" content="Come si calcola il costo fiscale delle azioni vendute in Italia: costo medio ponderato in regime amministrato, LIFO in dichiarativo, commissioni, ETF e cambio. Esempio numerico completo." />
+  <title>Prezzo Medio di Carico e Tasse: come si calcola la plusvalenza (esempi)</title>
+  <meta name="description" content="Quante tasse paghi vendendo una parte delle azioni? Prezzo medio fiscale, costo medio ponderato o LIFO, commissioni ed ETF, con un esempio calcolato euro per euro." />
   <meta name="keywords" content="prezzo medio di carico, costo fiscale azioni, costo medio ponderato, LIFO regime dichiarativo, plusvalenza vendita parziale, commissioni costo fiscale" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Prezzo medio di carico e tasse: costo medio ponderato o LIFO" />
+  <meta property="og:title" content="Prezzo medio di carico e tasse: come si calcola la plusvalenza (esempi)" />
   <meta property="og:description" content="Costo medio ponderato o LIFO, commissioni incluse: esempio numerico completo su quanto si paga di tasse vendendo una parte delle azioni." />
   <meta property="og:url" content="https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse" />
   <meta property="og:locale" content="it_IT" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Prezzo medio di carico e tasse: costo medio ponderato o LIFO","description":"Costo medio ponderato o LIFO, commissioni incluse: esempio numerico completo su quanto si paga di tasse vendendo una parte delle azioni.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://calcolatoretrading.it/"},"datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Prezzo medio di carico e tasse: come si calcola la plusvalenza (esempi)","description":"Costo medio ponderato o LIFO, commissioni incluse: esempio numerico completo su quanto si paga di tasse vendendo una parte delle azioni.","author":{"@type":"Organization","name":"CalcolatoreTrading.it"},"publisher":{"@type":"Organization","name":"CalcolatoreTrading.it","url":"https://calcolatoretrading.it/"},"datePublished":"2026-09-24","dateModified":"2026-10-15","inLanguage":"it","mainEntityOfPage":{"@type":"WebPage","@id":"https://calcolatoretrading.it/blog/prezzo-medio-di-carico-tasse"}}</script>
 
   <!-- GOOGLE ADSENSE -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
@@ -96,6 +96,8 @@
     .btn-sm:hover{opacity:0.85}
       /* nav secondari: niente comportamento "sticky" della barra principale */
     nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}.article{min-width:0;max-width:100%}.article table{display:block;overflow-x:auto}}
   </style>
 </head>
 <body>
@@ -123,8 +125,13 @@
     <div class="post-tag">Fiscalit&agrave;</div>
     <h1>Prezzo medio di carico e tasse: perch&eacute; la plusvalenza del broker non coincide con la tua</h1>
     <div class="post-meta">
-      <span>24 settembre 2026</span>
+      <span>24 settembre 2026 · aggiornato il 15 ottobre 2026</span>
       <span>8 min di lettura</span>
+    </div>
+
+    <div class="cta-box" style="margin:0 0 2rem">
+      <p>Ti serve solo il numero? Calcola il tuo prezzo medio di carico in pochi secondi, con tutti i tuoi acquisti.</p>
+      <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">Calcola il tuo PMC →</a>
     </div>
 
     <p>Chi compra la stessa azione in pi&ugrave; momenti, per esempio facendo un piano di accumulo o mediando una posizione in perdita, prima o poi si trova davanti a una domanda concreta: vendo una parte delle azioni, quanto pagher&ograve; di tasse? E spesso il numero che si aspetta non coincide con quello che il broker trattiene. Il motivo non &egrave; un errore del broker: in Italia il costo fiscale delle azioni vendute si calcola con regole diverse a seconda del regime fiscale, e le commissioni entrano nel conto. In questa guida vediamo le regole con un esempio numerico completo, calcolato euro per euro.</p>
