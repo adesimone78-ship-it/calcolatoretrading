@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recuperare una perdita in borsa: quanto deve risalire il titolo | CalcolatoreTrading.it</title>
+  <meta name="description" content="Se un titolo perde il 30% serve un +42,9% per tornare in pari: formula, tabella perdita-recupero, anni necessari, cosa succede al rischio se medi al ribasso e un mini calcolatore." />
+  <meta name="keywords" content="recuperare perdita azioni, quanto deve salire un titolo per tornare in pari, recupero perdita percentuale, mediare al ribasso, mediare azioni in perdita, prezzo di pareggio, tornare in pari borsa" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/recuperare-perdita-azioni" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Recuperare una perdita in borsa: quanto deve risalire il titolo (e cosa cambia se medi)" />
+  <meta property="og:description" content="Formula, tabella perdita-recupero, tempi e rischio del mediare al ribasso, con mini calcolatore." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/recuperare-perdita-azioni" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Recuperare una perdita in borsa: quanto deve risalire il titolo (e cosa cambia se medi)", "description": "Se un titolo perde il 30% serve un +42,9% per tornare in pari: formula, tabella perdita-recupero, anni necessari, cosa succede al rischio se medi al ribasso e un mini calcolatore.", "author": {"@type": "Organization", "name": "CalcolatoreTrading.it"}, "publisher": {"@type": "Organization", "name": "CalcolatoreTrading.it", "url": "https://calcolatoretrading.it/"}, "datePublished": "2026-10-20", "dateModified": "2026-10-20", "inLanguage": "it-IT", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://calcolatoretrading.it/blog/recuperare-perdita-azioni"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Se un'azione perde il 50%, quanto deve salire per tornare in pari?", "acceptedAnswer": {"@type": "Answer", "text": "Deve raddoppiare: +100%. Da 50 euro a 25 euro è -50%, ma da 25 a 50 euro è +100%."}}, {"@type": "Question", "name": "Mediare abbassa la perdita?", "acceptedAnswer": {"@type": "Answer", "text": "No, abbassa il prezzo di pareggio. La perdita in euro nel momento in cui medi resta la stessa; da lì in poi ogni movimento del prezzo pesa di più perché hai più azioni."}}, {"@type": "Question", "name": "Meglio mediare o vendere e comprare un altro titolo?", "acceptedAnswer": {"@type": "Answer", "text": "Dipende da quale dei due ha prospettive migliori da oggi in poi: il prezzo a cui hai comprato non conta per il futuro del titolo. Se vendi in perdita, la minusvalenza resta utilizzabile per quattro anni contro plusvalenze future (non quelle degli ETF)."}}, {"@type": "Question", "name": "Quante azioni devo comprare per abbassare il prezzo medio a un certo livello?", "acceptedAnswer": {"@type": "Answer", "text": "Lo calcola il calcolatore del prezzo medio di CalcolatoreTrading.it, che ha una sezione dedicata a quante azioni comprare per mediare."}}]}]}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    .calc-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:1.75rem 0;font-family:'Syne',sans-serif}
+    .calc-box h3{margin-top:0 !important}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem}
+    @media(max-width:600px){.calc-grid{grid-template-columns:1fr}}
+    .calc-grid label{display:block;font-size:0.78rem;color:var(--text2);margin-bottom:4px}
+    .calc-grid input{width:100%;padding:9px 11px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:'Syne',sans-serif;font-size:0.9rem}
+    .calc-out{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--text2);line-height:1.9}
+    .calc-out strong{color:var(--accent);font-size:1.05rem}
+    .calc-warn{color:#e0a43a;font-size:0.82rem;margin-top:0.5rem}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Recuperare una perdita</span>
+    </nav>
+    <div class="post-tag">Gestione del rischio</div>
+    <h1>Recuperare una perdita in borsa: quanto deve risalire il titolo (e cosa cambia se medi)</h1>
+    <div class="post-meta">
+      <span>20 ottobre 2026</span>
+      <span>7 min di lettura</span>
+    </div>
+    <p>Un titolo che perde il 30% non torna in pari con un rialzo del 30%: gli serve un <strong>+42,9%</strong>. È la regola più sottovalutata di chi investe, e spiega perché tante posizioni in perdita restano in portafoglio per anni. In questa guida vediamo la formula, la tabella pronta, quanto tempo serve per recuperare e cosa succede davvero al rischio quando provi ad accorciare la strada <strong>mediando al ribasso</strong>.</p>
+
+    <h2>La formula del recupero</h2>
+    <p>Perdita e recupero si calcolano su basi diverse: la perdita si misura sul prezzo di partenza, il recupero sul prezzo già sceso, che è più basso. Per questo il rialzo necessario è sempre più grande della perdita:</p>
+    <div class="formula-box">
+      Rialzo necessario = perdita &divide; (1 &minus; perdita)
+      <span>Con la perdita espressa in decimali: &minus;30% &rarr; 0,30 &divide; 0,70 = 0,4286, cioè +42,86%.</span>
+    </div>
+    <div class="example-box">
+      <div class="example-box-title">Esempio</div>
+      <p>Compri 100 azioni a <strong>50 &euro;</strong> (5.000 &euro;). Il titolo scende a <strong>35 &euro;</strong>: la posizione vale 3.500 &euro;, perdita del 30%.</p>
+      <p>Per tornare a 50 &euro; il prezzo deve salire di 15 &euro; partendo da 35: 15 &divide; 35 = <strong>+42,9%</strong>.</p>
+    </div>
+
+    <h2>La tabella: perdita e rialzo necessario</h2>
+    <p>Fino al 10-15% la differenza è piccola; oltre il 30% cresce in fretta, e sopra il 50% il recupero richiede di raddoppiare o più. La terza e la quarta colonna mostrano quanti anni servono se, dopo la caduta, il titolo cresce a un ritmo costante del 5% o del 7% l'anno (un'ipotesi, non una previsione).</p>
+    <table>
+      <thead><tr><th>Perdita</th><th>Rialzo per tornare in pari</th><th>Anni al 7% annuo</th><th>Anni al 5% annuo</th></tr></thead>
+      <tbody>
+        <tr><td>&minus;10%</td><td>+11,1%</td><td>1,6</td><td>2,2</td></tr>
+        <tr><td>&minus;20%</td><td>+25,0%</td><td>3,3</td><td>4,6</td></tr>
+        <tr><td>&minus;25%</td><td>+33,3%</td><td>4,3</td><td>5,9</td></tr>
+        <tr><td>&minus;30%</td><td>+42,9%</td><td>5,3</td><td>7,3</td></tr>
+        <tr><td>&minus;40%</td><td>+66,7%</td><td>7,6</td><td>10,5</td></tr>
+        <tr><td>&minus;50%</td><td><strong>+100%</strong></td><td>10,2</td><td>14,2</td></tr>
+        <tr><td>&minus;60%</td><td>+150%</td><td>13,5</td><td>18,8</td></tr>
+        <tr><td>&minus;75%</td><td>+300%</td><td>20,5</td><td>28,4</td></tr>
+        <tr><td>&minus;90%</td><td>+900%</td><td>34,0</td><td>47,2</td></tr>
+      </tbody>
+    </table>
+    <p>Gli anni si calcolano con l'interesse composto: anni = ln(1 + rialzo) &divide; ln(1 + rendimento annuo). Puoi provare altri rendimenti con il <a class="inline" href="/calcolatore-interesse-composto">calcolatore di interesse composto</a>. Il messaggio è semplice: una perdita grande non si recupera "aspettando un po'". Per questo chi fa trading limita le perdite prima che diventino grandi, con lo <a class="inline" href="/blog/stop-loss-take-profit">stop loss</a> e un <a class="inline" href="/blog/position-sizing-quante-azioni-comprare">position sizing</a> che non metta troppo capitale su un solo titolo.</p>
+
+    <!-- SLOT 1: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Mediare al ribasso: la strada si accorcia, il rischio cresce</h2>
+    <p><strong>Mediare</strong> significa comprare altre azioni dello stesso titolo a un prezzo più basso, così il <a class="inline" href="/calcolatore-prezzo-medio-azioni">prezzo medio di carico</a> scende e il punto di pareggio si avvicina. Riprendiamo l'esempio: a 35 &euro; compri altre 100 azioni (3.500 &euro;).</p>
+    <div class="formula-box">
+      Prezzo medio = (100 &times; 50 + 100 &times; 35) &divide; 200 = 42,50 &euro;<br>
+      Rialzo necessario da 35 &euro; = 42,50 &divide; 35 &minus; 1 = +21,4%
+      <span>Il rialzo per tornare in pari si dimezza: da +42,9% a +21,4%. Al 7% annuo, da circa 5,3 a circa 2,9 anni.</span>
+    </div>
+    <p>Fin qui sembra solo un vantaggio. Ma il capitale in quel titolo è passato da 5.000 a <strong>8.500 &euro;</strong>, e ogni euro di movimento del prezzo ora pesa il doppio. Ecco cosa succede nei diversi scenari:</p>
+    <table>
+      <thead><tr><th>Prezzo finale</th><th>Senza mediare (100 az., carico 50 &euro;)</th><th>Mediando (200 az., carico 42,50 &euro;)</th></tr></thead>
+      <tbody>
+        <tr><td>25 &euro;</td><td>&minus;2.500 &euro;</td><td><strong>&minus;3.500 &euro;</strong></td></tr>
+        <tr><td>30 &euro;</td><td>&minus;2.000 &euro;</td><td>&minus;2.500 &euro;</td></tr>
+        <tr><td>35 &euro;</td><td>&minus;1.500 &euro;</td><td>&minus;1.500 &euro;</td></tr>
+        <tr><td>42,50 &euro;</td><td>&minus;750 &euro;</td><td>0 &euro;</td></tr>
+        <tr><td>50 &euro;</td><td>0 &euro;</td><td>+1.500 &euro;</td></tr>
+        <tr><td>60 &euro;</td><td>+1.000 &euro;</td><td>+3.500 &euro;</td></tr>
+      </tbody>
+    </table>
+    <p>Mediare non è né giusto né sbagliato in sé: è una <strong>nuova scommessa</strong>, più grande, sullo stesso titolo. Se il prezzo risale, guadagni prima e di più; se continua a scendere, perdi di più. Sotto i 35 &euro; ogni euro di calo costa 200 &euro; invece di 100.</p>
+
+    <h3>Mini calcolatore: con e senza mediare</h3>
+    <p>Inserisci la tua posizione e quante azioni pensi di aggiungere al prezzo attuale: vedi il rialzo necessario nei due casi, il nuovo prezzo medio e quanto capitale avresti esposto.</p>
+    <div class="calc-box">
+      <h3>Recupero della perdita</h3>
+      <div class="calc-grid">
+        <div><label for="rc-qty">Azioni possedute</label><input id="rc-qty" type="number" inputmode="numeric" value="100" min="0" step="1"></div>
+        <div><label for="rc-pc">Prezzo medio di carico (&euro;)</label><input id="rc-pc" type="number" inputmode="decimal" value="50" min="0" step="any"></div>
+        <div><label for="rc-px">Prezzo attuale (&euro;)</label><input id="rc-px" type="number" inputmode="decimal" value="35" min="0" step="any"></div>
+        <div><label for="rc-add">Azioni da aggiungere (0 = non mediare)</label><input id="rc-add" type="number" inputmode="numeric" value="100" min="0" step="1"></div>
+        <div><label for="rc-rend">Rendimento annuo ipotizzato (%)</label><input id="rc-rend" type="number" inputmode="decimal" value="7" min="0" step="any"></div>
+      </div>
+      <div class="calc-out" id="rc-out" aria-live="polite"></div>
+    </div>
+
+    <h2>Tornare in pari non è tornare in pari "netto"</h2>
+    <p>Il prezzo di pareggio calcolato sopra non considera due cose che contano in euro:</p>
+    <ul>
+      <li><strong>Commissioni</strong>: ogni acquisto aggiunge una commissione al costo. Con 9 &euro; a ordine, nell'esempio mediato paghi 18 &euro; per i due acquisti: il prezzo medio sale a (8.500 + 18) &divide; 200 = <strong>42,59 &euro;</strong>, e servono altri 9 &euro; per vendere.</li>
+      <li><strong>Tasse</strong>: se medi e poi vendi tutto a 50 &euro;, per te sei "solo tornato al prezzo iniziale", ma per il fisco hai una plusvalenza. In regime amministrato l'intermediario usa il costo medio ponderato: 200 &times; (50 &minus; 42,50) = 1.500 &euro; di plusvalenza, tassata al 26% sulle azioni = <strong>390 &euro;</strong>. Senza mediare, vendendo a 50 &euro; non avresti avuto né guadagno né tasse. Le regole complete sono nella guida al <a class="inline" href="/blog/prezzo-medio-di-carico-tasse">prezzo medio di carico e tasse</a>.</li>
+    </ul>
+    <p>Al contrario, se decidi di <strong>chiudere in perdita</strong>, la minusvalenza non è persa: puoi usarla per compensare plusvalenze future su azioni, obbligazioni, ETC e certificati entro quattro anni (non quelle degli ETF). Vedi la guida alle <a class="inline" href="/blog/minusvalenze-in-scadenza-recupero">minusvalenze in scadenza</a>.</p>
+
+    <!-- SLOT 2: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Cinque domande prima di mediare</h2>
+    <ol>
+      <li><strong>Il motivo per cui l'hai comprato è ancora valido?</strong> Se il titolo è sceso per un problema dell'azienda (conti, debito, perdita di un cliente chiave), il prezzo più basso non è uno sconto.</li>
+      <li><strong>Quanto peserebbe il titolo sul portafoglio dopo l'acquisto?</strong> Se una singola azione arriva a pesare un quarto o un terzo di tutto, un altro calo ti farebbe molto male. Il <a class="inline" href="/blog/position-sizing-quante-azioni-comprare">position sizing</a> serve proprio a fissare un limite prima.</li>
+      <li><strong>Stai usando soldi che ti servono o la leva?</strong> Mediare con la <a class="inline" href="/blog/leva-finanziaria-rischi">leva finanziaria</a> moltiplica il rischio di dover chiudere nel momento peggiore.</li>
+      <li><strong>Avevi deciso prima di mediare a quel prezzo?</strong> Un piano scritto ("compro una seconda tranche se scende a X") è diverso da una decisione presa per non vedere la perdita.</li>
+      <li><strong>È un'azione singola o un ETF diversificato?</strong> Un indice ampio difficilmente va a zero; una singola azione sì. Il <a class="inline" href="/blog/dca-dollar-cost-averaging">DCA su un ETF</a> è un piano di acquisti regolari, non un tentativo di salvare una posizione.</li>
+    </ol>
+
+    <h2>Domande frequenti</h2>
+    <h3>Se un'azione perde il 50%, quanto deve salire per tornare in pari?</h3>
+    <p>Deve raddoppiare: +100%. Da 50 &euro; a 25 &euro; è &minus;50%, ma da 25 &euro; a 50 &euro; è +100%.</p>
+    <h3>Mediare abbassa la perdita?</h3>
+    <p>No, abbassa il prezzo di pareggio. La perdita in euro, nel momento in cui medi, resta la stessa; da lì in poi ogni movimento del prezzo pesa di più, nel bene e nel male, perché hai più azioni.</p>
+    <h3>Meglio mediare o vendere e comprare un altro titolo?</h3>
+    <p>Dipende da quale dei due ha prospettive migliori da oggi in poi: il prezzo a cui hai comprato non conta per il futuro del titolo. Se vendi in perdita, la minusvalenza resta utilizzabile per quattro anni contro plusvalenze future (non quelle degli ETF).</p>
+    <h3>Quante azioni devo comprare per abbassare il prezzo medio a un certo livello?</h3>
+    <p>Lo calcola il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a>, che ha anche una sezione dedicata a "quante azioni comprare per mediare".</p>
+    <p><em>Questo articolo ha scopo informativo e non costituisce consulenza finanziaria o fiscale personalizzata. Gli esempi sono semplificati; per la tua situazione valuta con il tuo intermediario o un consulente abilitato.</em></p>
+
+    <div class="cta-box">
+      <p>Calcola il prezzo medio di carico con più acquisti a prezzi diversi.</p>
+      <a href="/calcolatore-prezzo-medio-azioni" class="cta-btn">&#128290; Apri il calcolatore del prezzo medio &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatori</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly &rarr;</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/stop-loss-take-profit" class="post-link"><div class="post-link-title">Stop loss e take profit: come impostarli</div></a>
+      <a href="/blog/prezzo-medio-di-carico-tasse" class="post-link"><div class="post-link-title">Prezzo medio di carico e tasse: costo medio ponderato o LIFO</div></a>
+      <a href="/blog/minusvalenze-in-scadenza-recupero" class="post-link"><div class="post-link-title">Minusvalenze in scadenza: come recuperarle</div></a>
+      <a href="/blog/position-sizing-quante-azioni-comprare" class="post-link"><div class="post-link-title">Position sizing: quante azioni comprare</div></a>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var out=document.getElementById('rc-out'); if(!out) return;
+  var f=function(n,d){return n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d});};
+  function v(id){var x=parseFloat(String(document.getElementById(id).value).replace(',','.'));return isNaN(x)?0:x;}
+  function anni(g,r){ if(g<=0) return '0'; if(r<=0) return '&ndash;'; return f(Math.log(1+g)/Math.log(1+r),1); }
+  function calc(){
+    var q=Math.floor(v('rc-qty')),pc=v('rc-pc'),px=v('rc-px'),a=Math.floor(v('rc-add')),r=v('rc-rend')/100;
+    if(q<=0||pc<=0||px<=0){out.innerHTML='Inserisci valori maggiori di zero.';return;}
+    var loss=(px-pc)/pc, g1=pc/px-1;
+    var html='Variazione attuale: <strong>'+(loss>=0?'+':'')+f(loss*100,1)+'%</strong> ('+f(q*(px-pc),0)+' &euro;)<br>';
+    if(px>=pc){out.innerHTML=html+'Il titolo &egrave; gi&agrave; sopra il prezzo di carico: non c&apos;&egrave; nulla da recuperare.';return;}
+    html+='Senza mediare: serve un rialzo del <strong>+'+f(g1*100,1)+'%</strong> (circa '+anni(g1,r)+' anni al '+f(r*100,1)+'% annuo)<br>';
+    if(a>0){
+      var pm=(q*pc+a*px)/(q+a), g2=pm/px-1;
+      html+='Mediando con '+f(a,0)+' azioni a '+f(px,2)+' &euro;: nuovo prezzo medio <strong>'+f(pm,2)+' &euro;</strong>, rialzo necessario <strong>+'+f(g2*100,1)+'%</strong> (circa '+anni(g2,r)+' anni)<br>';
+      html+='Capitale investito: da '+f(q*pc,0)+' &euro; a <strong>'+f(q*pc+a*px,0)+' &euro;</strong>; ogni euro di calo ora costa '+f(q+a,0)+' &euro; invece di '+f(q,0)+' &euro;';
+      var down=px*0.8, l1=q*(down-pc), l2=(q+a)*(down-pm);
+      html+='<div class="calc-warn">Se il prezzo scendesse ancora del 20% (a '+f(down,2)+' &euro;): perdita '+f(l1,0)+' &euro; senza mediare, '+f(l2,0)+' &euro; mediando.</div>';
+    }
+    out.innerHTML=html;
+  }
+  ['rc-qty','rc-pc','rc-px','rc-add','rc-rend'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
