@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendimento annualizzato (CAGR): come si calcola | CalcolatoreTrading.it</title>
+  <meta name="description" content="Come calcolare il rendimento annualizzato (CAGR) di un investimento: formula, esempi, perché la media dei rendimenti inganna, tasse al 26%, inflazione, PAC con TIR.X e mini calcolatore." />
+  <meta name="keywords" content="rendimento annualizzato, CAGR, come calcolare il rendimento annuo, tasso di crescita annuo composto, rendimento medio annuo, XIRR, TIR.X, rendimento PAC, rendimento reale" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/blog/rendimento-annualizzato-cagr" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Rendimento annualizzato e CAGR: quanto ha reso davvero il tuo investimento" />
+  <meta property="og:description" content="Formula del CAGR, esempi, media aritmetica vs composta, tasse, inflazione e rendimento di un PAC, con mini calcolatore." />
+  <meta property="og:url" content="https://calcolatoretrading.it/blog/rendimento-annualizzato-cagr" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Rendimento annualizzato e CAGR: quanto ha reso davvero il tuo investimento", "description": "Come calcolare il rendimento annualizzato (CAGR) di un investimento: formula, esempi, perché la media dei rendimenti inganna, tasse al 26%, inflazione, PAC con TIR.X e mini calcolatore.", "author": {"@type": "Organization", "name": "CalcolatoreTrading.it"}, "publisher": {"@type": "Organization", "name": "CalcolatoreTrading.it", "url": "https://calcolatoretrading.it/"}, "datePublished": "2026-10-27", "dateModified": "2026-10-27", "inLanguage": "it-IT", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://calcolatoretrading.it/blog/rendimento-annualizzato-cagr"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual è la differenza tra rendimento totale e CAGR?", "acceptedAnswer": {"@type": "Answer", "text": "Il rendimento totale è la crescita complessiva nel periodo (per esempio +40%); il CAGR è il tasso annuo costante che porta allo stesso risultato (+6,96% annuo in 5 anni). Il CAGR permette di confrontare investimenti di durata diversa."}}, {"@type": "Question", "name": "Il CAGR tiene conto dei dividendi?", "acceptedAnswer": {"@type": "Answer", "text": "Solo se il valore finale li include, per esempio se sono stati reinvestiti come negli ETF ad accumulazione o se li aggiungi al valore finale."}}, {"@type": "Question", "name": "Come si calcola il CAGR su Excel?", "acceptedAnswer": {"@type": "Answer", "text": "Con la formula =(B2/A2)^(1/C2)-1, dove A2 è il valore iniziale, B2 quello finale e C2 il numero di anni. Per più versamenti in date diverse usa TIR.X (XIRR)."}}, {"@type": "Question", "name": "Un CAGR del 7% è buono?", "acceptedAnswer": {"@type": "Answer", "text": "Dipende dal rischio preso e dal periodo: va confrontato con un'alternativa simile nello stesso arco di tempo, al netto di costi, tasse e inflazione."}}]}]}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#6b7588;--accent:#00d4a8;--accent-glow:rgba(0,212,168,0.15);--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;font-family:'Syne',sans-serif;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+    .layout{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;padding:2rem 1.5rem}}
+    .breadcrumb{font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--text3);text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+    .post-tag{display:inline-block;font-size:11px;font-family:'Syne',sans-serif;font-weight:500;color:var(--accent);background:var(--accent-glow);border:1px solid rgba(0,212,168,0.2);border-radius:99px;padding:3px 10px;letter-spacing:0.05em;margin-bottom:1rem}
+    h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);letter-spacing:-0.02em;color:var(--text);line-height:1.1;margin-bottom:1rem}
+    .post-meta{display:flex;gap:1.5rem;font-size:14px;font-family:'Syne',sans-serif;color:var(--text3);margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+    .article h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.2;color:var(--text);margin:2.5rem 0 0.75rem}
+    .article h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;line-height:1.25;color:var(--text);margin:2rem 0 0.5rem}
+    .article p{color:var(--text2);margin-bottom:1.1rem;font-size:1rem;line-height:1.8}
+    .article strong{color:var(--text);font-weight:600}
+    .article a.inline{color:var(--accent);text-decoration:none}
+    .article a.inline:hover{text-decoration:underline}
+    .article ul,.article ol{margin:0.5rem 0 1.25rem 1.5rem}
+    .article ul li,.article ol li{color:var(--text2);margin-bottom:0.4rem;font-size:1rem;line-height:1.8}
+    .article table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-family:'Syne',sans-serif;font-size:0.85rem}
+    .article table th,.article table td{border:1px solid var(--border2);padding:10px 12px;text-align:left;color:var(--text2)}
+    .article table th{background:var(--bg2);color:var(--text);font-weight:600}
+    .article table tr:nth-child(even) td{background:rgba(255,255,255,0.02)}
+    .formula-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.5rem 0;font-family:monospace;font-size:1rem;color:var(--accent);line-height:1.8}
+    .formula-box span{color:var(--text2);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.9rem;display:block;margin-top:0.5rem}
+    .example-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin:1.5rem 0}
+    .example-box-title{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.05em;text-transform:uppercase}
+    .example-box p{margin-bottom:0.5rem;font-size:0.95rem}
+    .example-box p:last-child{margin-bottom:0}
+    .cta-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:2.5rem 0;text-align:center}
+    .cta-box p{color:var(--text2);font-size:0.95rem;margin-bottom:1rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#021a14;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;padding:11px 22px;border-radius:var(--radius);text-decoration:none;transition:background 0.2s}
+    .cta-btn:hover{background:#00eabe}
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{margin:2rem 0}
+    .sidebar{display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;margin-bottom:7px;transition:border-color 0.2s}
+    .tool-link:last-child{margin-bottom:0}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text)}
+    .post-link{display:block;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .post-link:last-child{border-bottom:none}
+    .post-link-title{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text2);line-height:1.4;transition:color 0.2s}
+    .post-link:hover .post-link-title{color:var(--text)}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3)}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;font-family:'Syne',sans-serif;color:var(--text3);text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+    @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#7a8599;--accent:#009e7e;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    .calc-box{background:var(--bg2);border:1px solid rgba(0,212,168,0.3);border-radius:var(--radius-lg);padding:1.5rem;margin:1.75rem 0;font-family:'Syne',sans-serif}
+    .calc-box h3{margin-top:0 !important}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem 1.2rem}
+    @media(max-width:600px){.calc-grid{grid-template-columns:1fr}}
+    .calc-grid label{display:block;font-size:0.78rem;color:var(--text2);margin-bottom:4px}
+    .calc-grid input{width:100%;padding:9px 11px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:'Syne',sans-serif;font-size:0.9rem}
+    .calc-out{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--text2);line-height:1.9}
+    .calc-out strong{color:var(--accent);font-size:1.05rem}
+    .calc-warn{color:#e0a43a;font-size:0.82rem;margin-top:0.5rem}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="layout">
+  <article class="article">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>&rsaquo;</span>
+      <a href="/blog">Blog</a><span>&rsaquo;</span>
+      <span>Rendimento annualizzato (CAGR)</span>
+    </nav>
+    <div class="post-tag">Calcoli</div>
+    <h1>Rendimento annualizzato e CAGR: quanto ha reso davvero il tuo investimento</h1>
+    <div class="post-meta">
+      <span>27 ottobre 2026</span>
+      <span>7 min di lettura</span>
+    </div>
+    <p>"Ho guadagnato il 40%": detto così non vuol dire molto. Un +40% in due anni è un ottimo risultato, in dieci anni è poco più di un conto deposito. Per confrontare investimenti diversi serve il <strong>rendimento annualizzato</strong>, cioè il <strong>CAGR</strong> (Compound Annual Growth Rate, tasso di crescita annuo composto). In questa guida vediamo come si calcola, perché la media dei rendimenti annui inganna, come tenere conto di tasse e inflazione e cosa usare quando hai fatto più versamenti, come in un PAC.</p>
+
+    <h2>La formula del CAGR</h2>
+    <p>Il CAGR risponde a una domanda semplice: <em>a quale tasso costante sarebbe dovuto crescere il capitale, anno dopo anno, per arrivare dal valore iniziale a quello finale?</em></p>
+    <div class="formula-box">
+      CAGR = (Valore finale &divide; Valore iniziale)<sup>1/anni</sup> &minus; 1
+      <span>Gli anni possono essere anche frazionari: 18 mesi = 1,5 anni, 400 giorni = 400 &divide; 365 = 1,1 anni.</span>
+    </div>
+    <div class="example-box">
+      <div class="example-box-title">Esempio</div>
+      <p>Investi <strong>10.000 &euro;</strong> e dopo <strong>5 anni</strong> hai <strong>14.000 &euro;</strong>. Il rendimento totale è +40%.</p>
+      <p>CAGR = (14.000 &divide; 10.000)<sup>1/5</sup> &minus; 1 = 1,4<sup>0,2</sup> &minus; 1 = <strong>6,96% annuo</strong>.</p>
+      <p>Verifica: 10.000 &times; 1,0696<sup>5</sup> &asymp; 14.000 &euro;. Puoi rifare il conto al contrario con il <a class="inline" href="/calcolatore-interesse-composto">calcolatore di interesse composto</a>.</p>
+    </div>
+    <p>Il CAGR <strong>non</strong> è il rendimento totale diviso per gli anni: 40% &divide; 5 = 8% sovrastima il risultato, perché ignora che ogni anno i guadagni si sommano al capitale. Lo stesso +50% vale un CAGR del <strong>14,5%</strong> se ottenuto in 3 anni e del <strong>5,2%</strong> se ottenuto in 8.</p>
+
+    <h2>Perché la media dei rendimenti annui inganna</h2>
+    <p>Un investimento fa +50% il primo anno e &minus;50% il secondo. La media aritmetica è 0%, quindi sembra che tu sia in pari. In realtà 10.000 &euro; diventano 15.000 e poi 7.500 &euro;: hai perso il 25%, e il CAGR è &minus;13,4% annuo.</p>
+    <table>
+      <thead><tr><th>Anno</th><th>Rendimento</th><th>Capitale</th></tr></thead>
+      <tbody>
+        <tr><td>Inizio</td><td>&ndash;</td><td>10.000 &euro;</td></tr>
+        <tr><td>1</td><td>+50%</td><td>15.000 &euro;</td></tr>
+        <tr><td>2</td><td>&minus;50%</td><td><strong>7.500 &euro;</strong></td></tr>
+        <tr><td colspan="2">Media aritmetica dei rendimenti</td><td>0%</td></tr>
+        <tr><td colspan="2">CAGR</td><td><strong>&minus;13,4% annuo</strong></td></tr>
+      </tbody>
+    </table>
+    <p>È lo stesso motivo per cui dopo una perdita serve un rialzo più grande per tornare in pari (lo vedi nella guida su <a class="inline" href="/blog/recuperare-perdita-azioni">quanto deve risalire un titolo per recuperare una perdita</a>). Quando leggi "rendimento medio annuo" in una pubblicità o in una scheda prodotto, controlla se è una media aritmetica o un CAGR: la prima, con anni molto volatili, fa sembrare il risultato migliore di quello reale.</p>
+
+    <!-- SLOT 1: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 1 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h3>Mini calcolatore del CAGR</h3>
+    <p>Inserisci quanto hai investito, quanto vale oggi e per quanto tempo: vedi il rendimento totale, il CAGR lordo e una stima netta se vendessi oggi pagando le tasse sulla plusvalenza.</p>
+    <div class="calc-box">
+      <h3>Rendimento annualizzato</h3>
+      <div class="calc-grid">
+        <div><label for="cg-vi">Valore iniziale (&euro;)</label><input id="cg-vi" type="number" inputmode="decimal" value="10000" min="0" step="any"></div>
+        <div><label for="cg-vf">Valore finale (&euro;)</label><input id="cg-vf" type="number" inputmode="decimal" value="14000" min="0" step="any"></div>
+        <div><label for="cg-y">Anni</label><input id="cg-y" type="number" inputmode="numeric" value="5" min="0" step="1"></div>
+        <div><label for="cg-m">Mesi in più</label><input id="cg-m" type="number" inputmode="numeric" value="0" min="0" max="11" step="1"></div>
+        <div><label for="cg-tax">Aliquota sulla plusvalenza</label><select id="cg-tax" style="width:100%;padding:9px 11px;border-radius:var(--radius);border:1px solid var(--border2);background:var(--bg3);color:var(--text);font-family:'Syne',sans-serif;font-size:0.9rem"><option value="0.26">26% (azioni, ETF, fondi)</option><option value="0.125">12,5% (titoli di Stato)</option><option value="0">Nessuna (solo lordo)</option></select></div>
+        <div><label for="cg-inf">Inflazione media annua (%)</label><input id="cg-inf" type="number" inputmode="decimal" value="2" min="0" step="any"></div>
+      </div>
+      <div class="calc-out" id="cg-out" aria-live="polite"></div>
+    </div>
+
+    <h2>Al netto di tasse, bollo e inflazione</h2>
+    <p>Il CAGR calcolato sui valori del conto è un rendimento <strong>lordo</strong>. Per sapere quanto ti resta davvero ci sono tre correzioni.</p>
+    <ul>
+      <li><strong>Tasse sulla plusvalenza</strong>: in Italia il guadagno su azioni, ETF e fondi è tassato al 26%, quello sui titoli di Stato italiani ed esteri della white list al 12,5%. Nell'esempio, vendendo dopo 5 anni paghi il 26% su 4.000 &euro; = 1.040 &euro;: ti restano 12.960 &euro; e il CAGR netto scende al <strong>5,32%</strong>. Le regole complete sono nella guida alla <a class="inline" href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>.</li>
+      <li><strong>Imposta di bollo</strong>: lo 0,20% annuo sul valore del deposito titoli, per le persone fisiche, si paga ogni anno anche se non vendi. Se l'hai pagata a parte, toglila dal risultato: vale grosso modo 0,2 punti di CAGR in meno.</li>
+      <li><strong>Inflazione</strong>: il rendimento reale si calcola con (1 + CAGR) &divide; (1 + inflazione) &minus; 1. Con un CAGR del 6,96% e un'inflazione media del 2% il rendimento reale è il <strong>4,86%</strong>, non il 4,96% che si otterrebbe con una semplice sottrazione.</li>
+    </ul>
+    <p>Un esempio completo con TER, bollo e tasse su un piano di accumulo lo trovi nella guida <a class="inline" href="/blog/pac-etf-rendimento-netto">PAC in ETF: quanto resta davvero</a>.</p>
+
+    <h2>Se hai fatto più versamenti: il CAGR non basta</h2>
+    <p>La formula del CAGR funziona con <strong>un solo versamento</strong> iniziale. Con un PAC o con aggiunte e prelievi nel tempo, ogni euro è rimasto investito per un periodo diverso, e dividere il guadagno per il totale versato dà un numero fuorviante.</p>
+    <div class="example-box">
+      <div class="example-box-title">Esempio con tre versamenti</div>
+      <p>Versi <strong>1.000 &euro;</strong> a inizio 2023, 1.000 &euro; a inizio 2024 e 1.000 &euro; a inizio 2025. A inizio 2026 il conto vale <strong>3.600 &euro;</strong>.</p>
+      <p>Guadagno su versato: 600 &divide; 3.000 = 20%. Ma il primo versamento è stato investito tre anni, l'ultimo solo uno.</p>
+      <p>Il rendimento annuo che tiene conto delle date (tasso interno di rendimento) è circa il <strong>9,4% annuo</strong>: è il tasso al quale 1.000 &euro; per 3 anni + 1.000 &euro; per 2 anni + 1.000 &euro; per 1 anno arrivano esattamente a 3.600 &euro;.</p>
+    </div>
+    <p>Questo rendimento "pesato sui soldi" (in inglese money-weighted return) si calcola facilmente con un foglio di calcolo. Metti in una colonna le date e in un'altra i movimenti: versamenti con il segno meno, valore attuale con il segno più nell'ultima riga. Poi usa la funzione <strong>XIRR</strong>, che nell'Excel in italiano si chiama <strong>TIR.X</strong>. Il risultato è già annualizzato e confrontabile con il CAGR di un investimento a versamento unico.</p>
+
+    <!-- SLOT 2: In-article -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 2 — In-article -->
+      <ins class="adsbygoogle" style="display:block;text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1145255592067202" data-ad-slot="4333580337"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div></div>
+
+    <h2>Tre errori comuni</h2>
+    <ol>
+      <li><strong>Annualizzare periodi brevi</strong>: un +5% in un mese diventa un CAGR di circa l'80% annuo. Il calcolo è giusto, il messaggio no: su periodi sotto l'anno il CAGR amplifica il caso e non dice nulla sul futuro.</li>
+      <li><strong>Confrontare lordo con netto</strong>: il rendimento di un conto deposito è spesso indicato lordo (prima del 26% e del bollo), quello di un ETF nei grafici del broker è lordo di tasse ma già al netto del TER. Confronta sempre numeri calcolati allo stesso modo.</li>
+      <li><strong>Usare il prezzo medio di carico come valore iniziale con più acquisti</strong>: il <a class="inline" href="/calcolatore-prezzo-medio-azioni">prezzo medio di carico</a> serve per sapere quanto hai guadagnato in euro e per le tasse; per il rendimento annuo con più acquisti in date diverse serve il tasso interno di rendimento visto sopra.</li>
+    </ol>
+
+    <h2>Domande frequenti</h2>
+    <h3>Qual è la differenza tra rendimento totale e CAGR?</h3>
+    <p>Il rendimento totale è la crescita complessiva nel periodo (per esempio +40%); il CAGR è il tasso annuo costante che porta allo stesso risultato (+6,96% annuo in 5 anni). Il CAGR permette di confrontare investimenti di durata diversa.</p>
+    <h3>Il CAGR tiene conto dei dividendi?</h3>
+    <p>Solo se il valore finale li include: per esempio se sono stati reinvestiti, come negli ETF ad accumulazione, o se li aggiungi al valore finale. Con il solo prezzo del titolo, il CAGR sottostima il rendimento di un'azione che paga dividendi.</p>
+    <h3>Come si calcola il CAGR su Excel?</h3>
+    <p>Con la formula =(B2/A2)^(1/C2)-1, dove A2 è il valore iniziale, B2 quello finale e C2 il numero di anni. Per più versamenti in date diverse usa TIR.X (XIRR).</p>
+    <h3>Un CAGR del 7% è buono?</h3>
+    <p>Dipende dal rischio preso e dal periodo: va confrontato con un'alternativa simile nello stesso arco di tempo, al netto di costi, tasse e inflazione. Un rendimento passato non garantisce quelli futuri.</p>
+    <p><em>Questo articolo ha scopo informativo e non costituisce consulenza finanziaria o fiscale personalizzata. Gli esempi sono semplificati; per la tua situazione valuta con il tuo intermediario o un consulente abilitato.</em></p>
+
+    <div class="cta-box">
+      <p>Vuoi vedere dove arriva un capitale a un certo tasso annuo?</p>
+      <a href="/calcolatore-interesse-composto" class="cta-btn">&#128200; Apri il calcolatore di interesse composto &rarr;</a>
+    </div>
+
+    <!-- SLOT 3: Fine articolo -->
+    <div class="ad-wrap"><div class="ad-slot">
+      <!-- ADSENSE SLOT 3 — Responsive Display
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div></div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="side-card">
+      <div class="side-title">Calcolatori</div>
+      <a href="/calcolatore-criterio-kelly" class="tool-link"><span class="tool-link-name">&#9878;&#65039; Criterio di Kelly &rarr;</span></a>
+      <a href="/calcolatore-prezzo-medio-azioni" class="tool-link"><span class="tool-link-name">&#128290; Prezzo medio</span></a>
+      <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
+    </div>
+
+    <!-- SLOT 4: Sidebar -->
+    <div class="ad-slot">
+      <!-- ADSENSE SLOT 4 — Sidebar 300x250
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+    </div>
+
+    <div class="side-card">
+      <div class="side-title">Altri articoli</div>
+      <a href="/blog/recuperare-perdita-azioni" class="post-link"><div class="post-link-title">Recuperare una perdita: quanto deve risalire il titolo</div></a>
+      <a href="/blog/prezzo-medio-di-carico-tasse" class="post-link"><div class="post-link-title">Prezzo medio di carico e tasse: costo medio ponderato o LIFO</div></a>
+      <a href="/blog/interesse-composto-investimenti" class="post-link"><div class="post-link-title">Interesse composto: come funziona</div></a>
+      <a href="/blog/pac-etf-rendimento-netto" class="post-link"><div class="post-link-title">PAC in ETF: quanto resta davvero dopo costi, bollo e tasse</div></a>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var out=document.getElementById('cg-out'); if(!out) return;
+  var f=function(n,d){return n.toLocaleString('it-IT',{minimumFractionDigits:d,maximumFractionDigits:d});};
+  function v(id){var x=parseFloat(String(document.getElementById(id).value).replace(',','.'));return isNaN(x)?0:x;}
+  function pct(x){return (x>=0?'+':'')+f(x*100,2)+'%';}
+  function calc(){
+    var vi=v('cg-vi'),vf=v('cg-vf'),n=v('cg-y')+v('cg-m')/12,t=v('cg-tax'),inf=v('cg-inf')/100;
+    if(vi<=0||vf<=0||n<=0){out.innerHTML='Inserisci valori e durata maggiori di zero.';return;}
+    var tot=vf/vi-1, cagr=Math.pow(vf/vi,1/n)-1;
+    var gain=vf-vi, tax=gain>0?gain*t:0, vfn=vf-tax, cagrN=Math.pow(vfn/vi,1/n)-1, real=(1+cagrN)/(1+inf)-1;
+    var html='Rendimento totale: '+pct(tot)+' in '+f(n,2)+' anni<br>CAGR lordo: <strong>'+pct(cagr)+' annuo</strong>';
+    if(t>0&&gain>0) html+='<br>Tasse se vendi oggi ('+f(t*100,1)+'%): '+f(tax,2)+' &euro; &rarr; CAGR netto <strong>'+pct(cagrN)+'</strong>';
+    html+='<br>Rendimento reale '+((t>0&&gain>0)?'dopo tasse e inflazione':'al netto dell&apos;inflazione')+' ('+f(inf*100,1)+'%): '+pct(real)+' annuo';
+    if(n<1) html+='<div class="calc-warn">Periodo inferiore a un anno: il CAGR amplifica il risultato e non va preso come previsione.</div>';
+    out.innerHTML=html;
+  }
+  ['cg-vi','cg-vf','cg-y','cg-m','cg-tax','cg-inf'].forEach(function(id){var el=document.getElementById(id);el.addEventListener('input',calc);el.addEventListener('change',calc);});
+  calc();
+})();
+</script>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links"><a href="/">Home</a><a href="/blog">Blog</a><a href="/chi-siamo">Chi siamo</a><a href="/privacy">Privacy</a><a href="/cookie">Cookie</a><a href="/disclaimer">Disclaimer</a><a href="/contatti">Contatti</a></nav>
+  </div>
+</footer>
+
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
