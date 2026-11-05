@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calcolatore Plusvalenze Azioni ed ETF: tasse 26% e 12,5% — CalcolatoreTrading.it</title>
+  <meta name="description" content="Calcola quante tasse paghi vendendo azioni, ETF o BTP: plusvalenza con commissioni, aliquota 26% o 12,5%, minusvalenze da compensare e quando scadono. Gratis." />
+  <meta name="keywords" content="calcolatore plusvalenze, tasse plusvalenze azioni, capital gain 26%, tassazione ETF, plusvalenze BTP 12,5%, minusvalenze compensazione" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/calcolatore-plusvalenze-azioni" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calcolatore plusvalenze azioni ed ETF — CalcolatoreTrading.it" />
+  <meta property="og:description" content="Quante tasse paghi vendendo azioni, ETF o BTP, con le minusvalenze da compensare. Gratuito, senza registrazione." />
+  <meta property="og:url" content="https://calcolatoretrading.it/calcolatore-plusvalenze-azioni" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Calcolatore plusvalenze azioni ed ETF", "url": "https://calcolatoretrading.it/calcolatore-plusvalenze-azioni", "description": "Calcola quante tasse paghi vendendo azioni, ETF o BTP: plusvalenza con commissioni, aliquota 26% o 12,5%, minusvalenze da compensare e quando scadono. Gratis.", "inLanguage": "it-IT", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "publisher": {"@type": "Organization", "name": "CalcolatoreTrading.it", "url": "https://calcolatoretrading.it/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Come si calcola la plusvalenza su un'azione?", "acceptedAnswer": {"@type": "Answer", "text": "Plusvalenza = (prezzo di vendita × quantità − commissione di vendita) − (prezzo medio di carico × quantità + commissioni di acquisto). Le commissioni fanno parte del costo fiscale e riducono la plusvalenza tassabile."}}, {"@type": "Question", "name": "Quanto si paga di tasse sulle plusvalenze nel 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Il 26% su azioni, ETF, obbligazioni societarie, certificati ed ETC. Il 12,5% sui titoli di Stato italiani e dei Paesi white list (BOT, BTP, CCT): tecnicamente la plusvalenza conta per il 48,08% e su quella quota si applica il 26%."}}, {"@type": "Question", "name": "Posso usare le minusvalenze per pagare meno tasse su un ETF?", "acceptedAnswer": {"@type": "Answer", "text": "No. Il guadagno su un ETF o un fondo armonizzato è un reddito di capitale e viene tassato per intero, anche se hai minusvalenze nello zainetto. Le perdite sugli ETF invece generano minusvalenze, che puoi usare contro plusvalenze su azioni, obbligazioni, certificati o ETC."}}, {"@type": "Question", "name": "Entro quando vanno usate le minusvalenze?", "acceptedAnswer": {"@type": "Answer", "text": "Entro il 31 dicembre del quarto anno successivo a quello in cui le hai realizzate: una perdita del 2026 si può usare fino al 31 dicembre 2030. Poi scade."}}, {"@type": "Question", "name": "Perché una perdita su BTP vale meno nello zainetto?", "acceptedAnswer": {"@type": "Answer", "text": "Perché i titoli di Stato sono tassati al 12,5% invece che al 26%. Per riequilibrare, le loro minusvalenze contano solo per il 48,08%: una perdita di 1.000 € su BTP vale 480,80 € di minusvalenze."}}]}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#5a6475;--accent:#00d4a8;--accent2:#00a882;--accent-glow:rgba(0,212,168,0.15);--red:#e24b4a;--amber:#f5a623;--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+
+    /* LAYOUT */
+    .page{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:start}
+    @media(max-width:900px){.page{grid-template-columns:1fr;padding:2rem 1.5rem}}
+
+    /* BREADCRUMB */
+    .breadcrumb{font-size:0.8rem;color:#4a5568;margin-bottom:1.5rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+
+    /* PAGE TITLE */
+    .page-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
+    .page-sub{font-size:0.95rem;color:var(--text2);margin-bottom:2rem;font-weight:300}
+
+    /* CALCULATOR CARD */
+    .calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.75rem}
+
+    /* ROWS TABLE */
+    .rows-header{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px}
+    .rows-header span{font-size:13px;font-weight:500;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;padding:0 2px}
+    .row-item{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px;align-items:center}
+    .row-num{font-size:13px;color:#4a5568;text-align:center;font-weight:500}
+    input[type="number"]{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none;transition:border-color 0.2s;-moz-appearance:textfield}
+    input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none}
+    input[type="number"]:focus{border-color:var(--accent)}
+    input[type="number"].error{border-color:var(--red)}
+    .label-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+    .input-label{font-size:14px;color:#4a5568;font-weight:400}
+    .btn-remove{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;color:#4a5568;font-size:16px;transition:border-color 0.2s,color 0.2s;flex-shrink:0}
+    .btn-remove:hover{border-color:var(--red);color:var(--red)}
+    .btn-remove:disabled{opacity:0.2;cursor:not-allowed}
+
+    /* BUTTONS */
+    .btn-add{width:100%;margin-top:4px;padding:10px;background:transparent;border:1px dashed var(--border2);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.88rem;color:var(--text2);cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-add:hover{border-color:var(--accent);color:var(--accent)}
+    .btn-calc{width:100%;margin-top:1.25rem;padding:13px;background:var(--accent);border:none;border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;color:#021a14;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .btn-calc:hover{background:#00eabe;transform:translateY(-1px)}
+    .btn-reset{width:100%;margin-top:8px;padding:10px;background:transparent;border:1px solid var(--border);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.85rem;color:#4a5568;cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-reset:hover{border-color:var(--border2);color:var(--text2)}
+
+    /* RESULTS */
+    .results{margin-top:1.5rem;display:none}
+    .results.visible{display:block}
+    .divider{height:1px;background:var(--border);margin:1.25rem 0}
+    .result-main{text-align:center;padding:1.25rem 0}
+    .result-label{font-size:14px;color:#4a5568;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+    .result-value{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent);letter-spacing:-0.02em}
+    .result-sub{font-size:0.82rem;color:var(--text2);margin-top:4px}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1rem}
+    .stat-box{background:var(--bg3);border-radius:var(--radius);padding:0.9rem 1rem}
+    .stat-box-label{font-size:13px;color:#4a5568;margin-bottom:4px;letter-spacing:0.04em}
+    .stat-box-val{font-size:1.05rem;font-weight:500;color:var(--text)}
+    .stat-box-val.green{color:var(--accent)}
+    .stat-box-val.red{color:var(--red)}
+    .stat-box-val.amber{color:var(--amber)}
+
+    /* BREAKDOWN TABLE */
+    .breakdown{margin-top:1.25rem}
+    .breakdown-title{font-size:14px;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.6rem}
+    .breakdown-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+    .breakdown-table th{text-align:left;color:#4a5568;font-weight:400;padding:4px 8px;border-bottom:1px solid var(--border)}
+    .breakdown-table td{padding:6px 8px;border-bottom:1px solid var(--border);color:var(--text2)}
+    .breakdown-table tr:last-child td{border-bottom:none}
+    .breakdown-table td:not(:first-child){text-align:right;color:var(--text)}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:1.5rem}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .side-text{font-size:0.85rem;color:var(--text2);line-height:1.7;font-weight:300}
+    .side-text p{margin-bottom:0.6rem}
+    .side-text p:last-child{margin-bottom:0}
+    .side-text strong{color:var(--text);font-weight:500}
+    .formula-box{background:var(--bg3);border-radius:var(--radius);padding:0.75rem 1rem;margin:0.75rem 0;font-family:monospace;font-size:0.82rem;color:var(--accent);line-height:1.6}
+    .tool-links{display:flex;flex-direction:column;gap:8px}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;transition:border-color 0.2s}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.85rem;color:var(--text)}
+    .tool-link-arr{font-size:0.75rem;color:#4a5568}
+
+    /* AD SLOTS */
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{padding:1rem 0}
+
+    /* SEO SECTION */
+    .seo-section{background:var(--bg2);border-top:1px solid var(--border);margin-top:3rem}
+    .seo-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+    .faq-item{margin-bottom:1.5rem}
+    h2.faq-h{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+    .faq-ans{font-size:0.9rem;color:var(--text2);line-height:1.75;font-weight:300}
+    h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:1.25rem}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+  @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#9aa5b4;--accent:#009e7e;--accent2:#007d63;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}}
+    /* calcolatore plusvalenze */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-bottom:1.25rem}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-family:'Syne',sans-serif;font-size:12px;letter-spacing:.04em;color:var(--text2)}
+    .field small{font-size:14px;color:var(--text3);line-height:1.4}
+    select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none}
+    select:focus{border-color:var(--accent)}
+    .note-box{margin-top:1rem;padding:12px 14px;border:1px solid var(--border2);border-radius:var(--radius);font-size:16px;line-height:1.55;color:var(--text2)}
+    .note-box strong{color:var(--text)}
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- SLOT 1: Top of page — primo slot visibile, alto CTR -->
+<div style="max-width:1100px;margin:1.5rem auto 0;padding:0 2rem">
+  <div class="ad-slot">
+    <!-- ADSENSE SLOT 1 — Responsive Display (leaderboard)
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1145255592067202"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
+
+<div class="page">
+  <!-- MAIN COLUMN -->
+  <div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">CalcolatoreTrading.it</a>
+      <span aria-hidden="true">›</span>
+      <span>Calcolatore plusvalenze</span>
+    </nav>
+
+    <h1 class="page-title">Calcolatore plusvalenze e tasse</h1>
+    <p class="page-sub">Quanto paghi di tasse vendendo azioni, ETF o titoli di Stato, con le minusvalenze che hai nello zainetto.</p>
+
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="tipo">Cosa vendi</label>
+          <select id="tipo" onchange="toggleTipo()">
+            <option value="azioni">Azioni, obbligazioni societarie, certificati, ETC (26%)</option>
+            <option value="etf">ETF o fondo armonizzato (26%, 12,5% sulla quota in titoli di Stato)</option>
+            <option value="stato">Titoli di Stato italiani o white list: BOT, BTP, CCT (12,5%)</option>
+          </select>
+        </div>
+        <div class="field full" id="field-quota" style="display:none">
+          <label for="quota">Quota dell'ETF in titoli di Stato (%)</label>
+          <input type="number" id="quota" min="0" max="100" step="any" value="0" />
+          <small>0 per un ETF azionario. Per gli ETF obbligazionari la quota è indicata dall'emittente o nel rendiconto fiscale del broker.</small>
+        </div>
+        <div class="field">
+          <label for="qty">Quantità venduta</label>
+          <input type="number" id="qty" min="0" step="any" value="100" />
+        </div>
+        <div class="field">
+          <label for="pmc">Prezzo medio di carico (€)</label>
+          <input type="number" id="pmc" min="0" step="any" value="40" />
+        </div>
+        <div class="field">
+          <label for="pv">Prezzo di vendita (€)</label>
+          <input type="number" id="pv" min="0" step="any" value="55" />
+        </div>
+        <div class="field">
+          <label for="anno">Anno della vendita</label>
+          <input type="number" id="anno" min="2020" max="2100" step="1" value="2026" />
+        </div>
+        <div class="field">
+          <label for="cacq">Commissioni di acquisto, totale (€)</label>
+          <input type="number" id="cacq" min="0" step="any" value="5" />
+        </div>
+        <div class="field">
+          <label for="cven">Commissione di vendita (€)</label>
+          <input type="number" id="cven" min="0" step="any" value="5" />
+        </div>
+        <div class="field full">
+          <label for="minus">Minusvalenze disponibili nello zainetto (€)</label>
+          <input type="number" id="minus" min="0" step="any" value="0" />
+          <small>Le trovi nel rendiconto fiscale del broker. Contano solo quelle sullo stesso deposito titoli e non ancora scadute.</small>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calcola le tasse</button>
+      <button class="btn-reset" onclick="resetAll()">Azzera</button>
+
+      <div class="results" id="results" aria-live="polite">
+        <div class="divider"></div>
+        <div class="result-main">
+          <div class="result-label" id="main-label">Tasse da pagare</div>
+          <div class="result-value" id="main-value">—</div>
+          <div class="result-sub" id="main-sub"></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-box-label" id="g-label">Plusvalenza</div>
+            <div class="stat-box-val" id="g-val">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Incasso netto dalla vendita</div>
+            <div class="stat-box-val" id="incasso">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label" id="s3-label">Minusvalenze usate</div>
+            <div class="stat-box-val green" id="s3-val">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label" id="s4-label">Zainetto dopo la vendita</div>
+            <div class="stat-box-val amber" id="s4-val">—</div>
+          </div>
+        </div>
+        <div class="breakdown">
+          <div class="divider"></div>
+          <div class="breakdown-title">Dettaglio del calcolo</div>
+          <table class="breakdown-table" aria-label="Dettaglio del calcolo">
+            <tbody id="detail-body"></tbody>
+          </table>
+        </div>
+        <div class="note-box" id="note"></div>
+      </div>
+    </div>
+
+    <div class="ad-wrap">
+      <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-1145255592067202"
+             data-ad-slot="4333580337"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Informazioni e altri strumenti">
+    <div class="side-card">
+      <div class="side-title">Come funziona</div>
+      <div class="side-text">
+        <p>La <strong>plusvalenza</strong> è la differenza tra quanto incassi e quanto hai speso, commissioni comprese.</p>
+        <div class="formula-box">Plusvalenza =<br />(vendita × q − comm.)<br />− (carico × q + comm.)</div>
+        <p>Azioni: 26%. Titoli di Stato: 12,5%. ETF: 26%, ma il guadagno non si compensa con le minusvalenze.</p>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-title">Altri strumenti</div>
+      <div class="tool-links">
+        <a href="/calcolatore-prezzo-medio-azioni" class="tool-link">
+          <span class="tool-link-name">🔢 Prezzo medio azioni</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+        <a href="/calcolatore-interesse-composto" class="tool-link">
+          <span class="tool-link-name">📈 Interesse composto</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+        <a href="/calcolatore-criterio-kelly" class="tool-link">
+          <span class="tool-link-name">⚖️ Criterio di Kelly</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-title">Guide collegate</div>
+      <div class="tool-links">
+        <a href="/blog/tassazione-plusvalenze-trading" class="tool-link"><span class="tool-link-name">Tassazione delle plusvalenze</span><span class="tool-link-arr">→</span></a>
+        <a href="/blog/minusvalenze-in-scadenza-recupero" class="tool-link"><span class="tool-link-name">Minusvalenze in scadenza</span><span class="tool-link-arr">→</span></a>
+        <a href="/blog/prezzo-medio-di-carico-tasse" class="tool-link"><span class="tool-link-name">Prezzo di carico e tasse</span><span class="tool-link-arr">→</span></a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo-section">
+  <div class="seo-inner">
+    <h2>Come calcola le tasse questo strumento</h2>
+    <p class="faq-ans" style="margin-bottom:1rem">Il calcolo segue le regole del <strong>regime amministrato</strong>, quello in cui la banca o il broker italiano trattiene le tasse al posto tuo. Il costo fiscale è il prezzo medio di carico per la quantità venduta, più le commissioni di acquisto; l'incasso è il prezzo di vendita per la quantità, meno la commissione di vendita. Poi conta cosa stai vendendo.</p>
+    <p class="faq-ans" style="margin-bottom:1rem"><strong>Azioni, obbligazioni societarie, certificati, ETC</strong>: la plusvalenza è un reddito diverso, tassato al 26%. Se hai minusvalenze nello zainetto, vengono sottratte prima di applicare l'imposta. Esempio con i valori iniziali del calcolatore: 100 azioni caricate a 40 € e vendute a 55 €, con 5 € di commissione all'acquisto e 5 € alla vendita, danno 1.490 € di plusvalenza e 387,40 € di tasse.</p>
+    <p class="faq-ans" style="margin-bottom:1rem"><strong>Titoli di Stato</strong>: la plusvalenza conta per il 48,08% e su quella quota si applica il 26%, cioè in pratica il 12,5%. Anche le minusvalenze si compensano con questa quota ridotta, e una perdita su BTP entra nello zainetto solo per il 48,08%.</p>
+    <p class="faq-ans" style="margin-bottom:1rem"><strong>ETF e fondi armonizzati</strong>: il guadagno è un reddito di capitale, tassato al 26% (12,5% sulla parte in titoli di Stato) e <strong>non compensabile</strong> con le minusvalenze. Le perdite invece sono redditi diversi e finiscono nello zainetto. È l'asimmetria che sorprende di più chi investe solo in ETF.</p>
+    <p class="faq-ans" style="margin-bottom:1rem">Non sono calcolati: il bollo dello 0,20% sul deposito titoli, i dividendi e le cedole (tassati a parte quando li incassi), le cripto-attività (33% dal 2026), gli ETF non armonizzati e i PIR. Il prezzo medio di carico lo puoi ricavare con il <a href="/calcolatore-prezzo-medio-azioni" style="color:var(--accent)">calcolatore del prezzo medio</a>. Il risultato è una stima: per la tua posizione fa fede il rendiconto fiscale dell'intermediario.</p>
+
+    <h2 style="margin-top:2.5rem">Domande frequenti sulle tasse delle plusvalenze</h2>
+    <div class="faq-item">
+      <h2 class="faq-h">Come si calcola la plusvalenza su un'azione?</h2>
+      <p class="faq-ans">Plusvalenza = (prezzo di vendita × quantità − commissione di vendita) − (prezzo medio di carico × quantità + commissioni di acquisto). Le commissioni fanno parte del costo fiscale e riducono la plusvalenza tassabile.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Quanto si paga di tasse sulle plusvalenze nel 2026?</h2>
+      <p class="faq-ans">Il 26% su azioni, ETF, obbligazioni societarie, certificati ed ETC. Il 12,5% sui titoli di Stato italiani e dei Paesi white list (BOT, BTP, CCT): tecnicamente la plusvalenza conta per il 48,08% e su quella quota si applica il 26%.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Posso usare le minusvalenze per pagare meno tasse su un ETF?</h2>
+      <p class="faq-ans">No. Il guadagno su un ETF o un fondo armonizzato è un reddito di capitale e viene tassato per intero, anche se hai minusvalenze nello zainetto. Le perdite sugli ETF invece generano minusvalenze, che puoi usare contro plusvalenze su azioni, obbligazioni, certificati o ETC.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Entro quando vanno usate le minusvalenze?</h2>
+      <p class="faq-ans">Entro il 31 dicembre del quarto anno successivo a quello in cui le hai realizzate: una perdita del 2026 si può usare fino al 31 dicembre 2030. Poi scade.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Perché una perdita su BTP vale meno nello zainetto?</h2>
+      <p class="faq-ans">Perché i titoli di Stato sono tassati al 12,5% invece che al 26%. Per riequilibrare, le loro minusvalenze contano solo per il 48,08%: una perdita di 1.000 € su BTP vale 480,80 € di minusvalenze.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links" aria-label="Link footer">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/chi-siamo">Chi siamo</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/cookie">Cookie</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  var COEFF_STATO = 0.4808, ALIQ = 0.26, ALIQ_STATO = 0.125;
+  function fmtEur(n) {
+    return new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2, useGrouping:'always'}).format(n);
+  }
+  function num(id) { var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? NaN : v; }
+  function toggleTipo() {
+    document.getElementById('field-quota').style.display = document.getElementById('tipo').value === 'etf' ? '' : 'none';
+    if (document.getElementById('results').classList.contains('visible')) calculate();
+  }
+  function calcolaPlusvalenze(d) {
+    var costo = d.qty * d.pmc + d.cacq;
+    var incassoLordo = d.qty * d.pv - d.cven;
+    var g = incassoLordo - costo;
+    var r = {costo: costo, incassoLordo: incassoLordo, g: g, tasse: 0, tasseSenzaMinus: 0, minusUsate: 0, minusResidue: d.minus, nuoveMinus: 0, base: 0};
+    if (g > 0) {
+      if (d.tipo === 'etf') {
+        var s = Math.min(Math.max(d.quota, 0), 100) / 100;
+        r.tasse = g * (ALIQ * (1 - s) + ALIQ_STATO * s);
+        r.tasseSenzaMinus = r.tasse;
+        r.base = g;
+      } else {
+        r.base = d.tipo === 'stato' ? g * COEFF_STATO : g;
+        r.minusUsate = Math.min(d.minus, r.base);
+        r.minusResidue = d.minus - r.minusUsate;
+        r.tasse = (r.base - r.minusUsate) * ALIQ;
+        r.tasseSenzaMinus = r.base * ALIQ;
+      }
+    } else if (g < 0) {
+      r.nuoveMinus = d.tipo === 'stato' ? -g * COEFF_STATO : -g;
+      r.minusResidue = d.minus + r.nuoveMinus;
+    }
+    r.incassoNetto = incassoLordo - r.tasse;
+    r.guadagnoNetto = g - r.tasse;
+    return r;
+  }
+  function row(label, value, strong) {
+    return '<tr><td>' + label + '</td><td>' + (strong ? '<strong>' + value + '</strong>' : value) + '</td></tr>';
+  }
+  function calculate() {
+    var ids = ['qty','pmc','pv','cacq','cven','minus','anno','quota'], ok = true;
+    ids.forEach(function(id){
+      var el = document.getElementById(id); el.classList.remove('error');
+      var v = num(id);
+      if (isNaN(v) || v < 0) { if (id !== 'quota' || document.getElementById('tipo').value === 'etf') { el.classList.add('error'); ok = false; } }
+    });
+    if (!(num('qty') > 0)) { document.getElementById('qty').classList.add('error'); ok = false; }
+    if (!ok) return;
+    var d = {tipo: document.getElementById('tipo').value, qty: num('qty'), pmc: num('pmc'), pv: num('pv'),
+             cacq: num('cacq'), cven: num('cven'), minus: num('minus'), quota: num('quota') || 0, anno: Math.round(num('anno'))};
+    var r = calcolaPlusvalenze(d);
+    var tb = document.getElementById('detail-body'), html = '';
+    html += row('Costo fiscale (carico × quantità + commissioni)', fmtEur(r.costo));
+    html += row('Incasso (vendita × quantità − commissione)', fmtEur(r.incassoLordo));
+    html += row(r.g >= 0 ? 'Plusvalenza' : 'Minusvalenza', fmtEur(Math.abs(r.g)), true);
+    var note = '';
+    if (r.g > 0) {
+      document.getElementById('main-label').textContent = 'Tasse da pagare';
+      document.getElementById('main-value').textContent = fmtEur(r.tasse);
+      document.getElementById('main-sub').textContent = 'Ti restano ' + fmtEur(r.guadagnoNetto) + ' di guadagno netto (' + (r.tasse / r.g * 100).toFixed(1).replace('.', ',') + '% di tasse sulla plusvalenza)';
+      document.getElementById('g-label').textContent = 'Plusvalenza';
+      document.getElementById('s3-label').textContent = 'Minusvalenze usate';
+      document.getElementById('s3-val').textContent = fmtEur(r.minusUsate);
+      document.getElementById('s4-label').textContent = 'Zainetto dopo la vendita';
+      document.getElementById('s4-val').textContent = fmtEur(r.minusResidue);
+      if (d.tipo === 'stato') html += row('Quota tassabile (48,08%)', fmtEur(r.base));
+      if (d.tipo !== 'etf' && r.minusUsate > 0) html += row('− Minusvalenze compensate', '−' + fmtEur(r.minusUsate));
+      if (d.tipo === 'etf') {
+        var s = Math.min(Math.max(d.quota, 0), 100);
+        html += row('Aliquota applicata', s > 0 ? ('26% sul ' + (100 - s).toLocaleString('it-IT') + '%, 12,5% sul ' + s.toLocaleString('it-IT') + '%') : '26%');
+      } else {
+        html += row('Base imponibile × 26%', fmtEur(r.base - r.minusUsate));
+      }
+      html += row('Tasse', fmtEur(r.tasse), true);
+      if (r.minusUsate > 0) note = '<strong>Lo zainetto ti fa risparmiare ' + fmtEur(r.tasseSenzaMinus - r.tasse) + '</strong>: senza minusvalenze pagheresti ' + fmtEur(r.tasseSenzaMinus) + '.';
+      if (d.tipo === 'etf' && d.minus > 0) note = '<strong>Le minusvalenze non si possono usare</strong>: il guadagno su un ETF è un reddito di capitale e si paga per intero. Le ' + fmtEur(d.minus) + ' restano nello zainetto per future plusvalenze su azioni, obbligazioni, certificati o ETC.';
+      if (d.tipo === 'etf' && d.minus === 0) note = 'Sugli ETF il guadagno è un reddito di capitale: anche con minusvalenze nello zainetto pagheresti la stessa cifra.';
+      if (d.tipo === 'stato' && !note) note = 'Sui titoli di Stato la plusvalenza conta per il 48,08%: il 26% su quella quota equivale al 12,5% sull\'intero guadagno.';
+    } else if (r.g < 0) {
+      document.getElementById('main-label').textContent = 'Minusvalenza che entra nello zainetto';
+      document.getElementById('main-value').textContent = fmtEur(r.nuoveMinus);
+      document.getElementById('main-sub').textContent = 'Nessuna tassa da pagare. Usabile fino al 31 dicembre ' + (d.anno + 4);
+      document.getElementById('g-label').textContent = 'Perdita';
+      document.getElementById('s3-label').textContent = 'Scadenza';
+      document.getElementById('s3-val').textContent = '31/12/' + (d.anno + 4);
+      document.getElementById('s4-label').textContent = 'Zainetto dopo la vendita';
+      document.getElementById('s4-val').textContent = fmtEur(r.minusResidue);
+      if (d.tipo === 'stato') html += row('Minusvalenza riconosciuta (48,08%)', fmtEur(r.nuoveMinus), true);
+      note = 'La perdita potrà ridurre le tasse su plusvalenze future da azioni, obbligazioni, certificati, ETC e titoli di Stato realizzate sullo stesso deposito, non su guadagni da ETF o fondi.';
+      if (d.tipo === 'stato') note = 'Una perdita su titoli di Stato vale solo il 48,08% nello zainetto, perché i loro guadagni sono tassati al 12,5% invece che al 26%. ' + note;
+      if (d.tipo === 'etf') note += ' Per gli ETF obbligazionari con titoli di Stato l\'intermediario può riconoscere una minusvalenza ridotta sulla parte in titoli di Stato.';
+    } else {
+      document.getElementById('main-label').textContent = 'Tasse da pagare';
+      document.getElementById('main-value').textContent = fmtEur(0);
+      document.getElementById('main-sub').textContent = 'Vendita in pari: nessuna plusvalenza e nessuna minusvalenza';
+      document.getElementById('s3-label').textContent = 'Minusvalenze usate';
+      document.getElementById('s3-val').textContent = fmtEur(0);
+      document.getElementById('s4-label').textContent = 'Zainetto dopo la vendita';
+      document.getElementById('s4-val').textContent = fmtEur(d.minus);
+    }
+    document.getElementById('g-val').textContent = fmtEur(Math.abs(r.g));
+    document.getElementById('g-val').className = 'stat-box-val ' + (r.g >= 0 ? 'green' : 'red');
+    document.getElementById('incasso').textContent = fmtEur(r.incassoNetto);
+    tb.innerHTML = html;
+    var n = document.getElementById('note');
+    n.innerHTML = note; n.style.display = note ? '' : 'none';
+    document.getElementById('results').classList.add('visible');
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function resetAll() {
+    ['qty','pmc','pv','cacq','cven','minus'].forEach(function(id){ document.getElementById(id).value = ''; document.getElementById(id).classList.remove('error'); });
+    document.getElementById('quota').value = '0';
+    document.getElementById('results').classList.remove('visible');
+  }
+</script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
