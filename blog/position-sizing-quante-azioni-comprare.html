@@ -118,6 +118,7 @@
       <a href="/calcolatore-interesse-composto">Interesse composto</a>
       <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
       <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/calcolatore-plusvalenze-azioni">Plusvalenze</a>
       <a href="/blog" class="active">Blog</a>
     </div>
   </div>
@@ -187,7 +188,7 @@
     <p>L'ultima riga mostra il problema opposto: uno stop molto vicino porta a una posizione da quasi il 60% del capitale. Il rischio "sulla carta" &egrave; sempre 200 &euro;, ma basta un'apertura in forte ribasso per perdere molto di pi&ugrave;. Per questo serve un secondo limite.</p>
 
     <h2>Il secondo limite: un tetto per posizione</h2>
-    <p>Oltre al rischio per operazione, molti trader fissano un <strong>controvalore massimo per singola posizione</strong>, per esempio il 20-25% del capitale. Con 20.000 &euro; e un tetto del 25%, non si superano 5.000 &euro; per titolo, cio&egrave; 200 azioni a 25 &euro;, anche se la formula ne darebbe 475. Si applica il pi&ugrave; basso dei due numeri. &Egrave; lo stesso principio che trovi nella guida alla <a class="inline" href="/blog/diversificazione-portafoglio-trading">diversificazione del portafoglio</a>: nessuna singola posizione deve poter fare troppo danno da sola.</p>
+    <p>Oltre al rischio per operazione, molti trader fissano un <strong>controvalore massimo per singola posizione</strong>, per esempio il 20-25% del capitale. Con 20.000 &euro; e un tetto del 25%, non si superano 5.000 &euro; per titolo, cio&egrave; 200 azioni a 25 &euro;, anche se la formula ne darebbe 475. Si applica il pi&ugrave; basso dei due numeri. &Egrave; un principio di diversificazione: nessuna singola posizione deve poter fare troppo danno da sola.</p>
 
     <h2>Lo stop non &egrave; garantito: il rischio del gap</h2>
     <p>Uno stop loss normale diventa un ordine al meglio quando il prezzo lo tocca. Se il titolo chiude a 24 &euro; e il giorno dopo apre a 22 &euro; per una notizia, lo stop viene eseguito intorno a 22, non a 23,50. Nell'esempio con 126 azioni la perdita diventerebbe 126 &times; 3,00 + 10 = <strong>388 &euro;</strong>, quasi il 2% invece dell'1%. Non si pu&ograve; eliminare del tutto, ma si pu&ograve; contenere: rischio per operazione basso, tetto per posizione, e attenzione alle date delle trimestrali e degli eventi societari, quando i gap sono pi&ugrave; probabili.</p>
@@ -219,7 +220,7 @@
     </div>
 
     <h2>Come usarlo insieme agli altri calcolatori</h2>
-    <p>Il <a class="inline" href="/calcolatore-criterio-kelly">calcolatore del criterio di Kelly</a> ti dice, in base a percentuale di successo e rapporto vincita/perdita della tua strategia, quale frazione del capitale sarebbe teoricamente ottimale: usalo come limite superiore, non come obiettivo. Se compri in pi&ugrave; tranche, il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a> ti aiuta a ricalcolare il rischio effettivo della posizione complessiva rispetto allo stop. E per il rapporto tra stop e obiettivo di prezzo trovi la guida a <a class="inline" href="/blog/stop-loss-take-profit">stop loss e take profit</a>.</p>
+    <p>Il <a class="inline" href="/calcolatore-criterio-kelly">calcolatore del criterio di Kelly</a> ti dice, in base a percentuale di successo e rapporto vincita/perdita della tua strategia, quale frazione del capitale sarebbe teoricamente ottimale: usalo come limite superiore, non come obiettivo. Se compri in pi&ugrave; tranche, il <a class="inline" href="/calcolatore-prezzo-medio-azioni">calcolatore del prezzo medio</a> ti aiuta a ricalcolare il rischio effettivo della posizione complessiva rispetto allo stop.</p>
 
     <h2>Domande frequenti</h2>
     <h3>Il capitale da usare &egrave; quello iniziale o quello attuale?</h3>
@@ -229,7 +230,7 @@
     <h3>Le perdite chiuse con lo stop hanno un risvolto fiscale?</h3>
     <p>S&igrave;. In Italia una vendita in perdita genera una minusvalenza che pu&ograve; essere compensata con plusvalenze future entro il quarto anno successivo, con le eccezioni viste nella guida alla <a class="inline" href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>. Non rende la perdita meno reale, ma va considerata nel conto complessivo.</p>
     <h3>E con la leva o i CFD?</h3>
-    <p>La formula &egrave; la stessa, ma il controvalore esposto pu&ograve; superare il capitale e le perdite possono andare oltre il margine versato. &Egrave; un motivo in pi&ugrave; per tenere basso il rischio per operazione: vedi la guida sulla <a class="inline" href="/blog/leva-finanziaria-rischi">leva finanziaria</a>.</p>
+    <p>La formula &egrave; la stessa, ma il controvalore esposto pu&ograve; superare il capitale e le perdite possono andare oltre il margine versato. &Egrave; un motivo in pi&ugrave; per tenere basso il rischio per operazione quando si usa la leva.</p>
     <p><em>Questo articolo ha scopo informativo e non costituisce consulenza finanziaria personalizzata. Gli esempi numerici sono illustrativi: il trading comporta il rischio di perdere anche l'intero capitale investito.</em></p>
 
     <div class="cta-box">
@@ -237,12 +238,6 @@
       <a href="/calcolatore-criterio-kelly" class="cta-btn">&#9878;&#65039; Apri il calcolatore di Kelly &rarr;</a>
     </div>
 
-    <!-- SLOT 3: Fine articolo -->
-    <div class="ad-wrap"><div class="ad-slot">
-      <!-- ADSENSE SLOT 3 — Responsive Display
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-    </div></div>
   </article>
 
   <aside class="sidebar">
@@ -253,19 +248,11 @@
       <a href="/calcolatore-interesse-composto" class="tool-link"><span class="tool-link-name">&#128200; Interesse composto</span></a>
     </div>
 
-    <!-- SLOT 4: Sidebar -->
-    <div class="ad-slot">
-      <!-- ADSENSE SLOT 4 — Sidebar 300x250
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1145255592067202" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-    </div>
 
     <div class="side-card">
       <div class="side-title">Altri articoli</div>
       <a href="/blog/recuperare-perdita-azioni" class="post-link"><div class="post-link-title">Recuperare una perdita: quanto deve risalire il titolo</div></a>
-      <a href="/blog/stop-loss-take-profit" class="post-link"><div class="post-link-title">Stop loss e take profit: come impostarli correttamente</div></a>
       <a href="/blog/criterio-di-kelly-trading" class="post-link"><div class="post-link-title">Criterio di Kelly: cos'&egrave; e come usarlo nel trading</div></a>
-      <a href="/blog/diversificazione-portafoglio-trading" class="post-link"><div class="post-link-title">Diversificazione di portafoglio: quante posizioni servono davvero</div></a>
     </div>
   </aside>
 </div>
