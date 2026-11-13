@@ -129,6 +129,16 @@
     .seo-section{background:var(--bg2);border-top:1px solid var(--border);margin-top:3rem}
     .seo-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem}
     .faq-item{margin-bottom:1.5rem}
+    .guide .seo-inner{max-width:780px}
+    .guide h2{font-size:1.5rem;font-weight:600;margin-bottom:1rem}
+    .guide h3{font-size:1.1rem;font-weight:600;margin:2rem 0 0.6rem}
+    .guide p,.guide li{font-size:0.95rem;color:var(--text2);line-height:1.8;font-weight:300}
+    .guide p{margin-bottom:0.9rem}
+    .guide ul,.guide ol{padding-left:1.3rem;margin-bottom:1rem}
+    .guide li{margin-bottom:0.4rem}
+    .guide strong{color:var(--text);font-weight:600}
+    .guide a{color:var(--accent)}
+    .guide table.data{margin:0.5rem 0 1.25rem}
     h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:1.25rem}
     h2.faq-h{font-size:1.05rem;font-weight:600;margin-bottom:0.4rem}
     .faq-ans{font-size:0.9rem;color:var(--text2);line-height:1.75;font-weight:300}
@@ -356,6 +366,51 @@
       </div>
     </div>
   </aside>
+</div>
+
+<!-- GUIDA -->
+<div class="seo-section guide">
+  <div class="seo-inner">
+    <h2>Guida pratica al criterio di Kelly</h2>
+    <p>Il criterio di Kelly, proposto nel 1956 da John L. Kelly Jr. dei Bell Labs, indica quale frazione del capitale rischiare su ogni operazione per massimizzare la crescita nel lungo periodo. Il calcolatore qui sopra fa il conto per te; questa guida spiega come interpretare il numero che ottieni e perché quasi mai va usato così com'è.</p>
+
+    <h3>Un esempio passo per passo</h3>
+    <p>Un sistema vince il 55% delle volte e, quando vince, guadagna il doppio di quanto perde quando sbaglia (rapporto guadagno/perdita 2). La formula dà:</p>
+    <p><strong>K = 0,55 − (1 − 0,55) ÷ 2 = 0,55 − 0,225 = 32,5%</strong></p>
+    <p>Significa rischiare il 32,5% del capitale su ogni operazione: in pratica, con uno stop loss, la perdita massima di ogni trade dovrebbe valere il 32,5% del conto. Una cifra che quasi nessun trader regge. Ecco come cambia con il Kelly frazionato:</p>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Frazione</th><th>Rischio per operazione</th></tr></thead>
+        <tbody>
+          <tr><td>Kelly pieno</td><td>32,5%</td></tr>
+          <tr><td>½ Kelly</td><td>16,3%</td></tr>
+          <tr><td>¼ Kelly</td><td>8,1%</td></tr>
+          <tr><td>1/10 Kelly</td><td>3,3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Perché il Kelly pieno è pericoloso</h3>
+    <p>Il problema principale sono le stime. Se il win rate reale non è il 55% ma il 45%, con lo stesso rapporto 2 il Kelly corretto scende al 17,5%. Rischiando il 32,5% staresti puntando quasi il doppio del valore ottimale, e intorno al doppio del Kelly la crescita attesa del capitale si azzera: tanto rischio per nessun guadagno atteso.</p>
+    <p>Anche con stime corrette, il Kelly pieno porta a cali del conto molto profondi. E le perdite pesano più dei guadagni: dopo un -50% serve un +100% solo per tornare in pari, come spiegato nella guida su <a href="/blog/recuperare-perdita-azioni">quanto deve risalire un titolo per recuperare una perdita</a>. Per questo si usa quasi sempre ¼ o ½ Kelly.</p>
+
+    <h3>Come usarlo nella pratica</h3>
+    <ol>
+      <li>Raccogli almeno 100 operazioni dal tuo diario di trading: con meno dati win rate e rapporto medio sono troppo incerti.</li>
+      <li>Calcola il Kelly pieno con il calcolatore.</li>
+      <li>Usa al massimo ¼ Kelly e affianca un tetto fisso: molti trader non rischiano più dell'1-2% del capitale per operazione, qualunque cosa dica la formula.</li>
+      <li>Traduci la percentuale in un numero di azioni con lo stop loss che hai scelto: trovi il metodo nella guida al <a href="/blog/position-sizing-quante-azioni-comprare">position sizing</a>.</li>
+      <li>Ricalcola ogni 50-100 operazioni, perché i risultati di un sistema cambiano nel tempo.</li>
+    </ol>
+
+    <h3>I limiti da conoscere</h3>
+    <ul>
+      <li><strong>Posizioni correlate</strong>: il Kelly calcolato su un singolo trade non tiene conto delle altre posizioni aperte. Cinque titoli tecnologici dimensionati al 10% ciascuno si muovono insieme, e il rischio reale è molto più vicino al 50% che al 10%.</li>
+      <li><strong>Esiti non binari</strong>: la formula base presuppone che si vinca o si perda un importo fisso. Con le opzioni o con uscite variabili va usata con molta più cautela.</li>
+      <li><strong>Leva</strong>: nel forex e nei CFD la leva moltiplica le conseguenze di una stima sbagliata; chi li usa adotta frazioni molto basse, come 1/8 o 1/10.</li>
+      <li><strong>Investimenti di lungo periodo</strong>: il Kelly serve per operazioni ripetute con esito misurabile, non per decidere quanto mettere in un ETF da tenere vent'anni.</li>
+    </ul>
+  </div>
 </div>
 
 <!-- SEO / FAQ -->

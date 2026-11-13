@@ -116,6 +116,16 @@
     .seo-section{background:var(--bg2);border-top:1px solid var(--border);margin-top:3rem}
     .seo-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem}
     .faq-item{margin-bottom:1.5rem}
+    .guide .seo-inner{max-width:780px}
+    .guide h2{font-size:1.5rem;font-weight:600;margin-bottom:1rem}
+    .guide h3{font-size:1.1rem;font-weight:600;margin:2rem 0 0.6rem}
+    .guide p,.guide li{font-size:0.95rem;color:var(--text2);line-height:1.8;font-weight:300}
+    .guide p{margin-bottom:0.9rem}
+    .guide ul,.guide ol{padding-left:1.3rem;margin-bottom:1rem}
+    .guide li{margin-bottom:0.4rem}
+    .guide strong{color:var(--text);font-weight:600}
+    .guide a{color:var(--accent)}
+    .guide table.data{margin:0.5rem 0 1.25rem}
     h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:1.25rem}
     h2.faq-h{font-size:1.05rem;font-weight:600;margin-bottom:0.4rem}
     .faq-ans{font-size:0.9rem;color:var(--text2);line-height:1.75;font-weight:300}
@@ -151,7 +161,6 @@
       <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
       <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
       <a href="/calcolatore-plusvalenze-azioni">Plusvalenze</a>
-      <a href="/blog">Blog</a>
       <a href="/blog">Blog</a>
     </div>
   </div>
@@ -339,6 +348,64 @@
       </div>
     </div>
   </aside>
+</div>
+
+<!-- GUIDA -->
+<div class="seo-section guide">
+  <div class="seo-inner">
+    <h2>Guida all'interesse composto: come leggere il risultato</h2>
+    <p>Il calcolatore applica la formula dell'interesse composto con la frequenza di capitalizzazione che scegli e, se li inserisci, aggiunge i versamenti periodici. Il risultato è una <strong>stima lorda</strong>: utile per capire l'ordine di grandezza, ma prima di usarlo per una decisione va corretto con le voci che trovi più sotto: tasse, bollo, costi e inflazione.</p>
+
+    <h3>Un esempio: 10.000 € all'8% annuo</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Anni</th><th>Capitale</th><th>Interessi maturati</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>14.693 €</td><td>4.693 €</td></tr>
+          <tr><td>10</td><td>21.589 €</td><td>11.589 €</td></tr>
+          <tr><td>20</td><td>46.610 €</td><td>36.610 €</td></tr>
+          <tr><td>30</td><td>100.627 €</td><td>90.627 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Capitalizzazione annuale, nessun versamento aggiuntivo. Nei primi dieci anni gli interessi sono 11.589 €, nei dieci successivi 25.021 €, nei dieci dopo ancora 54.017 €: la crescita accelera perché ogni anno gli interessi si calcolano su una base più grande.</p>
+
+    <h3>Il tempo conta più della cifra</h3>
+    <p>Due persone investono 200 € al mese con un rendimento ipotetico dell'8% annuo (capitalizzazione mensile):</p>
+    <ul>
+      <li><strong>Mario</strong> versa dai 25 ai 35 anni (24.000 € in tutto), poi smette ma lascia il capitale investito fino a 65 anni: arriva a circa <strong>403.000 €</strong>.</li>
+      <li><strong>Luca</strong> inizia a 35 anni e versa fino a 65 (72.000 € in tutto): arriva a circa <strong>300.000 €</strong>.</li>
+    </ul>
+    <p>Mario ha versato un terzo dei soldi di Luca e finisce con di più, perché i suoi versamenti hanno avuto dieci anni in più per comporsi. Con rendimenti più bassi la differenza si riduce, ma il principio resta: iniziare prima pesa più che versare di più.</p>
+
+    <h3>Il risultato è lordo: cosa togliere in Italia</h3>
+    <ul>
+      <li><strong>Tasse sul guadagno</strong>: 26% per azioni, ETF, fondi e conti deposito; 12,5% per i titoli di Stato italiani e quelli dei Paesi della white list. Per i dettagli vedi la guida alla <a href="/blog/tassazione-plusvalenze-trading">tassazione delle plusvalenze</a>.</li>
+      <li><strong>Imposta di bollo</strong>: 0,20% all'anno sul valore del deposito titoli (e dei conti deposito), qualunque sia il rendimento.</li>
+      <li><strong>Costi</strong>: il TER degli ETF e dei fondi e le commissioni del broker. Si compongono come i rendimenti, ma in negativo.</li>
+      <li><strong>Inflazione</strong>: con l'8% nominale e il 2-3% di inflazione, il rendimento reale è intorno al 5-6%.</li>
+    </ul>
+    <p>Riprendendo l'esempio di 10.000 € in un ETF all'8% lordo per 20 anni:</p>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Passaggio</th><th>Valore finale</th></tr></thead>
+        <tbody>
+          <tr><td>Capitale lordo</td><td>46.610 €</td></tr>
+          <tr><td>Con il bollo dello 0,20% ogni anno</td><td>44.780 €</td></tr>
+          <tr><td>Netto dopo il 26% sul guadagno alla vendita</td><td>35.737 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Per una stima più realistica con questo calcolatore, inserisci come tasso il rendimento lordo meno TER e bollo, poi togli il 26% dalla parte di guadagno. Un esempio completo con versamenti mensili è nell'articolo sul <a href="/blog/pac-etf-rendimento-netto">PAC in ETF al netto di costi, bollo e tasse</a>. Se invece vuoi sapere quanto ti costerà davvero in tasse una vendita, usa il <a href="/calcolatore-plusvalenze-azioni">calcolatore delle plusvalenze</a>.</p>
+
+    <h3>Azioni, ETF e conti deposito: cosa cambia</h3>
+    <ul>
+      <li><strong>Conti deposito e obbligazioni</strong>: il tasso è dichiarato e la capitalizzazione è prevedibile. Gli interessi però vengono tassati ogni volta che sono pagati, quindi solo il netto continua a comporsi.</li>
+      <li><strong>ETF ad accumulazione</strong>: non c'è un tasso fisso, la crescita dipende dal mercato e i dividendi vengono reinvestiti dentro il fondo. Il 26% si paga solo quando vendi, e fino ad allora anche la parte destinata alle tasse resta investita.</li>
+      <li><strong>Azioni ed ETF a distribuzione</strong>: i dividendi arrivano in contanti già tassati al 26%. L'effetto composto c'è solo se li reinvesti tu.</li>
+    </ul>
+    <p>Per ETF e azioni il tasso da inserire è quindi un'ipotesi, non una promessa: conviene provare più scenari (per esempio 4%, 6% e 8%) invece di affidarsi a un solo numero. Per misurare il rendimento che un investimento ha avuto davvero negli anni passati, usa invece il <a href="/blog/rendimento-annualizzato-cagr">rendimento annualizzato (CAGR)</a>.</p>
+  </div>
 </div>
 
 <!-- SEO / FAQ -->
