@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calcolatore Dividendi Netti: tasse 26% e ritenuta estera — CalcolatoreTrading.it</title>
+  <meta name="description" content="Quanto ti resta di un dividendo italiano o estero: ritenuta alla fonte (USA, Germania, Francia, Svizzera…), 26% in Italia sul netto frontiera, quota recuperabile e rendimento netto. Gratis." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://calcolatoretrading.it/calcolatore-dividendi-netti" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calcolatore dividendi netti — CalcolatoreTrading.it" />
+  <meta property="og:description" content="Dividendo lordo, ritenuta estera e 26% italiano: quanto incassi davvero e quanto puoi recuperare. Gratuito, senza registrazione." />
+  <meta property="og:url" content="https://calcolatoretrading.it/calcolatore-dividendi-netti" />
+  <meta property="og:locale" content="it_IT" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Calcolatore dividendi netti", "url": "https://calcolatoretrading.it/calcolatore-dividendi-netti", "description": "Quanto ti resta di un dividendo italiano o estero dopo la ritenuta alla fonte e il 26% italiano.", "inLanguage": "it", "dateModified": "2026-11-17", "publisher": {"@type": "Organization", "name": "CalcolatoreTrading.it", "url": "https://calcolatoretrading.it/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quanto si paga di tasse sui dividendi in Italia?", "acceptedAnswer": {"@type": "Answer", "text": "Il 26%. Sui dividendi di società italiane la banca lo trattiene a titolo d'imposta e incassi il 74% del lordo. Sui dividendi esteri il 26% si applica dopo la ritenuta del Paese della società, quindi la pressione totale è più alta: con un'azione USA e il modulo W-8BEN arrivi al 37,1%."}}, {"@type": "Question", "name": "Come si calcola il dividendo netto di un'azione estera?", "acceptedAnswer": {"@type": "Answer", "text": "Netto = lordo × (1 − ritenuta estera) × (1 − 26%). Per esempio, 100 € di dividendo USA con ritenuta del 15%: 85 € arrivano in Italia, il 26% di 85 è 22,10 €, ti restano 62,90 €."}}, {"@type": "Question", "name": "Cos'è il modulo W-8BEN e perché conviene?", "acceptedAnswer": {"@type": "Answer", "text": "È la dichiarazione con cui attesti al broker di non essere residente negli Stati Uniti. Con il W-8BEN la ritenuta USA sui dividendi scende dal 30% al 15% previsto dalla convenzione tra Italia e USA. Senza, su 1.000 € lordi incassi 518 € invece di 629 €."}}, {"@type": "Question", "name": "Posso recuperare la ritenuta estera sui dividendi?", "acceptedAnswer": {"@type": "Answer", "text": "Solo la parte che supera l'aliquota della convenzione (di solito il 15%), con un'istanza di rimborso al fisco del Paese estero. Vale per esempio per Germania, Spagna e Svizzera. In regime amministrato la ritenuta estera non dà diritto a un credito d'imposta in Italia."}}, {"@type": "Question", "name": "I dividendi si possono compensare con le minusvalenze?", "acceptedAnswer": {"@type": "Answer", "text": "No. I dividendi sono redditi di capitale e vengono tassati per intero. Le minusvalenze nello zainetto fiscale si usano solo contro le plusvalenze da azioni, obbligazioni, certificati ed ETC."}}]}</script>
+
+  <!-- GOOGLE ADSENSE -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1145255592067202" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#10141a;--bg3:#161c25;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#e8edf5;--text2:#8a95a8;--text3:#5a6475;--accent:#00d4a8;--accent2:#00a882;--accent-glow:rgba(0,212,168,0.15);--red:#e24b4a;--amber:#f5a623;--radius:12px;--radius-lg:20px}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:1.5rem}
+    .nav-links a{font-size:0.85rem;color:var(--text2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .nav-links a.active{color:var(--accent)}
+
+    /* LAYOUT */
+    .page{max-width:1100px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 360px;gap:2.5rem;align-items:start}
+    @media(max-width:900px){.page{grid-template-columns:1fr;padding:2rem 1.5rem}}
+
+    /* BREADCRUMB */
+    .breadcrumb{font-size:0.8rem;color:#4a5568;margin-bottom:1.5rem}
+    .breadcrumb a{color:#4a5568;text-decoration:none}
+    .breadcrumb a:hover{color:var(--text2)}
+    .breadcrumb span{margin:0 6px}
+
+    /* PAGE TITLE */
+    .page-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.03em;color:var(--text);margin-bottom:0.5rem}
+    .page-sub{font-size:0.95rem;color:var(--text2);margin-bottom:2rem;font-weight:300}
+
+    /* CALCULATOR CARD */
+    .calc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.75rem}
+
+    /* ROWS TABLE */
+    .rows-header{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px}
+    .rows-header span{font-size:13px;font-weight:500;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;padding:0 2px}
+    .row-item{display:grid;grid-template-columns:1fr 1fr 36px;gap:8px;margin-bottom:8px;align-items:center}
+    .row-num{font-size:13px;color:#4a5568;text-align:center;font-weight:500}
+    input[type="number"]{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none;transition:border-color 0.2s;-moz-appearance:textfield}
+    input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none}
+    input[type="number"]:focus{border-color:var(--accent)}
+    input[type="number"].error{border-color:var(--red)}
+    .label-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+    .input-label{font-size:14px;color:#4a5568;font-weight:400}
+    .btn-remove{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;color:#4a5568;font-size:16px;transition:border-color 0.2s,color 0.2s;flex-shrink:0}
+    .btn-remove:hover{border-color:var(--red);color:var(--red)}
+    .btn-remove:disabled{opacity:0.2;cursor:not-allowed}
+
+    /* BUTTONS */
+    .btn-add{width:100%;margin-top:4px;padding:10px;background:transparent;border:1px dashed var(--border2);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.88rem;color:var(--text2);cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-add:hover{border-color:var(--accent);color:var(--accent)}
+    .btn-calc{width:100%;margin-top:1.25rem;padding:13px;background:var(--accent);border:none;border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-weight:500;color:#021a14;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .btn-calc:hover{background:#00eabe;transform:translateY(-1px)}
+    .btn-reset{width:100%;margin-top:8px;padding:10px;background:transparent;border:1px solid var(--border);border-radius:var(--radius);font-family:'Cormorant Garamond',Georgia,serif;font-size:0.85rem;color:#4a5568;cursor:pointer;transition:border-color 0.2s,color 0.2s}
+    .btn-reset:hover{border-color:var(--border2);color:var(--text2)}
+
+    /* RESULTS */
+    .results{margin-top:1.5rem;display:none}
+    .results.visible{display:block}
+    .divider{height:1px;background:var(--border);margin:1.25rem 0}
+    .result-main{text-align:center;padding:1.25rem 0}
+    .result-label{font-size:14px;color:#4a5568;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+    .result-value{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent);letter-spacing:-0.02em}
+    .result-sub{font-size:0.82rem;color:var(--text2);margin-top:4px}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1rem}
+    .stat-box{background:var(--bg3);border-radius:var(--radius);padding:0.9rem 1rem}
+    .stat-box-label{font-size:13px;color:#4a5568;margin-bottom:4px;letter-spacing:0.04em}
+    .stat-box-val{font-size:1.05rem;font-weight:500;color:var(--text)}
+    .stat-box-val.green{color:var(--accent)}
+    .stat-box-val.red{color:var(--red)}
+    .stat-box-val.amber{color:var(--amber)}
+
+    /* BREAKDOWN TABLE */
+    .breakdown{margin-top:1.25rem}
+    .breakdown-title{font-size:14px;color:#4a5568;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.6rem}
+    .breakdown-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+    .breakdown-table th{text-align:left;color:#4a5568;font-weight:400;padding:4px 8px;border-bottom:1px solid var(--border)}
+    .breakdown-table td{padding:6px 8px;border-bottom:1px solid var(--border);color:var(--text2)}
+    .breakdown-table tr:last-child td{border-bottom:none}
+    .breakdown-table td:not(:first-child){text-align:right;color:var(--text)}
+
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:1.5rem}
+    .side-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem}
+    .side-title{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.75rem}
+    .side-text{font-size:0.85rem;color:var(--text2);line-height:1.7;font-weight:300}
+    .side-text p{margin-bottom:0.6rem}
+    .side-text p:last-child{margin-bottom:0}
+    .side-text strong{color:var(--text);font-weight:500}
+    .formula-box{background:var(--bg3);border-radius:var(--radius);padding:0.75rem 1rem;margin:0.75rem 0;font-family:monospace;font-size:0.82rem;color:var(--accent);line-height:1.6}
+    .tool-links{display:flex;flex-direction:column;gap:8px}
+    .tool-link{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;transition:border-color 0.2s}
+    .tool-link:hover{border-color:var(--border2)}
+    .tool-link-name{font-size:0.85rem;color:var(--text)}
+    .tool-link-arr{font-size:0.75rem;color:#4a5568}
+
+    /* AD SLOTS */
+    .ad-slot{width:100%;overflow:hidden;text-align:center}
+    .ad-wrap{padding:1rem 0}
+
+    /* SEO SECTION */
+    .seo-section{background:var(--bg2);border-top:1px solid var(--border);margin-top:3rem}
+    .seo-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+    .faq-item{margin-bottom:1.5rem}
+    h2.faq-h{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:0.4rem}
+    .faq-ans{font-size:0.9rem;color:var(--text2);line-height:1.75;font-weight:300}
+    h2{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;color:var(--text);margin-bottom:1.25rem}
+    footer{border-top:1px solid var(--border);padding:2rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:0.82rem;color:#4a5568}
+    .footer-links{display:flex;gap:1.5rem}
+    .footer-links a{font-size:0.82rem;color:#4a5568;text-decoration:none}
+    .footer-links a:hover{color:var(--text2)}
+  @media(prefers-color-scheme:light){:root{--bg:#f5f7fa;--bg2:#ffffff;--bg3:#eef0f4;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);--text:#0f1923;--text2:#4a5568;--text3:#9aa5b4;--accent:#009e7e;--accent2:#007d63;--accent-glow:rgba(0,158,126,0.12);}body{background:var(--bg);color:var(--text);}nav{background:rgba(245,247,250,0.92);}}
+    .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--bg2);border-top:1px solid var(--border2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,0.35)}
+    .cookie-banner.hidden{display:none}
+    .cookie-banner p{font-size:0.85rem;color:var(--text2);margin:0;font-weight:300;max-width:640px}
+    .cookie-banner a{color:var(--accent)}
+    .cookie-banner .actions{display:flex;gap:0.75rem;flex-shrink:0}
+    .btn-sm{font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:var(--radius);border:none;cursor:pointer;transition:opacity 0.2s}
+    .btn-primary.btn-sm{background:var(--accent);color:#021a14}
+    .btn-secondary.btn-sm{background:transparent;color:var(--text2);border:1px solid var(--border2)}
+    .btn-sm:hover{opacity:0.85}
+      /* nav secondari: niente comportamento "sticky" della barra principale */
+    nav.breadcrumb,nav.footer-links{position:static;z-index:auto;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;padding:0}
+    /* mobile: menu e footer vanno a capo (niente scorrimento orizzontale) */
+    @media(max-width:700px){nav[role="navigation"]{padding:0 1rem}.nav-inner{height:auto;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 0}.nav-links{flex-wrap:wrap;gap:0.25rem 1.1rem}.nav-links a{white-space:nowrap}.footer-links{flex-wrap:wrap;gap:0.5rem 1.25rem}}
+    /* calcolatore plusvalenze */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-bottom:1.25rem}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-family:'Syne',sans-serif;font-size:12px;letter-spacing:.04em;color:var(--text2)}
+    .field small{font-size:14px;color:var(--text3);line-height:1.4}
+    select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;font-family:'Cormorant Garamond',Georgia,serif;font-size:0.92rem;color:var(--text);outline:none}
+    select:focus{border-color:var(--accent)}
+    .note-box{margin-top:1rem;padding:12px 14px;border:1px solid var(--border2);border-radius:var(--radius);font-size:16px;line-height:1.55;color:var(--text2)}
+    .note-box strong{color:var(--text)}
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+    .guide .seo-inner{max-width:780px}
+    .guide h2{font-size:1.5rem;font-weight:600;margin-bottom:1rem}
+    .guide h3{font-size:1.1rem;font-weight:600;margin:2rem 0 0.6rem}
+    .guide p,.guide li{font-size:0.95rem;color:var(--text2);line-height:1.8;font-weight:300}
+    .guide p{margin-bottom:0.9rem}
+    .guide ul,.guide ol{padding-left:1.3rem;margin-bottom:1rem}
+    .guide li{margin-bottom:0.4rem}
+    .guide strong{color:var(--text);font-weight:600}
+    .guide a{color:var(--accent)}
+    .guide table.data{margin:0.5rem 0 1.25rem}
+    .guide .table-wrap{overflow-x:auto}
+    .guide table.data{width:100%;border-collapse:collapse;font-family:'Syne',sans-serif;font-size:0.82rem}
+    .guide table.data th{text-align:left;color:var(--text2);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--border2)}
+    .guide table.data td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2)}
+  </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Navigazione principale">
+  <div class="nav-inner">
+    <a href="/" class="logo">Calcolatore<span>Trading</span>.it</a>
+    <div class="nav-links">
+      <a href="/calcolatore-interesse-composto">Interesse composto</a>
+      <a href="/calcolatore-criterio-kelly">Criterio di Kelly</a>
+      <a href="/calcolatore-prezzo-medio-azioni">Prezzo medio</a>
+      <a href="/calcolatore-plusvalenze-azioni">Plusvalenze</a>
+      <a href="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+  <!-- MAIN COLUMN -->
+  <div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">CalcolatoreTrading.it</a>
+      <span aria-hidden="true">›</span>
+      <span>Calcolatore dividendi netti</span>
+    </nav>
+
+    <h1 class="page-title">Calcolatore dividendi netti</h1>
+    <p class="page-sub">Quanto ti resta di un dividendo italiano o estero dopo la ritenuta del Paese della società e il 26% italiano, e quanto potresti recuperare.</p>
+
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="paese">Da dove arriva il dividendo</label>
+          <select id="paese" onchange="setPaese()">
+            <option value="it" data-rit="0" data-conv="0">Azione italiana</option>
+            <option value="us" selected data-rit="15" data-conv="15">USA, con modulo W-8BEN (15%)</option>
+            <option value="us30" data-rit="30" data-conv="15">USA, senza W-8BEN (30%)</option>
+            <option value="de" data-rit="26.375" data-conv="15">Germania (26,375%)</option>
+            <option value="fr" data-rit="12.8" data-conv="15">Francia (12,8%)</option>
+            <option value="es" data-rit="19" data-conv="15">Spagna (19%)</option>
+            <option value="ch" data-rit="35" data-conv="15">Svizzera (35%)</option>
+            <option value="nl" data-rit="15" data-conv="15">Paesi Bassi (15%)</option>
+            <option value="uk" data-rit="0" data-conv="0">Regno Unito (nessuna ritenuta)</option>
+            <option value="etf" data-rit="0" data-conv="0">ETF armonizzato a distribuzione</option>
+            <option value="altro" data-rit="15" data-conv="15">Altro Paese (inserisci le aliquote)</option>
+          </select>
+        </div>
+        <div class="field" id="field-rit">
+          <label for="rit">Ritenuta estera applicata (%)</label>
+          <input type="number" id="rit" min="0" max="100" step="any" value="15" />
+          <small>Quella che vedi trattenuta nel rendiconto del broker.</small>
+        </div>
+        <div class="field" id="field-conv">
+          <label for="conv">Aliquota della convenzione (%)</label>
+          <input type="number" id="conv" min="0" max="100" step="any" value="15" />
+          <small>Il massimo che il Paese può trattenere a un residente in Italia.</small>
+        </div>
+        <div class="field full" id="field-quota" style="display:none">
+          <label for="quota">Quota dell'ETF in titoli di Stato (%)</label>
+          <input type="number" id="quota" min="0" max="100" step="any" value="0" />
+          <small>0 per un ETF azionario. Su questa quota la tassa è il 12,5% invece del 26%.</small>
+        </div>
+        <div class="field">
+          <label for="qty">Numero di azioni o quote</label>
+          <input type="number" id="qty" min="0" step="any" value="100" />
+        </div>
+        <div class="field">
+          <label for="dps">Dividendo lordo per azione (€)</label>
+          <input type="number" id="dps" min="0" step="any" value="1" />
+          <small>Per i titoli esteri usa l'importo convertito in euro.</small>
+        </div>
+        <div class="field full">
+          <label for="prezzo">Prezzo dell'azione (€, facoltativo)</label>
+          <input type="number" id="prezzo" min="0" step="any" value="" placeholder="per calcolare il rendimento lordo e netto" />
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calcola il dividendo netto</button>
+      <button class="btn-reset" onclick="resetAll()">Azzera</button>
+
+      <div class="results" id="results" aria-live="polite">
+        <div class="divider"></div>
+        <div class="result-main">
+          <div class="result-label">Dividendo netto sul conto</div>
+          <div class="result-value" id="main-value">—</div>
+          <div class="result-sub" id="main-sub"></div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-box-label">Dividendo lordo</div>
+            <div class="stat-box-val" id="s-lordo">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Ritenuta estera</div>
+            <div class="stat-box-val red" id="s-est">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label">Tasse italiane</div>
+            <div class="stat-box-val red" id="s-it">—</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-label" id="s4-label">Recuperabile dal fisco estero</div>
+            <div class="stat-box-val amber" id="s4-val">—</div>
+          </div>
+        </div>
+        <div class="breakdown">
+          <div class="divider"></div>
+          <div class="breakdown-title">Dettaglio del calcolo</div>
+          <table class="breakdown-table" aria-label="Dettaglio del calcolo">
+            <tbody id="detail-body"></tbody>
+          </table>
+        </div>
+        <div class="note-box" id="note"></div>
+      </div>
+    </div>
+
+    <div class="ad-wrap">
+      <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-1145255592067202"
+             data-ad-slot="4333580337"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Informazioni e altri strumenti">
+    <div class="side-card">
+      <div class="side-title">Come funziona</div>
+      <div class="side-text">
+        <p>Su un dividendo estero paghi <strong>due volte</strong>: prima la ritenuta del Paese della società, poi il 26% italiano su quello che resta.</p>
+        <div class="formula-box">Netto =<br />lordo × (1 − ritenuta estera)<br />× (1 − 26%)</div>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-title">Altri strumenti</div>
+      <div class="tool-links">
+        <a href="/calcolatore-plusvalenze-azioni" class="tool-link">
+          <span class="tool-link-name">🧾 Plusvalenze e tasse</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+        <a href="/calcolatore-prezzo-medio-azioni" class="tool-link">
+          <span class="tool-link-name">🔢 Prezzo medio azioni</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+        <a href="/calcolatore-interesse-composto" class="tool-link">
+          <span class="tool-link-name">📈 Interesse composto</span>
+          <span class="tool-link-arr">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="side-card">
+      <div class="side-title">Guide collegate</div>
+      <div class="tool-links">
+        <a href="/blog/tassazione-plusvalenze-trading" class="tool-link"><span class="tool-link-name">Tassazione del trading</span><span class="tool-link-arr">→</span></a>
+        <a href="/blog/pac-etf-rendimento-netto" class="tool-link"><span class="tool-link-name">PAC in ETF al netto delle tasse</span><span class="tool-link-arr">→</span></a>
+        <a href="/blog/minusvalenze-in-scadenza-recupero" class="tool-link"><span class="tool-link-name">Minusvalenze in scadenza</span><span class="tool-link-arr">→</span></a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- GUIDA -->
+<div class="seo-section guide">
+  <div class="seo-inner">
+    <h2>Come si tassano i dividendi in Italia</h2>
+    <p>Il calcolatore segue le regole del <strong>regime amministrato</strong>, quello in cui la banca o il broker italiano fa da sostituto d'imposta: incassi il dividendo già tassato e non devi dichiarare nulla.</p>
+    <ul>
+      <li><strong>Azioni italiane</strong>: la banca trattiene il 26% a titolo d'imposta. Su 100 € lordi ne incassi 74.</li>
+      <li><strong>Azioni estere</strong>: prima il Paese della società trattiene la sua ritenuta alla fonte, poi in Italia si paga il 26% su quello che arriva (il cosiddetto <em>netto frontiera</em>). La norma prevede che la ritenuta italiana si applichi al netto di quella estera (art. 27, comma 4-bis, DPR 600/1973).</li>
+      <li><strong>ETF armonizzati a distribuzione</strong>: il 26% si applica sulla distribuzione (12,5% sulla parte che deriva da titoli di Stato). Le ritenute estere sui dividendi delle società in portafoglio le ha già subite il fondo e non compaiono nel tuo rendiconto.</li>
+    </ul>
+
+    <h3>Un esempio: 1.000 € di dividendi da un'azione USA</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Passaggio</th><th>Con W-8BEN</th><th>Senza W-8BEN</th></tr></thead>
+        <tbody>
+          <tr><td>Dividendo lordo</td><td>1.000,00 €</td><td>1.000,00 €</td></tr>
+          <tr><td>Ritenuta USA</td><td>−150,00 € (15%)</td><td>−300,00 € (30%)</td></tr>
+          <tr><td>Netto frontiera</td><td>850,00 €</td><td>700,00 €</td></tr>
+          <tr><td>26% italiano</td><td>−221,00 €</td><td>−182,00 €</td></tr>
+          <tr><td><strong>Netto incassato</strong></td><td><strong>629,00 €</strong></td><td><strong>518,00 €</strong></td></tr>
+          <tr><td>Pressione fiscale totale</td><td>37,1%</td><td>48,2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Il modulo <strong>W-8BEN</strong> è una dichiarazione con cui attesti al broker di non essere residente negli USA: la ritenuta scende dal 30% al 15% previsto dalla convenzione. La firmi una volta tramite il broker e va rinnovata periodicamente. Senza, su ogni dividendo americano perdi 111 € ogni 1.000 € lordi.</p>
+
+    <h3>Le ritenute dei principali Paesi</h3>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Paese</th><th>Ritenuta ordinaria</th><th>Convenzione con l'Italia</th></tr></thead>
+        <tbody>
+          <tr><td>Stati Uniti</td><td>30%</td><td>15% (con W-8BEN, già alla fonte)</td></tr>
+          <tr><td>Germania</td><td>26,375%</td><td>15%</td></tr>
+          <tr><td>Francia</td><td>12,8% per le persone fisiche</td><td>15%</td></tr>
+          <tr><td>Spagna</td><td>19%</td><td>15%</td></tr>
+          <tr><td>Svizzera</td><td>35%</td><td>15%</td></tr>
+          <tr><td>Paesi Bassi</td><td>15%</td><td>15%</td></tr>
+          <tr><td>Regno Unito</td><td>0%</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Aliquote ordinarie sui dividendi pagati a persone fisiche residenti in Italia, controllate a novembre 2026. Possono cambiare e alcuni broker applicano già alla fonte l'aliquota ridotta: fa fede la ritenuta che vedi nel rendiconto, ed è quella da inserire nel calcolatore.</p>
+
+    <h3>Si può recuperare la ritenuta estera?</h3>
+    <p>Solo la parte che supera l'aliquota della convenzione, e solo chiedendola al fisco del Paese estero con un'istanza di rimborso, di solito accompagnata dal certificato di residenza fiscale rilasciato dall'Agenzia delle Entrate. Su un dividendo svizzero, per esempio, la Svizzera trattiene il 35% ma a un residente in Italia ne spetta il 15%: i 20 punti di differenza si possono chiedere indietro.</p>
+    <p>I tempi sono lunghi e la pratica può avere costi (moduli, traduzioni, commissioni della banca), quindi conviene solo su importi rilevanti. Il calcolatore mostra quanto sarebbe recuperabile e quanto incasseresti se la ritenuta fosse già quella della convenzione.</p>
+    <p>In regime amministrato la ritenuta estera non dà diritto a un credito d'imposta in Italia: il 26% si paga comunque sul netto frontiera. Per chi dichiara i dividendi esteri in proprio la questione è più aperta: la Cassazione (sentenza 10204 del 16 aprile 2024) ha riconosciuto il credito per un caso di dividendi americani, ma riguarda una situazione specifica e l'Agenzia delle Entrate ha una posizione diversa. In questi casi serve un commercialista.</p>
+
+    <h3>Dividendi e minusvalenze</h3>
+    <p>I dividendi sono <strong>redditi di capitale</strong>: non si possono compensare con le minusvalenze nello zainetto fiscale, che servono solo contro le plusvalenze (i redditi diversi). Per capire quanto paghi vendendo un titolo e quali perdite puoi usare, c'è il <a href="/calcolatore-plusvalenze-azioni">calcolatore delle plusvalenze</a>; per le scadenze dello zainetto, la guida alle <a href="/blog/minusvalenze-in-scadenza-recupero">minusvalenze in scadenza</a>.</p>
+
+    <h3>Distribuzione o accumulazione?</h3>
+    <p>Con un ETF ad accumulazione i dividendi restano nel fondo e il 26% si paga solo quando vendi: fino ad allora anche la parte che andrà al Fisco continua a rendere. Con un ETF a distribuzione o con azioni che pagano dividendi, invece, la tassa si paga ogni anno. Per chi non ha bisogno di una rendita l'accumulazione è di solito più efficiente: l'effetto, euro per euro, è calcolato nell'articolo sul <a href="/blog/pac-etf-rendimento-netto">PAC in ETF al netto di costi, bollo e tasse</a>.</p>
+  </div>
+</div>
+
+<!-- SEO / FAQ -->
+<div class="seo-section">
+  <div class="seo-inner">
+    <h2>Domande frequenti sui dividendi</h2>
+    <div class="faq-item">
+      <h2 class="faq-h">Quanto si paga di tasse sui dividendi in Italia?</h2>
+      <p class="faq-ans">Il 26%. Sui dividendi di società italiane la banca lo trattiene a titolo d'imposta e incassi il 74% del lordo. Sui dividendi esteri il 26% si applica dopo la ritenuta del Paese della società, quindi la pressione totale è più alta: con un'azione USA e il modulo W-8BEN arrivi al 37,1%.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Come si calcola il dividendo netto di un'azione estera?</h2>
+      <p class="faq-ans">Netto = lordo × (1 − ritenuta estera) × (1 − 26%). Per esempio, 100 € di dividendo USA con ritenuta del 15%: 85 € arrivano in Italia, il 26% di 85 è 22,10 €, ti restano 62,90 €.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Cos'è il modulo W-8BEN e perché conviene?</h2>
+      <p class="faq-ans">È la dichiarazione con cui attesti al broker di non essere residente negli Stati Uniti. Con il W-8BEN la ritenuta USA sui dividendi scende dal 30% al 15% previsto dalla convenzione tra Italia e USA. Senza, su 1.000 € lordi incassi 518 € invece di 629 €.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">Posso recuperare la ritenuta estera sui dividendi?</h2>
+      <p class="faq-ans">Solo la parte che supera l'aliquota della convenzione (di solito il 15%), con un'istanza di rimborso al fisco del Paese estero. Vale per esempio per Germania, Spagna e Svizzera. In regime amministrato la ritenuta estera non dà diritto a un credito d'imposta in Italia.</p>
+    </div>
+    <div class="faq-item">
+      <h2 class="faq-h">I dividendi si possono compensare con le minusvalenze?</h2>
+      <p class="faq-ans">No. I dividendi sono redditi di capitale e vengono tassati per intero. Le minusvalenze nello zainetto fiscale si usano solo contro le plusvalenze da azioni, obbligazioni, certificati ed ETC.</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 CalcolatoreTrading.it — Tutti i diritti riservati</span>
+    <nav class="footer-links" aria-label="Link footer">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/chi-siamo">Chi siamo</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/cookie">Cookie</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/contatti">Contatti</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  var ALIQ = 0.26, ALIQ_STATO = 0.125;
+  function fmtEur(n) {
+    return new Intl.NumberFormat('it-IT', {style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2, useGrouping:'always'}).format(n);
+  }
+  function fmtPct(x) { return (x * 100).toFixed(1).replace('.', ',') + '%'; }
+  function num(id) { var v = parseFloat(String(document.getElementById(id).value).replace(',', '.')); return isNaN(v) ? NaN : v; }
+  function setPaese() {
+    var sel = document.getElementById('paese'), o = sel.options[sel.selectedIndex], p = sel.value;
+    document.getElementById('rit').value = o.getAttribute('data-rit');
+    document.getElementById('conv').value = o.getAttribute('data-conv');
+    var estero = !(p === 'it' || p === 'etf' || p === 'uk');
+    document.getElementById('field-rit').style.display = estero ? '' : 'none';
+    document.getElementById('field-conv').style.display = estero ? '' : 'none';
+    document.getElementById('field-quota').style.display = p === 'etf' ? '' : 'none';
+    if (document.getElementById('results').classList.contains('visible')) calculate();
+  }
+  function calcolaDividendo(d) {
+    var lordo = d.qty * d.dps;
+    var aliqIt = d.tipo === 'etf' ? ALIQ * (1 - d.quota) + ALIQ_STATO * d.quota : ALIQ;
+    var est = lordo * d.rit;
+    var frontiera = lordo - est;
+    var it = frontiera * aliqIt;
+    var netto = frontiera - it;
+    var ritMin = Math.min(d.rit, d.conv);
+    var recuperabile = lordo * (d.rit - ritMin);
+    var nettoConv = lordo * (1 - ritMin) * (1 - aliqIt);
+    return {lordo: lordo, est: est, frontiera: frontiera, it: it, netto: netto, aliqIt: aliqIt,
+            pressione: lordo > 0 ? 1 - netto / lordo : 0, recuperabile: recuperabile, nettoConv: nettoConv};
+  }
+  function row(label, value, strong) {
+    return '<tr><td>' + label + '</td><td>' + (strong ? '<strong>' + value + '</strong>' : value) + '</td></tr>';
+  }
+  function calculate() {
+    var p = document.getElementById('paese').value, ok = true;
+    var estero = !(p === 'it' || p === 'etf' || p === 'uk');
+    ['qty','dps','rit','conv','quota','prezzo'].forEach(function(id){ document.getElementById(id).classList.remove('error'); });
+    ['qty','dps'].forEach(function(id){ if (!(num(id) > 0)) { document.getElementById(id).classList.add('error'); ok = false; } });
+    if (estero) ['rit','conv'].forEach(function(id){ var v = num(id); if (isNaN(v) || v < 0 || v >= 100) { document.getElementById(id).classList.add('error'); ok = false; } });
+    if (p === 'etf') { var q = num('quota'); if (isNaN(q) || q < 0 || q > 100) { document.getElementById('quota').classList.add('error'); ok = false; } }
+    var prezzo = num('prezzo');
+    if (document.getElementById('prezzo').value !== '' && !(prezzo > 0)) { document.getElementById('prezzo').classList.add('error'); ok = false; }
+    if (!ok) return;
+    var d = {tipo: p, qty: num('qty'), dps: num('dps'),
+             rit: estero ? num('rit') / 100 : 0, conv: estero ? num('conv') / 100 : 0,
+             quota: p === 'etf' ? num('quota') / 100 : 0};
+    var r = calcolaDividendo(d);
+    document.getElementById('main-value').textContent = fmtEur(r.netto);
+    document.getElementById('main-sub').textContent = 'Su ' + fmtEur(r.lordo) + ' lordi: pressione fiscale totale del ' + fmtPct(r.pressione);
+    document.getElementById('s-lordo').textContent = fmtEur(r.lordo);
+    document.getElementById('s-est').textContent = fmtEur(r.est);
+    document.getElementById('s-it').textContent = fmtEur(r.it);
+    var html = '';
+    html += row('Dividendo lordo (' + d.qty.toLocaleString('it-IT') + ' × ' + fmtEur(d.dps) + ')', fmtEur(r.lordo));
+    if (estero) {
+      html += row('− Ritenuta estera (' + fmtPct(d.rit) + ')', '−' + fmtEur(r.est));
+      html += row('Netto frontiera', fmtEur(r.frontiera));
+    }
+    var aliqLabel = p === 'etf' && d.quota > 0 ? 'aliquota media ' + fmtPct(r.aliqIt) : '26%';
+    html += row('− Tasse italiane (' + aliqLabel + ')', '−' + fmtEur(r.it));
+    html += row('Dividendo netto', fmtEur(r.netto), true);
+    if (prezzo > 0) {
+      html += row('Rendimento lordo (dividendo / prezzo)', fmtPct(d.dps / prezzo));
+      html += row('Rendimento netto', fmtPct(r.netto / (d.qty * prezzo)));
+    }
+    document.getElementById('detail-body').innerHTML = html;
+    var note = '';
+    if (estero && r.recuperabile > 0.005) {
+      document.getElementById('s4-label').textContent = 'Recuperabile dal fisco estero';
+      document.getElementById('s4-val').textContent = fmtEur(r.recuperabile);
+      note = '<strong>La ritenuta supera quella della convenzione (' + fmtPct(d.conv) + ').</strong> La differenza, ' + fmtEur(r.recuperabile) + ', si può chiedere a rimborso al fisco estero: con la ritenuta convenzionale incasseresti ' + fmtEur(r.nettoConv) + ' netti invece di ' + fmtEur(r.netto) + '. La pratica è lunga e conviene solo su importi rilevanti.';
+      if (p === 'us30') note = '<strong>Senza modulo W-8BEN perdi ' + fmtEur(r.nettoConv - r.netto) + ' netti</strong> su questo dividendo. Chiedi al broker di compilarlo: la ritenuta USA scende al 15% direttamente alla fonte.';
+    } else {
+      document.getElementById('s4-label').textContent = estero ? 'Recuperabile dal fisco estero' : 'Pressione fiscale';
+      document.getElementById('s4-val').textContent = estero ? fmtEur(0) : fmtPct(r.pressione);
+      if (p === 'it') note = 'Sui dividendi italiani la banca trattiene il 26% a titolo d\'imposta: non devi dichiarare nulla.';
+      else if (p === 'etf') note = 'Sulla distribuzione dell\'ETF paghi solo l\'imposta italiana. Le ritenute estere sui dividendi delle società in portafoglio le ha già subite il fondo, a monte.';
+      else if (p === 'uk') note = 'Il Regno Unito non applica ritenute sui dividendi: paghi solo il 26% italiano.';
+      else note = 'La ritenuta è già pari o inferiore a quella della convenzione: non c\'è nulla da recuperare all\'estero.';
+    }
+    if (estero) note += ' In regime amministrato la ritenuta estera non dà diritto a un credito d\'imposta in Italia.';
+    var n = document.getElementById('note');
+    n.innerHTML = note; n.style.display = note ? '' : 'none';
+    document.getElementById('results').classList.add('visible');
+    document.getElementById('results').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function resetAll() {
+    ['qty','dps','prezzo'].forEach(function(id){ document.getElementById(id).value = ''; document.getElementById(id).classList.remove('error'); });
+    document.getElementById('paese').value = 'it';
+    setPaese();
+    document.getElementById('results').classList.remove('visible');
+  }
+  setPaese();
+</script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
